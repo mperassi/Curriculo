@@ -43,6 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A04E38FC26FA4C0800B514B0 /* Páginas */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B8E7826F8F3A80006C064 /* FirstPageViewController.swift */,
+				A033746D26F9315600BE2CBA /* TextTableViewCell.swift */,
+				A0EF1DDC26F9398000479F6E /* DataTableViewCell.swift */,
+			);
+			name = "Páginas";
+			path = "Páginas";
+			sourceTree = "<group>";
+		};
 		FA4B8E6826F8F3A70006C064 = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +75,12 @@
 			children = (
 				FA4B8E7426F8F3A80006C064 /* AppDelegate.swift */,
 				FA4B8E7626F8F3A80006C064 /* SceneDelegate.swift */,
-				FA4B8E7826F8F3A80006C064 /* FirstPageViewController.swift */,
 				FA4B8E7A26F8F3A80006C064 /* Main.storyboard */,
 				FA4B8E8026F8F3AB0006C064 /* Assets.xcassets */,
 				FA4B8E8226F8F3AB0006C064 /* LaunchScreen.storyboard */,
 				FA4B8E8526F8F3AB0006C064 /* Info.plist */,
 				FA4B8E7D26F8F3A80006C064 /* Curriculo.xcdatamodeld */,
-				A033746D26F9315600BE2CBA /* TextTableViewCell.swift */,
-				A0EF1DDC26F9398000479F6E /* DataTableViewCell.swift */,
+				A04E38FC26FA4C0800B514B0 /* Páginas */,
 			);
 			path = Curriculo;
 			sourceTree = "<group>";
