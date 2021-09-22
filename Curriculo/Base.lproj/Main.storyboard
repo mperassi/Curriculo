@@ -51,10 +51,10 @@
                                                                     <color key="textColor" name="Ciano"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24J-ZT-4ki">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="24J-ZT-4ki">
                                                                     <rect key="frame" x="30" y="45" width="300" height="34"/>
                                                                     <color key="backgroundColor" name="TextField"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xF-LN-h7K">
@@ -197,6 +197,7 @@
                     <size key="freeformSize" width="390" height="1000"/>
                     <connections>
                         <outlet property="addLink" destination="4LF-2v-hoq" id="ew3-pA-Dls"/>
+                        <outlet property="scrollView" destination="pmG-b5-kVR" id="yKM-ra-kqH"/>
                         <outlet property="tableView" destination="ifl-3y-TH0" id="34Z-wu-kAD"/>
                     </connections>
                 </viewController>
