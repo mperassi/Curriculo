@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A01913C626FB9AEC003BC29E /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913C526FB9AEC003BC29E /* SecondPageViewController.swift */; };
 		A01913C926FB9C6C003BC29E /* LargeTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913C826FB9C6C003BC29E /* LargeTextTableViewCell.swift */; };
+		A01913CD26FBCE41003BC29E /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913CC26FBCE41003BC29E /* ThirdPageViewController.swift */; };
+		A01913CF26FBD211003BC29E /* DuasDatasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */; };
 		A033746E26F9315600BE2CBA /* TextoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033746D26F9315600BE2CBA /* TextoTableViewCell.swift */; };
 		A0EF1DDD26F9398000479F6E /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1DDC26F9398000479F6E /* DataTableViewCell.swift */; };
 		FA4B8E7526F8F3A80006C064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B8E7426F8F3A80006C064 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		A01913C526FB9AEC003BC29E /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		A01913C826FB9C6C003BC29E /* LargeTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTextTableViewCell.swift; sourceTree = "<group>"; };
+		A01913CC26FBCE41003BC29E /* ThirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
+		A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuasDatasTableViewCell.swift; sourceTree = "<group>"; };
 		A033746D26F9315600BE2CBA /* TextoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoTableViewCell.swift; sourceTree = "<group>"; };
 		A0EF1DDC26F9398000479F6E /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		FA4B8E7126F8F3A80006C064 /* Curriculo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curriculo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,7 @@
 				A033746D26F9315600BE2CBA /* TextoTableViewCell.swift */,
 				A0EF1DDC26F9398000479F6E /* DataTableViewCell.swift */,
 				A01913C826FB9C6C003BC29E /* LargeTextTableViewCell.swift */,
+				A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */,
 			);
 			name = "Células";
 			path = "Células";
@@ -63,6 +68,7 @@
 			children = (
 				FA4B8E7826F8F3A80006C064 /* FirstPageViewController.swift */,
 				A01913C526FB9AEC003BC29E /* SecondPageViewController.swift */,
+				A01913CC26FBCE41003BC29E /* ThirdPageViewController.swift */,
 			);
 			name = "Páginas";
 			path = "Páginas";
@@ -170,10 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01913CD26FBCE41003BC29E /* ThirdPageViewController.swift in Sources */,
 				FA4B8E7926F8F3A80006C064 /* FirstPageViewController.swift in Sources */,
 				FA4B8E7526F8F3A80006C064 /* AppDelegate.swift in Sources */,
 				A01913C926FB9C6C003BC29E /* LargeTextTableViewCell.swift in Sources */,
 				FA4B8E7F26F8F3A80006C064 /* Curriculo.xcdatamodeld in Sources */,
+				A01913CF26FBD211003BC29E /* DuasDatasTableViewCell.swift in Sources */,
 				A0EF1DDD26F9398000479F6E /* DataTableViewCell.swift in Sources */,
 				A01913C626FB9AEC003BC29E /* SecondPageViewController.swift in Sources */,
 				FA4B8E7726F8F3A80006C064 /* SceneDelegate.swift in Sources */,

@@ -12,13 +12,8 @@ class FirstPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addLink: UIButton!
     
+    @IBOutlet weak var botaoProximo: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    // Create Date
-    let date = Date()
-
-    // Create Date Formatter
-    let dateFormatter = DateFormatter()
     
     let defaults = UserDefaults.standard
     var dictionary: [String : String] = [:]  //Dictionary which you want to save
@@ -30,7 +25,8 @@ class FirstPageViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         addLink.layer.cornerRadius = 10
-//        self.dictionary = defaults.value(forKey: "DictValue") as! [String : String] //colocar nas outras vc, no viewdidload
+        self.navigationItem.setHidesBackButton(true, animated: false)
+
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         
         NotificationCenter.default.addObserver(self, selector: #selector(FirstPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -44,7 +40,7 @@ class FirstPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func dicionario1Pagina(){
+    @IBAction func dicionario1Pagina(_ sender: UIBarButtonItem){
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
         let indexPath = NSIndexPath(row: 0, section: 0)
         let multiCell = tableView.cellForRow(at: indexPath as IndexPath) as? TextoTableViewCell
@@ -52,9 +48,20 @@ class FirstPageViewController: UIViewController {
         
         let indexPathData = NSIndexPath(row: 1, section: 0)
         let multiCell1 = tableView.cellForRow(at: indexPathData as IndexPath) as? DataTableViewCell
-        dateFormatter.dateFormat = "dd/MM/YY"
-        self.dictionary["Data"] = multiCell1?.dataPicker.date.description
+        
+        // Create Date
+        let date = multiCell1?.dataPicker.date
 
+        // Create Date Formatter
+        let dateFormatter = DateFormatter()
+    
+        // Set Date Format
+        dateFormatter.dateFormat = "dd/MM/YY"
+
+        // Convert Date to String
+        let texto = dateFormatter.string(from: date!)
+        self.dictionary["Data"] = texto
+        
         
         let indexPathTel = NSIndexPath(row: 2, section: 0)
         let multiCell2 = tableView.cellForRow(at: indexPathTel as IndexPath) as? TextoTableViewCell
@@ -73,8 +80,9 @@ class FirstPageViewController: UIViewController {
         self.dictionary["Link"] = multiCell5?.nomeField.text
         
         print(dictionary)
-
+        
     }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
       guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -121,9 +129,7 @@ extension FirstPageViewController: UITableViewDataSource{
             
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell", for: indexPath) as! DataTableViewCell
-            cell.dataPicker.tintColor = UIColor.init(named: "Ciano")
             cell.dataPicker.contentHorizontalAlignment = .left
-            
             
             return cell
             
@@ -133,6 +139,8 @@ extension FirstPageViewController: UITableViewDataSource{
             cell.nomeField.placeholder = "Exemplo: (00) 00000-0000"
             cell.nomeField.keyboardType = .numberPad
             cell.nomeObs.text = "*Obrigatório"
+   
+            
             return cell
             
         } else if indexPath.row == 3 {
@@ -154,7 +162,7 @@ extension FirstPageViewController: UITableViewDataSource{
         } else {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "Links adicionais"
-            cell.nomeField.placeholder = "Exemplo: LinkedIN, Behance, Github"
+            cell.nomeField.placeholder = "Exemplo: LinkedIn, Behance, Github"
             cell.nomeField.keyboardType = .URL
             cell.nomeObs.text = " "
             return cell

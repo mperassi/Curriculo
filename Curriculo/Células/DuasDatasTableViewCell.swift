@@ -1,5 +1,5 @@
 //
-//  LargeTextTableViewCell.swift
+//  TableViewCell.swift
 //  Curriculo
 //
 //  Created by Carolina Ortega on 22/09/21.
@@ -7,11 +7,8 @@
 
 import UIKit
 
-class LargeTextTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var largeTextLabel: UILabel!
-    @IBOutlet weak var largeTextView: UITextView!
-    
+class DuasDatasTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,8 +16,7 @@ class LargeTextTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        
+
         // Configure the view for the selected state
     }
 
