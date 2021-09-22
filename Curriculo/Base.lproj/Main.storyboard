@@ -7,6 +7,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -101,30 +102,34 @@
                                                                     <color key="textColor" name="Campos"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-Jy-RAB">
-                                                                    <rect key="frame" x="30" y="49" width="300" height="31"/>
-                                                                    <color key="backgroundColor" name="TextField"/>
+                                                                <datePicker clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="fDS-VS-D4s">
+                                                                    <rect key="frame" x="25" y="40" width="315" height="55"/>
                                                                     <color key="tintColor" name="Ciano"/>
                                                                     <locale key="locale" localeIdentifier="pt_BR"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                            <color key="value" name="Ciano"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </datePicker>
                                                             </subviews>
                                                             <color key="backgroundColor" name="Fundo"/>
                                                             <constraints>
-                                                                <constraint firstItem="eoG-Jy-RAB" firstAttribute="trailing" secondItem="DI1-V3-G9P" secondAttribute="trailingMargin" constant="-10" id="3Ad-h7-JRW"/>
-                                                                <constraint firstItem="eoG-Jy-RAB" firstAttribute="top" secondItem="mMb-h2-WHW" secondAttribute="bottom" constant="14" id="47J-5w-xYT"/>
-                                                                <constraint firstAttribute="bottomMargin" secondItem="eoG-Jy-RAB" secondAttribute="bottom" constant="14" id="7kM-OY-Sy4"/>
                                                                 <constraint firstItem="P3L-f9-p8e" firstAttribute="top" secondItem="DI1-V3-G9P" secondAttribute="topMargin" id="8Bs-Dy-rKj"/>
-                                                                <constraint firstItem="eoG-Jy-RAB" firstAttribute="leading" secondItem="DI1-V3-G9P" secondAttribute="leadingMargin" constant="10" id="Txk-7E-XsG"/>
+                                                                <constraint firstAttribute="trailing" secondItem="fDS-VS-D4s" secondAttribute="trailing" constant="20" id="DI7-J4-bO7"/>
+                                                                <constraint firstItem="fDS-VS-D4s" firstAttribute="top" secondItem="DI1-V3-G9P" secondAttribute="top" constant="40" id="KzH-tl-BFA"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="P3L-f9-p8e" secondAttribute="trailing" constant="10" id="Wxr-i2-XJ6"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="mMb-h2-WHW" secondAttribute="trailing" constant="10" id="ayL-mR-QCT"/>
                                                                 <constraint firstItem="mMb-h2-WHW" firstAttribute="leading" secondItem="DI1-V3-G9P" secondAttribute="leadingMargin" constant="10" id="fvb-c5-gwd"/>
                                                                 <constraint firstItem="mMb-h2-WHW" firstAttribute="top" secondItem="DI1-V3-G9P" secondAttribute="topMargin" id="huj-Kv-rAi"/>
+                                                                <constraint firstAttribute="bottom" secondItem="fDS-VS-D4s" secondAttribute="bottom" constant="10" id="lOF-eT-AQ3"/>
+                                                                <constraint firstItem="fDS-VS-D4s" firstAttribute="leading" secondItem="DI1-V3-G9P" secondAttribute="leading" constant="25" id="yVr-Hh-rZg"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="dataLabel" destination="mMb-h2-WHW" id="FmE-dv-TEP"/>
                                                             <outlet property="dataObs" destination="P3L-f9-p8e" id="D3W-QO-bnG"/>
-                                                            <outlet property="dataPicker" destination="eoG-Jy-RAB" id="mLK-Sw-miR"/>
+                                                            <outlet property="dataPicker" destination="fDS-VS-D4s" id="5Bg-uf-xNg"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -162,7 +167,11 @@
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="qPz-Ue-2F7"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
-                                            <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH"/>
+                                            <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
+                                                <connections>
+                                                    <segue destination="tmn-bu-Mua" kind="show" id="yk2-Lb-eu3"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                         <color key="tintColor" name="Ciano"/>
                                     </toolbar>
@@ -216,14 +225,144 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Ti-xJ-f2Z" kind="relationship" relationship="rootViewController" id="3zl-au-rdX"/>
+                        <segue destination="6Ti-xJ-f2Z" kind="relationship" relationship="rootViewController" id="v5a-3G-EwQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-xu-Fxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="37.681159420289859" y="116.51785714285714"/>
         </scene>
+        <!--Dados profissionais-->
+        <scene sceneID="IXF-T2-5HQ">
+            <objects>
+                <viewController id="tmn-bu-Mua" customClass="SecondPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="80o-Ic-Zbo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-tU-U4j">
+                                <rect key="frame" x="0.0" y="148" width="390" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-s4-QZk">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 2 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGQ-bM-UII">
+                                                <rect key="frame" x="17" y="10" width="348" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Lh-R1N">
+                                                <rect key="frame" x="15" y="43" width="360" height="630"/>
+                                                <color key="backgroundColor" name="Fundo"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="630" id="JMJ-F1-00B"/>
+                                                </constraints>
+                                                <color key="separatorColor" name="Fundo"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="largeTextCell" rowHeight="250" id="4nQ-6d-RJm" customClass="LargeTextTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="250"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nQ-6d-RJm" id="XL1-br-mK1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="250"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objetivo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLu-JR-Ijr">
+                                                                    <rect key="frame" x="30" y="21" width="300" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                                    <color key="textColor" name="Ciano"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="oioioi" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HEk-3q-Iyl">
+                                                                    <rect key="frame" x="30" y="55" width="310" height="185"/>
+                                                                    <color key="backgroundColor" name="Fundo"/>
+                                                                    <color key="textColor" systemColor="labelColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="HEk-3q-Iyl" firstAttribute="top" secondItem="WLu-JR-Ijr" secondAttribute="bottom" constant="10" id="8Zk-zp-P1c"/>
+                                                                <constraint firstAttribute="trailing" secondItem="HEk-3q-Iyl" secondAttribute="trailing" constant="20" id="AQf-dI-SWi"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="WLu-JR-Ijr" secondAttribute="trailing" constant="10" id="Dl0-yH-5eE"/>
+                                                                <constraint firstAttribute="bottom" secondItem="HEk-3q-Iyl" secondAttribute="bottom" constant="10" id="NWJ-CZ-UAX"/>
+                                                                <constraint firstItem="WLu-JR-Ijr" firstAttribute="top" secondItem="XL1-br-mK1" secondAttribute="topMargin" constant="10" id="frP-SV-NPa"/>
+                                                                <constraint firstItem="WLu-JR-Ijr" firstAttribute="leading" secondItem="XL1-br-mK1" secondAttribute="leadingMargin" constant="10" id="uXX-yd-xCj"/>
+                                                                <constraint firstItem="HEk-3q-Iyl" firstAttribute="leading" secondItem="XL1-br-mK1" secondAttribute="leading" constant="30" id="y5y-fC-pff"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" name="Fundo"/>
+                                                        <connections>
+                                                            <outlet property="largeTextLabel" destination="WLu-JR-Ijr" id="Xew-C7-gIK"/>
+                                                            <outlet property="largeTextView" destination="HEk-3q-Iyl" id="lb5-Zl-9ak"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ObT-Lh-R1N" secondAttribute="trailing" constant="15" id="Faw-5e-mcI"/>
+                                            <constraint firstItem="ObT-Lh-R1N" firstAttribute="top" secondItem="lGQ-bM-UII" secondAttribute="bottom" constant="15" id="HmG-c5-i75"/>
+                                            <constraint firstAttribute="trailing" secondItem="lGQ-bM-UII" secondAttribute="trailing" constant="25" id="NAd-dN-wcU"/>
+                                            <constraint firstAttribute="trailing" secondItem="lGQ-bM-UII" secondAttribute="trailing" constant="25" id="NwS-Cb-hwm"/>
+                                            <constraint firstItem="ObT-Lh-R1N" firstAttribute="top" secondItem="lGQ-bM-UII" secondAttribute="bottom" constant="15" id="Pqp-Cc-tBP"/>
+                                            <constraint firstItem="lGQ-bM-UII" firstAttribute="top" secondItem="WMU-s4-QZk" secondAttribute="top" constant="10" id="Zw0-u4-j7a"/>
+                                            <constraint firstItem="ObT-Lh-R1N" firstAttribute="leading" secondItem="WMU-s4-QZk" secondAttribute="leading" constant="15" id="chN-dR-yaJ"/>
+                                            <constraint firstItem="lGQ-bM-UII" firstAttribute="leading" secondItem="WMU-s4-QZk" secondAttribute="leading" constant="17" id="fIm-rA-zKI"/>
+                                            <constraint firstAttribute="height" constant="800" id="zHB-Qk-ghn"/>
+                                        </constraints>
+                                    </view>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
+                                        <rect key="frame" x="0.0" y="771" width="390" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
+                                            <barButtonItem title="Próximo" width="112.66666412353516" id="Bkw-LS-DW7"/>
+                                        </items>
+                                        <color key="tintColor" name="Ciano"/>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="width" secondItem="lMM-kh-82c" secondAttribute="width" id="Eov-EJ-K1s"/>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="top" secondItem="Sbk-N9-lnW" secondAttribute="top" id="Obv-CK-NoC"/>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="bottom" secondItem="Sbk-N9-lnW" secondAttribute="bottom" id="SxW-AO-auZ"/>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="trailing" secondItem="Sbk-N9-lnW" secondAttribute="trailing" id="k1u-9f-oRH"/>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="leading" secondItem="Sbk-N9-lnW" secondAttribute="leading" id="uaZ-iN-fjk"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Sbk-N9-lnW"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="lMM-kh-82c"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fBP-JL-vNV"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dD4-tU-U4j" secondAttribute="bottom" id="Ag4-tF-CLN"/>
+                            <constraint firstItem="dD4-tU-U4j" firstAttribute="leading" secondItem="fBP-JL-vNV" secondAttribute="leading" id="Bi4-Ti-7zt"/>
+                            <constraint firstItem="dD4-tU-U4j" firstAttribute="trailing" secondItem="fBP-JL-vNV" secondAttribute="trailing" id="MDj-e6-iub"/>
+                            <constraint firstItem="dD4-tU-U4j" firstAttribute="top" secondItem="80o-Ic-Zbo" secondAttribute="top" id="kn2-FD-Lav"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dados profissionais" id="FbD-Vn-iLe">
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="73I-3i-04c">
+                            <color key="tintColor" name="Ciano"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="1000"/>
+                    <connections>
+                        <outlet property="scrollView" destination="dD4-tU-U4j" id="4sT-bn-gWz"/>
+                        <outlet property="tableView" destination="ObT-Lh-R1N" id="vpY-Sn-Ft9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XoN-Yr-o1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6153846153845" y="-286.49289099526067"/>
+        </scene>
     </scenes>
+    <color key="tintColor" name="Ciano"/>
     <resources>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Campos">
@@ -238,5 +377,8 @@
         <namedColor name="TextField">
             <color red="0.94999998807907104" green="0.94599997997283936" blue="0.95499998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

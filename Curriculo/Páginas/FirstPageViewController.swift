@@ -121,7 +121,10 @@ extension FirstPageViewController: UITableViewDataSource{
             
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell", for: indexPath) as! DataTableViewCell
-
+            cell.dataPicker.tintColor = UIColor.init(named: "Ciano")
+            cell.dataPicker.contentHorizontalAlignment = .left
+            
+            
             return cell
             
         } else if indexPath.row == 2 {
