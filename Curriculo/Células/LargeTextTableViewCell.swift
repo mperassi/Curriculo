@@ -1,28 +1,26 @@
 //
-//  DateTableViewCell.swift
+//  LargeTextTableViewCell.swift
 //  Curriculo
 //
-//  Created by Carolina Ortega on 20/09/21.
+//  Created by Carolina Ortega on 22/09/21.
 //
 
 import UIKit
 
-class DataTableViewCell: UITableViewCell {
+class LargeTextTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var dataLabel: UILabel!
-    @IBOutlet weak var dataObs: UILabel!
-    @IBOutlet weak var dataPicker: UIDatePicker!
+    @IBOutlet weak var largeTextLabel: UILabel!
+    @IBOutlet weak var largeTextView: UITextView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        
         // Configure the view for the selected state
     }
 
