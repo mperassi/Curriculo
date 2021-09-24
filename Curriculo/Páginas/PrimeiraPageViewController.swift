@@ -8,11 +8,14 @@
 import UIKit
 import NotificationCenter
 
-class FirstPageViewController: UIViewController {
+class PrimeiraPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addLink: UIButton!
-    @IBOutlet weak var botaoProximo: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBSegueAction func mudaPagina(_ coder: NSCoder) -> SegundaPageViewController? {
+        dicionario1Pagina()
+        return SegundaPageViewController(coder: coder)
+    }
     
     //Dicionário
     let defaults = UserDefaults.standard
@@ -29,15 +32,14 @@ class FirstPageViewController: UIViewController {
         
         //Navegação
         addLink.layer.cornerRadius = 10
-        addLink.addTarget(self, action: #selector(dicionario1Pagina), for: .touchDown)
         self.navigationItem.setHidesBackButton(true, animated: false)
         
         //Dicionário
 
         //Scroll
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            
-           NotificationCenter.default.addObserver(self, selector: #selector(FirstPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+           NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
     }
     //Dicionário
@@ -108,11 +110,11 @@ class FirstPageViewController: UIViewController {
 
 }
     //Config TableView
-extension FirstPageViewController: UITableViewDelegate{
+extension PrimeiraPageViewController: UITableViewDelegate{
     
 }
 
-extension FirstPageViewController: UITableViewDataSource{
+extension PrimeiraPageViewController: UITableViewDataSource{
 
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
@@ -123,7 +125,7 @@ extension FirstPageViewController: UITableViewDataSource{
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "Nome"
             cell.nomeField.keyboardType = .default
-            cell.nomeField.placeholder = "Digite seu nome completo"
+            cell.nomeField.placeholder = "Digite o nome completo"
             cell.nomeObs.text = "*Obrigatório"
 //            print(dictValue)  // Printing the value
             return cell
@@ -178,5 +180,6 @@ extension FirstPageViewController: UITableViewDataSource{
     
     
 }
+
 
 

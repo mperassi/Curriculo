@@ -14,7 +14,7 @@
         <!--Dados profissionais-->
         <scene sceneID="IXF-T2-5HQ">
             <objects>
-                <viewController id="tmn-bu-Mua" customClass="SecondPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tmn-bu-Mua" customClass="SegundaPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="80o-Ic-Zbo">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                                 <color key="backgroundColor" name="Fundo"/>
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="largeTextCell" rowHeight="300" id="4nQ-6d-RJm" customClass="LargeTextTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="largeTextCell" rowHeight="300" id="4nQ-6d-RJm" customClass="TextoMaiorTableViewCell" customModule="Curriculo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nQ-6d-RJm" id="XL1-br-mK1">
@@ -99,14 +99,14 @@
                                             <constraint firstAttribute="height" constant="652" id="zHB-Qk-ghn"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="629" width="390" height="44"/>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
                                             <barButtonItem title="Próximo" width="112.66666412353516" id="Bkw-LS-DW7">
                                                 <connections>
-                                                    <segue destination="Nw6-oo-Svx" kind="show" destinationCreationSelector="botaoProximo:" id="NnQ-H4-8CI"/>
+                                                    <segue destination="Nw6-oo-Svx" kind="show" destinationCreationSelector="mudaSegundaPagina:" id="NnQ-H4-8CI"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -161,7 +161,7 @@
         <!--Dados pessoais-->
         <scene sceneID="0ox-Ss-FYJ">
             <objects>
-                <viewController id="6Ti-xJ-f2Z" customClass="FirstPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Ti-xJ-f2Z" customClass="PrimeiraPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pvJ-FA-nn9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,14 +314,14 @@
                                             <constraint firstItem="EMb-Wm-t66" firstAttribute="leading" secondItem="Smq-oc-0Gz" secondAttribute="leading" constant="17" id="yDt-I2-Rps"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="776.33333333333337" width="390" height="49"/>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
+                                        <rect key="frame" x="0.0" y="789" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="qPz-Ue-2F7"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
                                             <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
                                                 <connections>
-                                                    <segue destination="tmn-bu-Mua" kind="show" id="7lk-MG-fjf"/>
+                                                    <segue destination="tmn-bu-Mua" kind="show" destinationCreationSelector="mudaPagina:" id="7lk-MG-fjf"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -361,7 +361,6 @@
                     <size key="freeformSize" width="390" height="1000"/>
                     <connections>
                         <outlet property="addLink" destination="4LF-2v-hoq" id="ew3-pA-Dls"/>
-                        <outlet property="botaoProximo" destination="4rL-yn-9GH" id="8rt-0k-Yil"/>
                         <outlet property="scrollView" destination="pmG-b5-kVR" id="yKM-ra-kqH"/>
                         <outlet property="tableView" destination="ifl-3y-TH0" id="34Z-wu-kAD"/>
                     </connections>
@@ -386,12 +385,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-xu-Fxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="43"/>
+            <point key="canvasLocation" x="65" y="-286"/>
         </scene>
         <!--Experiências-->
         <scene sceneID="obT-O8-cB9">
             <objects>
-                <viewController id="Nw6-oo-Svx" customClass="ThirdPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nw6-oo-Svx" customClass="TerceiraPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Th5-j4-jOz">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -530,7 +529,7 @@
                                                             <outlet property="nomeObs" destination="YRA-TF-JGC" id="Doz-6M-uUk"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="largeTextCell" rowHeight="300" id="wwK-oi-wCf" customClass="LargeTextTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="novaTextCell" rowHeight="300" id="wwK-oi-wCf" customClass="NovaTableViewCell" customModule="Curriculo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="349.66666603088379" width="360" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwK-oi-wCf" id="YLY-zz-r9Y">
@@ -578,6 +577,10 @@
                                                                 <constraint firstItem="obf-Ad-TED" firstAttribute="leading" secondItem="YLY-zz-r9Y" secondAttribute="leadingMargin" constant="5" id="mTC-Be-uM7"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="novaLabel" destination="UvP-qZ-qFD" id="XPg-sN-D9p"/>
+                                                            <outlet property="novaTextView" destination="obf-Ad-TED" id="fgB-BN-yiK"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -607,14 +610,14 @@
                                             <constraint firstAttribute="trailing" secondItem="133-to-Z6l" secondAttribute="trailing" constant="60" id="iiM-2j-7Ic"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
+                                        <rect key="frame" x="0.0" y="636.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
                                             <barButtonItem title="Próximo" width="112.66666412353516" id="RCq-9V-VEW">
                                                 <connections>
-                                                    <segue destination="uVJ-Le-wYB" kind="show" destinationCreationSelector="botaoProximo:" id="Rlj-ZH-qSI"/>
+                                                    <segue destination="uVJ-Le-wYB" kind="show" destinationCreationSelector="mudaTerceiraPagina:" id="Rlj-ZH-qSI"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -670,7 +673,7 @@
         <!--Educação-->
         <scene sceneID="w4t-yO-PZT">
             <objects>
-                <viewController id="uVJ-Le-wYB" customClass="FourthPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uVJ-Le-wYB" customClass="QuartaPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cYs-gQ-xJO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -835,14 +838,14 @@
                                             <constraint firstAttribute="trailing" secondItem="Z0B-no-c8C" secondAttribute="trailing" constant="25" id="k3q-aM-usJ"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-3K-t78">
-                                        <rect key="frame" x="0.0" y="522.33333333333337" width="390" height="44"/>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-3K-t78">
+                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zzr-Vg-U9w"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="a3t-Yl-gbZ"/>
                                             <barButtonItem title="Próximo" width="112.66666412353516" id="QR9-CZ-iGa">
                                                 <connections>
-                                                    <segue destination="hbu-si-2ib" kind="show" id="uUY-Qt-SiO"/>
+                                                    <segue destination="hbu-si-2ib" kind="show" destinationCreationSelector="mudaQuartaPagina:" id="uUY-Qt-SiO"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -897,16 +900,16 @@
         <!--Dados adicionais-->
         <scene sceneID="i9y-NX-EbM">
             <objects>
-                <viewController id="hbu-si-2ib" customClass="FifthPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hbu-si-2ib" customClass="QuintaPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePV-Fw-5gd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1050"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-tR-aYz">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="1050"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhN-wo-46z">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1050"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 5 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-RT-XD1">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
@@ -914,14 +917,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qdi-Np-84I">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="primeiraTabela" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qdi-Np-84I">
                                                 <rect key="frame" x="15" y="43" width="360" height="557"/>
                                                 <color key="backgroundColor" name="Fundo"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="557" id="CvL-Vs-oyC"/>
                                                 </constraints>
                                                 <color key="separatorColor" name="Fundo"/>
-                                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Conquistas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V5Y-PS-uEW">
+                                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realizações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V5Y-PS-uEW">
                                                     <rect key="frame" x="0.0" y="0.0" width="360" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
@@ -1044,7 +1047,7 @@
                                                             <outlet property="inicioLabel" destination="yhG-8O-We9" id="MPb-qZ-e4B"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="largeTextCell" rowHeight="160" id="XjU-uZ-WeA" customClass="LargeTextTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="descCell" rowHeight="160" id="XjU-uZ-WeA" customClass="DescTableViewCell" customModule="Curriculo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="393.66666603088379" width="360" height="160"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XjU-uZ-WeA" id="ecS-Jy-W65">
@@ -1092,15 +1095,20 @@
                                                                 <constraint firstItem="M07-W8-LxK" firstAttribute="top" secondItem="cxJ-Zw-FoZ" secondAttribute="bottom" constant="10" id="yvE-Bu-r5X"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="descLabel" destination="cxJ-Zw-FoZ" id="Jct-mR-aT0"/>
+                                                            <outlet property="descObsLabel" destination="hwM-Iz-veu" id="EQA-pL-D1d"/>
+                                                            <outlet property="descTextView" destination="M07-W8-LxK" id="q3C-vU-Ijq"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHw-Bg-Yvc">
-                                                <rect key="frame" x="60" y="513" width="270" height="37"/>
+                                                <rect key="frame" x="70" y="513" width="250" height="37"/>
                                                 <color key="backgroundColor" name="Ciano"/>
                                                 <color key="tintColor" name="Fundo"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Adicionar nova conquista ">
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Adicionar nova realização ">
                                                     <imageReference key="image" image="plus.circle" catalog="system" symbolScale="medium"/>
                                                     <directionalEdgeInsets key="contentInsets" top="10" leading="10" bottom="10" trailing="10"/>
                                                 </buttonConfiguration>
@@ -1121,21 +1129,133 @@
                                                 <rect key="frame" x="277.66666666666669" y="646" width="51" height="31"/>
                                                 <color key="onTintColor" name="Ciano"/>
                                             </switch>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="segundaTabela" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-bD-EKQ">
+                                                <rect key="frame" x="15" y="692" width="360" height="308"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="separatorColor" name="Fundo"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="kiC-TU-R5e" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="105"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kiC-TU-R5e" id="Nny-VR-cNK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deficiência" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuV-7C-a9D">
+                                                                    <rect key="frame" x="25" y="11" width="230" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                                    <color key="textColor" name="Ciano"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hUE-Mt-8gD">
+                                                                    <rect key="frame" x="30" y="45" width="300" height="34"/>
+                                                                    <color key="backgroundColor" name="TextField"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xib-yw-OsW">
+                                                                    <rect key="frame" x="260" y="15.666666666666664" width="70" height="14.333333333333336"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="GTY-6M-pfT"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" name="Campos"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="Fundo"/>
+                                                            <constraints>
+                                                                <constraint firstItem="hUE-Mt-8gD" firstAttribute="leading" secondItem="Nny-VR-cNK" secondAttribute="leadingMargin" constant="10" id="AWc-xM-Bm2"/>
+                                                                <constraint firstItem="TuV-7C-a9D" firstAttribute="leading" secondItem="Nny-VR-cNK" secondAttribute="leadingMargin" constant="5" id="GTg-Iu-4O0"/>
+                                                                <constraint firstItem="hUE-Mt-8gD" firstAttribute="top" secondItem="xib-yw-OsW" secondAttribute="bottom" constant="15" id="QF2-G0-sxd"/>
+                                                                <constraint firstItem="TuV-7C-a9D" firstAttribute="top" secondItem="Nny-VR-cNK" secondAttribute="topMargin" id="Sev-QT-Vw9"/>
+                                                                <constraint firstItem="xib-yw-OsW" firstAttribute="trailing" secondItem="hUE-Mt-8gD" secondAttribute="trailing" id="aQ7-No-xUS"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="hUE-Mt-8gD" secondAttribute="trailing" constant="10" id="mVg-WN-1JW"/>
+                                                                <constraint firstItem="xib-yw-OsW" firstAttribute="leading" secondItem="TuV-7C-a9D" secondAttribute="trailing" constant="5" id="uNv-9b-RjJ"/>
+                                                                <constraint firstItem="hUE-Mt-8gD" firstAttribute="top" secondItem="TuV-7C-a9D" secondAttribute="bottom" constant="10" id="upN-wA-WSa"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="nomeField" destination="hUE-Mt-8gD" id="cQa-R6-Fr6"/>
+                                                            <outlet property="nomeLabel" destination="TuV-7C-a9D" id="nE5-iD-yAV"/>
+                                                            <outlet property="nomeObs" destination="xib-yw-OsW" id="M6Q-Y5-Z88"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="obsCell" rowHeight="180" id="OBj-st-hLk" customClass="ObsTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="149.66666603088379" width="360" height="180"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OBj-st-hLk" id="xEv-Zf-VIt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="180"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-TQ-BUa">
+                                                                    <rect key="frame" x="25" y="11" width="230" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                                    <color key="textColor" name="Ciano"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVa-aD-3wF">
+                                                                    <rect key="frame" x="260" y="16" width="70" height="14.333333333333336"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="GFc-Mk-Cr5"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" name="Campos"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-gr-EWj">
+                                                                    <rect key="frame" x="30" y="45" width="300" height="124"/>
+                                                                    <color key="backgroundColor" name="TextField"/>
+                                                                    <color key="textColor" systemColor="labelColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <integer key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </textView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="Fundo"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="gVa-aD-3wF" secondAttribute="trailing" constant="10" id="4Ur-lJ-Pyx"/>
+                                                                <constraint firstItem="eVA-gr-EWj" firstAttribute="top" secondItem="z2d-TQ-BUa" secondAttribute="bottom" constant="10" id="HgZ-Sb-9xM"/>
+                                                                <constraint firstItem="z2d-TQ-BUa" firstAttribute="leading" secondItem="xEv-Zf-VIt" secondAttribute="leadingMargin" constant="5" id="IRv-u9-Kzc"/>
+                                                                <constraint firstItem="eVA-gr-EWj" firstAttribute="bottom" secondItem="xEv-Zf-VIt" secondAttribute="bottomMargin" id="UZa-6l-ZnH"/>
+                                                                <constraint firstItem="z2d-TQ-BUa" firstAttribute="top" secondItem="xEv-Zf-VIt" secondAttribute="topMargin" id="XVN-8W-6cr"/>
+                                                                <constraint firstItem="gVa-aD-3wF" firstAttribute="top" secondItem="xEv-Zf-VIt" secondAttribute="topMargin" constant="5" id="px0-w5-4WP"/>
+                                                                <constraint firstItem="eVA-gr-EWj" firstAttribute="leading" secondItem="xEv-Zf-VIt" secondAttribute="leadingMargin" constant="10" id="tgx-cb-OoP"/>
+                                                                <constraint firstItem="gVa-aD-3wF" firstAttribute="leading" secondItem="z2d-TQ-BUa" secondAttribute="trailing" constant="5" id="txy-4O-mbe"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="eVA-gr-EWj" secondAttribute="trailing" constant="10" id="wdx-Jy-Vb9"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="obsLabel" destination="z2d-TQ-BUa" id="WUV-O0-cCS"/>
+                                                            <outlet property="obsLabelObs" destination="gVa-aD-3wF" id="xg3-yW-iaj"/>
+                                                            <outlet property="obsTextView" destination="eVA-gr-EWj" id="uRk-Pf-p1G"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" name="Fundo"/>
                                         <constraints>
                                             <constraint firstItem="7pD-zC-Y9R" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="15" id="7fI-TY-7yL"/>
                                             <constraint firstItem="QZ7-RT-XD1" firstAttribute="top" secondItem="nhN-wo-46z" secondAttribute="top" constant="10" id="81t-dC-IaO"/>
+                                            <constraint firstAttribute="bottom" secondItem="SSI-bD-EKQ" secondAttribute="bottom" constant="50" id="87V-Wi-xta"/>
+                                            <constraint firstItem="SSI-bD-EKQ" firstAttribute="top" secondItem="VGn-4j-bld" secondAttribute="bottom" constant="15" id="8Lr-22-wLK"/>
                                             <constraint firstItem="7pD-zC-Y9R" firstAttribute="top" secondItem="qdi-Np-84I" secondAttribute="bottom" id="DqD-Jd-Pwe"/>
-                                            <constraint firstAttribute="height" constant="1200" id="G7y-Y2-ceR"/>
+                                            <constraint firstAttribute="height" constant="1050" id="G7y-Y2-ceR"/>
+                                            <constraint firstItem="SSI-bD-EKQ" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="15" id="IQa-SG-tu6"/>
+                                            <constraint firstAttribute="trailing" secondItem="SSI-bD-EKQ" secondAttribute="trailing" constant="15" id="Jco-Tz-dCX"/>
                                             <constraint firstItem="qdi-Np-84I" firstAttribute="top" secondItem="QZ7-RT-XD1" secondAttribute="bottom" constant="15" id="MKA-AT-I5v"/>
-                                            <constraint firstAttribute="trailing" secondItem="oHw-Bg-Yvc" secondAttribute="trailing" constant="60" id="OXh-3i-pEZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="oHw-Bg-Yvc" secondAttribute="trailing" constant="70" id="OXh-3i-pEZ"/>
                                             <constraint firstAttribute="trailing" secondItem="7pD-zC-Y9R" secondAttribute="trailing" constant="15" id="PGA-v2-zhe"/>
                                             <constraint firstItem="OlY-4k-FCi" firstAttribute="top" secondItem="7pD-zC-Y9R" secondAttribute="bottom" constant="20" id="VSb-Nc-QBY"/>
                                             <constraint firstItem="qdi-Np-84I" firstAttribute="top" secondItem="QZ7-RT-XD1" secondAttribute="bottom" constant="15" id="W2v-KF-Afz"/>
                                             <constraint firstItem="VGn-4j-bld" firstAttribute="leading" secondItem="OlY-4k-FCi" secondAttribute="trailing" constant="15" id="Xdo-BW-FRU"/>
                                             <constraint firstAttribute="trailing" secondItem="QZ7-RT-XD1" secondAttribute="trailing" constant="25" id="ZTS-Rp-fWs"/>
-                                            <constraint firstItem="oHw-Bg-Yvc" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="60" id="Zev-8q-Sza"/>
+                                            <constraint firstItem="oHw-Bg-Yvc" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="70" id="Zev-8q-Sza"/>
                                             <constraint firstItem="VGn-4j-bld" firstAttribute="top" secondItem="7pD-zC-Y9R" secondAttribute="bottom" constant="17" id="aV3-g3-MkP"/>
                                             <constraint firstItem="QZ7-RT-XD1" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="17" id="dF0-Z4-V1N"/>
                                             <constraint firstItem="VGn-4j-bld" firstAttribute="top" secondItem="7pD-zC-Y9R" secondAttribute="bottom" constant="17" id="eOn-es-uq3"/>
@@ -1146,8 +1266,8 @@
                                             <constraint firstAttribute="trailing" secondItem="qdi-Np-84I" secondAttribute="trailing" constant="15" id="zOE-jw-w1z"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-px-WdG">
-                                        <rect key="frame" x="0.0" y="976.33333333333337" width="390" height="49.000000000000114"/>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-px-WdG">
+                                        <rect key="frame" x="0.0" y="1017.6666666666665" width="390" height="49"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zSB-kM-qYs"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
@@ -1186,12 +1306,14 @@
                             <color key="tintColor" name="Ciano"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="390" height="1200"/>
+                    <size key="freeformSize" width="390" height="1050"/>
                     <connections>
                         <outlet property="addConq" destination="oHw-Bg-Yvc" id="bLZ-Po-YrJ"/>
                         <outlet property="botaoAnterior" destination="zSB-kM-qYs" id="ByP-u3-32k"/>
+                        <outlet property="primeiraTableView" destination="qdi-Np-84I" id="CjK-HI-Cs9"/>
                         <outlet property="scrollView" destination="Zjk-tR-aYz" id="idn-xN-xiB"/>
-                        <outlet property="tableView" destination="qdi-Np-84I" id="CjK-HI-Cs9"/>
+                        <outlet property="segundaTableView" destination="SSI-bD-EKQ" id="Nqj-IC-xRB"/>
+                        <outlet property="switch" destination="VGn-4j-bld" id="PZ2-4j-oKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ow-Nq-z0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1216,6 +1338,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

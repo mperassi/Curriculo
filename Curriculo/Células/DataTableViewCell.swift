@@ -16,6 +16,7 @@ class DataTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        UIDatePicker.appearance().tintColor = UIColor(named: "Ciano")
         // Initialization code
         
     }

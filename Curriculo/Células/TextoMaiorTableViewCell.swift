@@ -7,10 +7,11 @@
 
 import UIKit
 
-class LargeTextTableViewCell: UITableViewCell {
+class TextoMaiorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var largeTextLabel: UILabel!
     @IBOutlet weak var largeTextView: UITextView?
+    @IBOutlet var largeTextObs: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

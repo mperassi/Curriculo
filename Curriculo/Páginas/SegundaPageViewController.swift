@@ -8,10 +8,14 @@
 import UIKit
 import NotificationCenter
 
-class SecondPageViewController: UIViewController {
+class SegundaPageViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
+    @IBSegueAction func mudaSegundaPagina(_ coder: NSCoder) -> TerceiraPageViewController? {
+        dicionario2Pagina()
+        return TerceiraPageViewController(coder: coder)
+    }
     
     //Dicionário
     let defaults = UserDefaults.standard
@@ -37,9 +41,9 @@ class SecondPageViewController: UIViewController {
         }
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(SecondPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SegundaPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(SecondPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SegundaPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         
     }
@@ -48,7 +52,7 @@ class SecondPageViewController: UIViewController {
             let viewcontrollers = self.navigationController?.viewControllers
             
             viewcontrollers?.forEach({ (vc) in
-                if  let inventoryListVC = vc as? FirstPageViewController {
+                if  let inventoryListVC = vc as? PrimeiraPageViewController {
                     self.navigationController!.popToViewController(inventoryListVC, animated: true)
                 }
             })
@@ -89,12 +93,12 @@ class SecondPageViewController: UIViewController {
     @IBAction func dicionario2Pagina() {
         tableView.dequeueReusableCell(withIdentifier: "largeTextCell")
         let indexPath = NSIndexPath(row: 0, section: 0)
-        let multiCell = tableView.cellForRow(at: indexPath as IndexPath) as? LargeTextTableViewCell
+        let multiCell = tableView.cellForRow(at: indexPath as IndexPath) as? TextoMaiorTableViewCell
         self.dictionary["Objetivo"] = multiCell?.largeTextView?.text
         
         tableView.dequeueReusableCell(withIdentifier: "largeTextCell")
         let indexPath1 = NSIndexPath(row: 1, section: 0)
-        let multiCell1 = tableView.cellForRow(at: indexPath1 as IndexPath) as? LargeTextTableViewCell
+        let multiCell1 = tableView.cellForRow(at: indexPath1 as IndexPath) as? TextoMaiorTableViewCell
         self.dictionary["Resumo"] = multiCell1?.largeTextView?.text
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
@@ -103,11 +107,11 @@ class SecondPageViewController: UIViewController {
     }
 }
 //TableView
-extension SecondPageViewController: UITableViewDelegate{
+extension SegundaPageViewController: UITableViewDelegate{
     
 }
 
-extension SecondPageViewController: UITableViewDataSource{
+extension SegundaPageViewController: UITableViewDataSource{
 
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -115,14 +119,14 @@ extension SecondPageViewController: UITableViewDataSource{
     
     func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell  = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! LargeTextTableViewCell
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! TextoMaiorTableViewCell
             cell.largeTextLabel.text = "Objetivo profissional"
             cell.selectionStyle = .none
 
             return cell
             
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! LargeTextTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! TextoMaiorTableViewCell
             cell.largeTextLabel.text = "Resumo profissional"
             cell.selectionStyle = .none
             
