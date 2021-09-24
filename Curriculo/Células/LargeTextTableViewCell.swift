@@ -10,11 +10,13 @@ import UIKit
 class LargeTextTableViewCell: UITableViewCell {
     
     @IBOutlet weak var largeTextLabel: UILabel!
-    @IBOutlet weak var largeTextView: UITextView!
+    @IBOutlet weak var largeTextView: UITextView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        largeTextView?.layer.cornerRadius = 10
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
