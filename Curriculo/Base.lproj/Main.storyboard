@@ -101,7 +101,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -151,6 +151,7 @@
                     <size key="freeformSize" width="390" height="800"/>
                     <connections>
                         <outlet property="botaoAnterior" destination="AO2-EL-SaK" id="Iyr-vY-anK"/>
+                        <outlet property="cancelarBotao" destination="73I-3i-04c" id="HmG-Gw-ubs"/>
                         <outlet property="scrollView" destination="dD4-tU-U4j" id="4sT-bn-gWz"/>
                         <outlet property="tableView" destination="ObT-Lh-R1N" id="vpY-Sn-Ft9"/>
                     </connections>
@@ -362,6 +363,7 @@
                     <size key="freeformSize" width="390" height="1000"/>
                     <connections>
                         <outlet property="addLink" destination="4LF-2v-hoq" id="ew3-pA-Dls"/>
+                        <outlet property="cancelarBotao" destination="JJQ-ov-wgp" id="POr-XP-lZd"/>
                         <outlet property="scrollView" destination="pmG-b5-kVR" id="yKM-ra-kqH"/>
                         <outlet property="tableView" destination="ifl-3y-TH0" id="34Z-wu-kAD"/>
                     </connections>
@@ -381,12 +383,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Ti-xJ-f2Z" kind="relationship" relationship="rootViewController" id="njN-ZZ-qsd"/>
+                        <segue destination="41a-lX-Zfq" kind="relationship" relationship="rootViewController" id="VdC-fH-xYZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-xu-Fxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-286"/>
+            <point key="canvasLocation" x="-703" y="-286"/>
         </scene>
         <!--Experiências-->
         <scene sceneID="obT-O8-cB9">
@@ -663,6 +665,7 @@
                     <connections>
                         <outlet property="addExp" destination="133-to-Z6l" id="e3A-0Z-uM3"/>
                         <outlet property="botaoAnterior" destination="WLR-3l-fXa" id="FyW-Jr-nkW"/>
+                        <outlet property="cancelarBotao" destination="RcV-5Q-Cug" id="kEt-Jp-7aq"/>
                         <outlet property="scrollView" destination="s95-y2-5Oe" id="MX4-R4-qvO"/>
                         <outlet property="tableView" destination="rMS-Df-GX8" id="3UY-dv-g3t"/>
                     </connections>
@@ -890,6 +893,7 @@
                     <connections>
                         <outlet property="addForm" destination="Zx1-i8-6hq" id="Veb-bP-5df"/>
                         <outlet property="botaoAnterior" destination="zzr-Vg-U9w" id="VPN-WL-YwX"/>
+                        <outlet property="cancelarBotao" destination="ovN-C2-AmI" id="El9-fd-YrB"/>
                         <outlet property="scrollView" destination="i9z-wt-J0L" id="hjI-aF-O6a"/>
                         <outlet property="tableView" destination="mMf-d7-HZa" id="h92-fV-0LO"/>
                     </connections>
@@ -1130,9 +1134,9 @@
                                                 <rect key="frame" x="277.66666666666669" y="646" width="51" height="31"/>
                                                 <color key="onTintColor" name="Ciano"/>
                                             </switch>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="segundaTabela" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-bD-EKQ">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="segundaTabela" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-bD-EKQ">
                                                 <rect key="frame" x="15" y="692" width="360" height="308"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Fundo"/>
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="kiC-TU-R5e" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
@@ -1272,7 +1276,11 @@
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zSB-kM-qYs"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
-                                            <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E"/>
+                                            <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E">
+                                                <connections>
+                                                    <segue destination="nLl-ta-YLc" kind="show" id="mRZ-GK-Pi6"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                         <color key="tintColor" name="Ciano"/>
                                     </toolbar>
@@ -1311,6 +1319,7 @@
                     <connections>
                         <outlet property="addConq" destination="oHw-Bg-Yvc" id="bLZ-Po-YrJ"/>
                         <outlet property="botaoAnterior" destination="zSB-kM-qYs" id="ByP-u3-32k"/>
+                        <outlet property="cancelarBotao" destination="0Z2-4D-AcI" id="shk-S8-VPe"/>
                         <outlet property="primeiraTableView" destination="qdi-Np-84I" id="CjK-HI-Cs9"/>
                         <outlet property="scrollView" destination="Zjk-tR-aYz" id="idn-xN-xiB"/>
                         <outlet property="segundaTableView" destination="SSI-bD-EKQ" id="Nqj-IC-xRB"/>
@@ -1321,9 +1330,143 @@
             </objects>
             <point key="canvasLocation" x="4527.6923076923076" y="-286.49289099526067"/>
         </scene>
+        <!--Templates-->
+        <scene sceneID="N9n-Ru-OL6">
+            <objects>
+                <viewController id="nLl-ta-YLc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0rm-IQ-Hap">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-fS-HOr">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-01-ERQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="570" id="E8k-Vt-xo0"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-Hl-bpe">
+                                        <rect key="frame" x="10" y="9.3333333333333428" width="360" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-1t-ksY">
+                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <items>
+                                            <barButtonItem title="Anterior" width="113" id="gyf-mG-ZYC"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="tDh-PQ-9xR"/>
+                                            <barButtonItem title="Próximo" width="112.66666412353516" id="FQr-N8-swl"/>
+                                        </items>
+                                        <color key="tintColor" name="Ciano"/>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="width" secondItem="L0l-fS-HOr" secondAttribute="width" id="638-p0-GYW"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="bottom" secondItem="bPO-ze-YpU" secondAttribute="bottom" constant="-48" id="AWd-Yf-9kR"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="leading" secondItem="bPO-ze-YpU" secondAttribute="leading" id="AyZ-Qb-OiL"/>
+                                    <constraint firstItem="UyG-1t-ksY" firstAttribute="trailing" secondItem="ytb-01-ERQ" secondAttribute="trailing" id="Cq6-QE-vnb"/>
+                                    <constraint firstAttribute="width" constant="390" id="Iqg-qY-s5j"/>
+                                    <constraint firstAttribute="height" constant="700" id="YDy-7D-fYg"/>
+                                    <constraint firstItem="UyG-1t-ksY" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" id="oYT-wi-rtE"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="width" secondItem="L08-sr-8dV" secondAttribute="width" id="pe0-ct-bz4"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="trailing" secondItem="bPO-ze-YpU" secondAttribute="trailing" id="tm7-np-exn"/>
+                                    <constraint firstItem="L08-sr-8dV" firstAttribute="bottom" secondItem="UyG-1t-ksY" secondAttribute="bottom" constant="27" id="zq7-wi-vx6"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="top" secondItem="bPO-ze-YpU" secondAttribute="top" id="zug-dO-sQ1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="bPO-ze-YpU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="L08-sr-8dV"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uML-Lr-vpG"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="L0l-fS-HOr" secondAttribute="bottom" id="W13-ke-cMj"/>
+                            <constraint firstItem="L0l-fS-HOr" firstAttribute="leading" secondItem="uML-Lr-vpG" secondAttribute="leading" id="cee-px-hhy"/>
+                            <constraint firstItem="L0l-fS-HOr" firstAttribute="trailing" secondItem="uML-Lr-vpG" secondAttribute="trailing" id="nBB-ud-XNw"/>
+                            <constraint firstItem="L0l-fS-HOr" firstAttribute="top" secondItem="0rm-IQ-Hap" secondAttribute="top" id="pBK-vn-MpE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Templates" id="nE8-2e-Pd4">
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="9Qb-qP-klJ">
+                            <color key="tintColor" name="Ciano"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="700"/>
+                    <connections>
+                        <outlet property="botaoAnterior" destination="gyf-mG-ZYC" id="1pT-O5-c8M"/>
+                        <outlet property="scrollView" destination="L0l-fS-HOr" id="hiy-NM-tJl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08U-5P-TRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5672" y="-286"/>
+        </scene>
+        <!--Cúrriculos-->
+        <scene sceneID="0m3-v2-jZy">
+            <objects>
+                <viewController id="41a-lX-Zfq" customClass="BemvindosViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KGh-OW-cuY">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-Xf-9nx">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-Xy-AYz">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="696"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Component 1" translatesAutoresizingMaskIntoConstraints="NO" id="fHM-DZ-L8c">
+                                                <rect key="frame" x="43" y="101" width="304" height="324"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clique em ”Adicionar” para criar seu primeiro currículo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRP-6V-Qlo" customClass="fraseSemCurriculo">
+                                                <rect key="frame" x="35" y="425" width="320" height="111"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.34509803919999998" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="86Y-86-69p"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="xHI-pn-lHr"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PNF-JB-di2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cúrriculos" id="1VS-nU-AcJ">
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="dsn-Xp-0CJ" customClass="botaoAdd">
+                            <connections>
+                                <segue destination="6Ti-xJ-f2Z" kind="show" id="Im8-qy-cZu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="844"/>
+                    <connections>
+                        <outlet property="botaoAdd" destination="dsn-Xp-0CJ" id="xTN-CX-p0v"/>
+                        <outlet property="fraseSemCurriculo" destination="DRP-6V-Qlo" id="v8M-bX-Pat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBh-U5-x3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.38461538461539" y="-286.49289099526067"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="Ciano"/>
     <resources>
+        <image name="Component 1" width="468" height="436"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Campos">
             <color red="0.78799998760223389" green="0.20399999618530273" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
