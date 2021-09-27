@@ -12,6 +12,7 @@ class QuintaPageViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var primeiraTableView: UITableView!
     @IBOutlet var botaoAnterior: UIBarButtonItem!
+    @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet var addConq: UIButton!
     @IBOutlet var segundaTableView: UITableView!
     @IBOutlet var `switch`: UISwitch!
@@ -33,6 +34,9 @@ class QuintaPageViewController: UIViewController {
         segundaTableView.isHidden = true
         self.switch.addTarget(self, action: #selector(stateChanged(switchState:)), for: .valueChanged)
 
+        cancelarBotao.action = #selector(cancelarAcao)
+        cancelarBotao.target = self
+        cancelarBotao.style = .plain
         
         //TableView
         self.primeiraTableView.register(UITableViewCell.self, forCellReuseIdentifier: "primeiraTabela")
@@ -111,6 +115,28 @@ class QuintaPageViewController: UIViewController {
         print(dictionary)
       
 }
+    @objc func backViewController(){
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? BemvindosViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
+            }
+        })
+    }
+    @objc func cancelarAcao(){
+        
+        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.backViewController()
+        }))
+        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        
+            
+        }))
+      present(ac,animated: true)
+    }
     //Navegação
     @objc func changeViewController(){
         
