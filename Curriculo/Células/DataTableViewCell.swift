@@ -18,18 +18,6 @@ class DataTableViewCell: UITableViewCell {
         super.awakeFromNib()
         UIDatePicker.appearance().tintColor = UIColor(named: "Ciano")
         
-        //MARK: Acessibilidade
-        dataLabel.isAccessibilityElement = true
-        dataLabel.accessibilityLabel = "Data de nascimento"
-        
-        dataObs.isAccessibilityElement = true
-        dataObs.accessibilityLabel = "Este item é de preenchimento brigatório"
-        
-        dataPicker.isAccessibilityElement = true
-        dataPicker.accessibilityLabel = "Selecione a data de nascimento"
-        
-        self.accessibilityElements = [dataLabel, dataObs, dataPicker]
-        
     }
     
     

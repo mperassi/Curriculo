@@ -42,6 +42,11 @@ class PrimeiraPageViewController: UIViewController {
            NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
     }
+    
+    deinit{
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     //Dicionário
     @IBAction func dicionario1Pagina(){
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
@@ -139,6 +144,9 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             
@@ -165,6 +173,9 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             return cell
             
         } else if indexPath.row == 3 {
@@ -183,6 +194,11 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else if indexPath.row == 4 {
@@ -202,6 +218,10 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else {
@@ -218,6 +238,9 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Exemplo: LinkedIn, Behance, Github"
         
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             

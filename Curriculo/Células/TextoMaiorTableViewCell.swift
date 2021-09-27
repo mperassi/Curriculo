@@ -16,29 +16,18 @@ class TextoMaiorTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        largeTextView?.layer.cornerRadius = 10
-        largeTextView?.delegate = self
-        
-        
-        largeTextLabel.isAccessibilityElement = true
-
-        largeTextView?.isAccessibilityElement = true
-        
-        
-        //MARK: Acessibilidade
-        
-        largeTextLabel.isAccessibilityElement = true
-        largeTextLabel.accessibilityLabel = "Objetivo profissional"
-        
-        largeTextView?.isAccessibilityElement = true
-        largeTextView?.accessibilityLabel = "Digite seu objetivo profissional"
-        
-        largeTextObs.isAccessibilityElement = true
-        largeTextObs.accessibilityLabel = "Item de preenchimento obrigatório"
-      
-        
-        self.accessibilityElements = [largeTextLabel, largeTextView, largeTextObs]
-
+        if largeTextLabel.text == "Objetivo profissional" {
+            largeTextLabel.isAccessibilityElement = true
+            largeTextLabel.accessibilityLabel = "Objetivo Profissional"
+            
+            largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional. Limite máximo de 300 caracteres"
+        } else {
+            largeTextLabel.isAccessibilityElement = true
+            largeTextLabel.accessibilityLabel = "Resumo profissional"
+            
+            largeTextView?.isAccessibilityElement = true
+//            largeTextView.accessibilityLabel = "Digite aqui seu resumo profissional"
+        }
         
     }
     

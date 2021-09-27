@@ -158,6 +158,10 @@ extension QuartaPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -176,6 +180,10 @@ extension QuartaPageViewController: UITableViewDataSource{
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             
