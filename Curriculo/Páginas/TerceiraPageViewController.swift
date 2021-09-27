@@ -147,6 +147,17 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeField.placeholder = "Digite o nome da empresa"
             cell.nomeObs.text = "*Obrigatório"
             //            print(dictValue)  // Printing the value
+            
+            //MARK: Acessibilidade - Nome da Empresa
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Nome da Empresa"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Digite o nome da empresa"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -156,6 +167,17 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeField.placeholder = "Digite o cargo na empresa"
             cell.nomeObs.text = "*Obrigatório"
             //            print(dictValue)  // Printing the value
+            
+            //MARK: Acessibilidade - Cargo na empresa
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Cargo"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Digite o cargo na empresa"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
             return cell
             
         } else if indexPath.row == 2 {

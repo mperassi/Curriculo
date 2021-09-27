@@ -15,6 +15,21 @@ class ObsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+        //MARK: Acessibilidade
+       obsLabel.isAccessibilityElement = true
+       obsLabel.accessibilityLabel = "Observações"
+        
+        obsLabelObs.isAccessibilityElement = true
+        obsLabelObs.accessibilityLabel = "Observações"
+        
+        obsTextView.isAccessibilityElement = true
+        obsTextView.accessibilityLabel = "Fale brevemente sobre a sua deficiência e das possíveis adaptações necessárias ao ambiente de trabalho."
+        
+
+        self.accessibilityElements = [obsLabel, obsLabelObs, obsTextView]
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

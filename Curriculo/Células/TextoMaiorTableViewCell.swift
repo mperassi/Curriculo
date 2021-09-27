@@ -15,13 +15,33 @@ class TextoMaiorTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
         largeTextView?.layer.cornerRadius = 10
         largeTextView?.delegate = self
         
         
-    }
+        largeTextLabel.isAccessibilityElement = true
 
+        largeTextView?.isAccessibilityElement = true
+        
+        
+        //MARK: Acessibilidade
+        
+        largeTextLabel.isAccessibilityElement = true
+        largeTextLabel.accessibilityLabel = "Objetivo profissional"
+        
+        largeTextView?.isAccessibilityElement = true
+        largeTextView?.accessibilityLabel = "Digite seu objetivo profissional"
+        
+        largeTextObs.isAccessibilityElement = true
+        largeTextObs.accessibilityLabel = "Item de preenchimento obrigatório"
+      
+        
+        self.accessibilityElements = [largeTextLabel, largeTextView, largeTextObs]
+
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

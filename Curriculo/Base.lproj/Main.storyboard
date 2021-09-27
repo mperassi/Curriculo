@@ -81,6 +81,7 @@
                                                         <color key="backgroundColor" name="Fundo"/>
                                                         <connections>
                                                             <outlet property="largeTextLabel" destination="WLu-JR-Ijr" id="Xew-C7-gIK"/>
+                                                            <outlet property="largeTextObs" destination="poU-zp-f8h" id="2Lt-q7-NKt"/>
                                                             <outlet property="largeTextView" destination="HEk-3q-Iyl" id="lb5-Zl-9ak"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -895,7 +896,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpi-5S-dnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3672" y="-286"/>
+            <point key="canvasLocation" x="3670.7692307692305" y="-286.49289099526067"/>
         </scene>
         <!--Dados adicionais-->
         <scene sceneID="i9y-NX-EbM">

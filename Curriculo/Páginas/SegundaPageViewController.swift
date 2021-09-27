@@ -122,6 +122,11 @@ extension SegundaPageViewController: UITableViewDataSource{
             let cell  = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! TextoMaiorTableViewCell
             cell.largeTextLabel.text = "Objetivo profissional"
             cell.selectionStyle = .none
+            
+            //MARK: Acessibilidade - Objetivo profissional
+            cell.largeTextLabel.isAccessibilityElement = true
+            cell.largeTextLabel.accessibilityLabel = "Objetivo profissional"
+            
 
             return cell
             
@@ -129,6 +134,12 @@ extension SegundaPageViewController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! TextoMaiorTableViewCell
             cell.largeTextLabel.text = "Resumo profissional"
             cell.selectionStyle = .none
+            
+            //MARK: Acessibilidade - Resumo profissional
+            cell.largeTextLabel.isAccessibilityElement = true
+            cell.largeTextLabel.accessibilityLabel = "Resumo profissinoal"
+            
+        
             
             return cell
             

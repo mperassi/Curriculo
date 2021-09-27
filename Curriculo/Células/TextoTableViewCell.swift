@@ -18,13 +18,30 @@ class TextoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         
-        // Initialization code
-    }
+        //MARK: Acessibilidade
+        nomeLabel.isAccessibilityElement = true
+        nomeLabel.accessibilityLabel = "Nome"
+        
+        nomeField.isAccessibilityElement = true
+        nomeField.accessibilityLabel = "Nome"
+        nomeField.accessibilityTraits = .staticText
+        nomeField.accessibilityHint = "Digite seu nome completo"
+        
+        nomeObs.isAccessibilityElement = true
+        nomeObs.accessibilityLabel = "Obrigatório"
+        nomeObs.accessibilityTraits = .staticText
+        nomeObs.accessibilityHint = "Este item é de preenchimento obrigatório"
+        
+        
+        self.accessibilityElements = [nomeLabel, nomeField, nomeObs]
 
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

@@ -13,6 +13,18 @@ class NovaTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        //MARK: Acessibilidade
+       novaLabel.isAccessibilityElement = true
+       novaLabel.accessibilityLabel = "Detalhes"
+
+      novaTextView.isAccessibilityElement = true
+      novaTextView.accessibilityLabel = "Digite aqui detalhes da sua experiência acadêmica ou profissional"
+
+        
+        self.accessibilityElements = [novaLabel, novaTextView!]
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

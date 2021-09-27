@@ -147,6 +147,15 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.keyboardType = .default
                 cell.nomeField.placeholder = "Digite uma realização"
                 cell.nomeObs.text = " "
+                
+                //MARK: Acessibilidade - Realização
+                cell.nomeLabel.isAccessibilityElement = true
+                cell.nomeLabel.accessibilityLabel = "Título"
+                
+                cell.nomeField.isAccessibilityElement = true
+                cell.nomeField.accessibilityLabel = "Digite uma realização profissional"
+                
+                
                 return cell
                 
             } else if indexPath.row == 1{
@@ -170,12 +179,26 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.keyboardType = .default
                 cell.nomeField.placeholder = "Digite o tipo de deficiência"
                 cell.nomeObs.text = "*Obrigatório"
+                
+                //MARK: Acessibilidade - Deficiência
+                cell.nomeLabel.isAccessibilityElement = true
+                cell.nomeLabel.accessibilityLabel = "Deficiência"
+                
+                cell.nomeField.isAccessibilityElement = true
+                cell.nomeField.accessibilityLabel = "Digite o tipo de deficiência"
+                
+                cell.nomeObs.isAccessibilityElement = true
+                cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+                
                 return cell
                 
             } else {
                 let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObsTableViewCell
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
+                
+                cell.obsLabelObs.isAccessibilityElement = true
+                cell.obsLabelObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
                 
                 return cell
             }
