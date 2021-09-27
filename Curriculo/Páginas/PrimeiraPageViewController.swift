@@ -9,6 +9,7 @@ import UIKit
 import NotificationCenter
 
 class PrimeiraPageViewController: UIViewController {
+    @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addLink: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -33,9 +34,17 @@ class PrimeiraPageViewController: UIViewController {
         //Navegação
         addLink.layer.cornerRadius = 10
         self.navigationItem.setHidesBackButton(true, animated: false)
+        //self.navigationController?.navigationBar.topItem?.backBarButtonItem = cancelarBotao
+        cancelarBotao.action = #selector(cancelarAcao)
+        cancelarBotao.target = self
+        cancelarBotao.style = .plain
+        //self.navigationItem.backBarButtonItem = cancelarBotao
         
         //Dicionário
-
+        
+        //Função botão adicionar link
+        addLink.addTarget(self, action: #selector(AddLink), for: .touchUpInside)
+        
         //Scroll
         NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            
@@ -90,6 +99,43 @@ class PrimeiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
+        if (multiCell?.nomeField.text == "") || (multiCell2?.nomeField.text == "") || (multiCell3?.nomeField.text == "") || (multiCell4?.nomeField.text == ""){
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
+    }
+    @objc func backViewController(){
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? BemvindosViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
+            }
+        })
+    }
+    //Função botão cancelar
+    
+    @objc func cancelarAcao(){
+        
+        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.backViewController()
+        }))
+        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        
+            
+        }))
+      present(ac,animated: true)
+    }
+    //Função botão link
+    @objc func AddLink(){
+        
     }
     //Funções Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -112,6 +158,7 @@ class PrimeiraPageViewController: UIViewController {
       scrollView.contentInset = contentInsets
       scrollView.scrollIndicatorInsets = contentInsets
     }
+
 
 }
     //Config TableView
@@ -252,7 +299,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         return 105
     }
     
-    
+
 }
 
 

@@ -9,6 +9,7 @@ import UIKit
 import NotificationCenter
 
 class SegundaPageViewController: UIViewController {
+    @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
@@ -35,6 +36,10 @@ class SegundaPageViewController: UIViewController {
         botaoAnterior.action = #selector(changeViewController)
         self.navigationItem.setHidesBackButton(true, animated: false)
         
+        //Botão cancelar
+        cancelarBotao.action = #selector(cancelarAcao)
+        cancelarBotao.target = self
+        cancelarBotao.style = .plain
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
             dictionary = userDataDictionary
@@ -53,6 +58,29 @@ class SegundaPageViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    @objc func backViewController(){
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? BemvindosViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
+            }
+        })
+    }
+    @objc func cancelarAcao(){
+        
+        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.backViewController()
+        }))
+        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        
+            
+        }))
+      present(ac,animated: true)
+    }
+
     @objc func changeViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -106,6 +134,16 @@ class SegundaPageViewController: UIViewController {
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
+        
+        if (multiCell?.largeTextView?.text == "") || (multiCell1?.largeTextView?.text == ""){
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
         
     }
 }

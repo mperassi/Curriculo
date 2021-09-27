@@ -12,9 +12,14 @@ class QuintaPageViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var primeiraTableView: UITableView!
     @IBOutlet var botaoAnterior: UIBarButtonItem!
+    @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet var addConq: UIButton!
     @IBOutlet var segundaTableView: UITableView!
     @IBOutlet var `switch`: UISwitch!
+    @IBSegueAction func mudaPagina(_ coder: NSCoder) -> TemplatesPageViewController? {
+        dicionario5Pagina()
+        return TemplatesPageViewController(coder: coder)
+    }
     
     
     
@@ -33,6 +38,9 @@ class QuintaPageViewController: UIViewController {
         segundaTableView.isHidden = true
         self.switch.addTarget(self, action: #selector(stateChanged(switchState:)), for: .valueChanged)
 
+        cancelarBotao.action = #selector(cancelarAcao)
+        cancelarBotao.target = self
+        cancelarBotao.style = .plain
         
         //TableView
         self.primeiraTableView.register(UITableViewCell.self, forCellReuseIdentifier: "primeiraTabela")
@@ -49,7 +57,6 @@ class QuintaPageViewController: UIViewController {
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
         addConq.layer.cornerRadius = 10
-        addConq.addTarget(self, action: #selector(dicionario4Pagina), for: .touchDown)
 
         
         //Dicionário
@@ -68,16 +75,16 @@ class QuintaPageViewController: UIViewController {
    }
     
     //Dicionário
-    @IBAction func dicionario4Pagina() {
+    @IBAction func dicionario5Pagina() {
         primeiraTableView.dequeueReusableCell(withIdentifier: "textoCell")
         let indexPath = NSIndexPath(row: 0, section: 0)
         let multiCell = primeiraTableView.cellForRow(at: indexPath as IndexPath) as? TextoTableViewCell
         self.dictionary["NomeConq"] = multiCell?.nomeField.text
         
         primeiraTableView.dequeueReusableCell(withIdentifier: "descCell")
-        let indexPath3 = NSIndexPath(row: 1, section: 0)
-        let multiCell3 = primeiraTableView.cellForRow(at: indexPath3 as IndexPath) as? DescTableViewCell
-        self.dictionary["DescConq"] = multiCell3?.descTextView?.text
+        let indexPath1 = NSIndexPath(row: 1, section: 0)
+        let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescTableViewCell
+        self.dictionary["DescConq"] = multiCell1?.descTextView?.text
         
         let indexPathDatas = NSIndexPath(row: 2, section: 0)
         let multiCell2 = primeiraTableView.cellForRow(at: indexPathDatas as IndexPath) as? DuasDatasTableViewCell
@@ -109,8 +116,32 @@ class QuintaPageViewController: UIViewController {
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
+        
+
       
 }
+    @objc func backViewController(){
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? BemvindosViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
+            }
+        })
+    }
+    @objc func cancelarAcao(){
+        
+        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.backViewController()
+        }))
+        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        
+            
+        }))
+      present(ac,animated: true)
+    }
     //Navegação
     @objc func changeViewController(){
         

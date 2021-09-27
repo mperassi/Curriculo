@@ -25,7 +25,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-s4-QZk">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="652"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 2 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGQ-bM-UII">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 2 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGQ-bM-UII">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -101,7 +101,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -151,6 +151,7 @@
                     <size key="freeformSize" width="390" height="800"/>
                     <connections>
                         <outlet property="botaoAnterior" destination="AO2-EL-SaK" id="Iyr-vY-anK"/>
+                        <outlet property="cancelarBotao" destination="73I-3i-04c" id="HmG-Gw-ubs"/>
                         <outlet property="scrollView" destination="dD4-tU-U4j" id="4sT-bn-gWz"/>
                         <outlet property="tableView" destination="ObT-Lh-R1N" id="vpY-Sn-Ft9"/>
                     </connections>
@@ -173,7 +174,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Smq-oc-0Gz">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 1 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-Wm-t66">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 1 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-Wm-t66">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -318,7 +319,6 @@
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
                                         <rect key="frame" x="0.0" y="776.33333333333337" width="390" height="49"/>
                                         <items>
-                                            <barButtonItem title="Anterior" width="113" id="qPz-Ue-2F7"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
                                             <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
                                                 <connections>
@@ -362,6 +362,7 @@
                     <size key="freeformSize" width="390" height="1000"/>
                     <connections>
                         <outlet property="addLink" destination="4LF-2v-hoq" id="ew3-pA-Dls"/>
+                        <outlet property="cancelarBotao" destination="JJQ-ov-wgp" id="POr-XP-lZd"/>
                         <outlet property="scrollView" destination="pmG-b5-kVR" id="yKM-ra-kqH"/>
                         <outlet property="tableView" destination="ifl-3y-TH0" id="34Z-wu-kAD"/>
                     </connections>
@@ -376,17 +377,17 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Ti-xJ-f2Z" kind="relationship" relationship="rootViewController" id="njN-ZZ-qsd"/>
+                        <segue destination="41a-lX-Zfq" kind="relationship" relationship="rootViewController" id="VdC-fH-xYZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-xu-Fxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-286"/>
+            <point key="canvasLocation" x="-703" y="-286"/>
         </scene>
         <!--Experiências-->
         <scene sceneID="obT-O8-cB9">
@@ -402,7 +403,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-Z2-jKk">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="652"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 3 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-3C-oBl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 3 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-3C-oBl">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -663,6 +664,7 @@
                     <connections>
                         <outlet property="addExp" destination="133-to-Z6l" id="e3A-0Z-uM3"/>
                         <outlet property="botaoAnterior" destination="WLR-3l-fXa" id="FyW-Jr-nkW"/>
+                        <outlet property="cancelarBotao" destination="RcV-5Q-Cug" id="kEt-Jp-7aq"/>
                         <outlet property="scrollView" destination="s95-y2-5Oe" id="MX4-R4-qvO"/>
                         <outlet property="tableView" destination="rMS-Df-GX8" id="3UY-dv-g3t"/>
                     </connections>
@@ -685,7 +687,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xme-uv-vSS">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 4 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0B-no-c8C">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 4 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0B-no-c8C">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -890,6 +892,7 @@
                     <connections>
                         <outlet property="addForm" destination="Zx1-i8-6hq" id="Veb-bP-5df"/>
                         <outlet property="botaoAnterior" destination="zzr-Vg-U9w" id="VPN-WL-YwX"/>
+                        <outlet property="cancelarBotao" destination="ovN-C2-AmI" id="El9-fd-YrB"/>
                         <outlet property="scrollView" destination="i9z-wt-J0L" id="hjI-aF-O6a"/>
                         <outlet property="tableView" destination="mMf-d7-HZa" id="h92-fV-0LO"/>
                     </connections>
@@ -912,7 +915,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhN-wo-46z">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1050"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 5 de 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-RT-XD1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 5 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-RT-XD1">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -1274,7 +1277,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
                                             <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E">
                                                 <connections>
-                                                    <segue destination="nLl-ta-YLc" kind="show" id="mRZ-GK-Pi6"/>
+                                                    <segue destination="nLl-ta-YLc" kind="show" destinationCreationSelector="mudaPagina:" id="7As-G4-Nwu"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -1315,6 +1318,7 @@
                     <connections>
                         <outlet property="addConq" destination="oHw-Bg-Yvc" id="bLZ-Po-YrJ"/>
                         <outlet property="botaoAnterior" destination="zSB-kM-qYs" id="ByP-u3-32k"/>
+                        <outlet property="cancelarBotao" destination="0Z2-4D-AcI" id="shk-S8-VPe"/>
                         <outlet property="primeiraTableView" destination="qdi-Np-84I" id="CjK-HI-Cs9"/>
                         <outlet property="scrollView" destination="Zjk-tR-aYz" id="idn-xN-xiB"/>
                         <outlet property="segundaTableView" destination="SSI-bD-EKQ" id="Nqj-IC-xRB"/>
@@ -1328,7 +1332,7 @@
         <!--Templates-->
         <scene sceneID="N9n-Ru-OL6">
             <objects>
-                <viewController id="nLl-ta-YLc" sceneMemberID="viewController">
+                <viewController id="nLl-ta-YLc" customClass="TemplatesPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0rm-IQ-Hap">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1338,24 +1342,55 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-01-ERQ">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 6 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8J-Pd-xDV">
+                                                <rect key="frame" x="20" y="15" width="350" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-Hl-bpe">
+                                                <rect key="frame" x="20" y="48" width="350" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modelo1" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-ii-xYQ">
+                                                <rect key="frame" x="28" y="92" width="155" height="210"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="210" id="DaS-qJ-HvB"/>
+                                                    <constraint firstAttribute="width" constant="155" id="Lv9-e1-pNb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modelo2" translatesAutoresizingMaskIntoConstraints="NO" id="p4i-bw-e4M">
+                                                <rect key="frame" x="208" y="92" width="155" height="210"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="155" id="LN9-f8-l2u"/>
+                                                    <constraint firstAttribute="height" constant="210" id="cak-Oh-Knz"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" name="Fundo"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="570" id="E8k-Vt-xo0"/>
+                                            <constraint firstItem="T8J-Pd-xDV" firstAttribute="top" secondItem="ytb-01-ERQ" secondAttribute="top" constant="15" id="FXv-15-dNM"/>
+                                            <constraint firstAttribute="trailing" secondItem="T8J-Pd-xDV" secondAttribute="trailing" constant="20" id="Hhs-1y-CUK"/>
+                                            <constraint firstItem="p4i-bw-e4M" firstAttribute="leading" secondItem="vq7-ii-xYQ" secondAttribute="trailing" constant="25" id="NcT-vQ-XKh"/>
+                                            <constraint firstItem="WZ2-Hl-bpe" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" constant="20" id="RZ2-B1-ZR3"/>
+                                            <constraint firstItem="WZ2-Hl-bpe" firstAttribute="top" secondItem="T8J-Pd-xDV" secondAttribute="bottom" constant="15" id="TTl-4L-xQQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="WZ2-Hl-bpe" secondAttribute="trailing" constant="20" id="Uqo-D2-k5R"/>
+                                            <constraint firstItem="vq7-ii-xYQ" firstAttribute="top" secondItem="WZ2-Hl-bpe" secondAttribute="bottom" constant="15" id="apJ-zZ-NAj"/>
+                                            <constraint firstItem="vq7-ii-xYQ" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" constant="28" id="gFS-Dz-OkS"/>
+                                            <constraint firstItem="T8J-Pd-xDV" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" constant="20" id="rqn-nm-cR2"/>
+                                            <constraint firstItem="p4i-bw-e4M" firstAttribute="top" secondItem="WZ2-Hl-bpe" secondAttribute="bottom" constant="15" id="y6Z-Si-Agw"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-Hl-bpe">
-                                        <rect key="frame" x="10" y="9.3333333333333428" width="360" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-1t-ksY">
                                         <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="gyf-mG-ZYC"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="tDh-PQ-9xR"/>
-                                            <barButtonItem title="Próximo" width="112.66666412353516" id="FQr-N8-swl"/>
+                                            <barButtonItem title="Concluir" width="112.66666412353516" id="FQr-N8-swl"/>
                                         </items>
                                         <color key="tintColor" name="Ciano"/>
                                     </toolbar>
@@ -1395,17 +1430,77 @@
                     </navigationItem>
                     <size key="freeformSize" width="390" height="700"/>
                     <connections>
-                        <outlet property="botaoAnterior" destination="gyf-mG-ZYC" id="1pT-O5-c8M"/>
-                        <outlet property="scrollView" destination="L0l-fS-HOr" id="hiy-NM-tJl"/>
+                        <outlet property="botaoAnterior" destination="gyf-mG-ZYC" id="UvF-bp-yU4"/>
+                        <outlet property="botaoProximo" destination="FQr-N8-swl" id="fM7-28-2Fs"/>
+                        <outlet property="primeiroModelo" destination="vq7-ii-xYQ" id="6HI-8A-E0a"/>
+                        <outlet property="scrollView" destination="L0l-fS-HOr" id="y2F-Mc-6Z0"/>
+                        <outlet property="segundoModelo" destination="p4i-bw-e4M" id="hAd-pu-SGS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08U-5P-TRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5672" y="-286"/>
+            <point key="canvasLocation" x="5670.7692307692305" y="-286.49289099526067"/>
+        </scene>
+        <!--Cúrriculos-->
+        <scene sceneID="0m3-v2-jZy">
+            <objects>
+                <viewController id="41a-lX-Zfq" customClass="BemvindosViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KGh-OW-cuY">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-Xf-9nx">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-Xy-AYz">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="696"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Component 1" translatesAutoresizingMaskIntoConstraints="NO" id="fHM-DZ-L8c">
+                                                <rect key="frame" x="43" y="101" width="304" height="324"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clique em ”Adicionar” para criar seu primeiro currículo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRP-6V-Qlo" customClass="fraseSemCurriculo">
+                                                <rect key="frame" x="35" y="425" width="320" height="111"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.34509803919999998" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="86Y-86-69p"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="xHI-pn-lHr"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PNF-JB-di2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cúrriculos" id="1VS-nU-AcJ">
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="dsn-Xp-0CJ" customClass="botaoAdd">
+                            <connections>
+                                <segue destination="6Ti-xJ-f2Z" kind="show" id="Im8-qy-cZu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="844"/>
+                    <connections>
+                        <outlet property="botaoAdd" destination="dsn-Xp-0CJ" id="xTN-CX-p0v"/>
+                        <outlet property="fraseSemCurriculo" destination="DRP-6V-Qlo" id="v8M-bX-Pat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBh-U5-x3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.38461538461539" y="-286.49289099526067"/>
         </scene>
     </scenes>
     <color key="tintColor" name="Ciano"/>
     <resources>
+        <image name="modelo1" width="155" height="210"/>
+        <image name="modelo2" width="155.66667175292969" height="209.33332824707031"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Campos">
             <color red="0.78799998760223389" green="0.20399999618530273" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1421,6 +1516,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

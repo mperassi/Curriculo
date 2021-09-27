@@ -9,6 +9,7 @@ import UIKit
 import NotificationCenter
 
 class TerceiraPageViewController: UIViewController {
+    @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
@@ -38,7 +39,10 @@ class TerceiraPageViewController: UIViewController {
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
         addExp.layer.cornerRadius = 10
-      
+        
+        cancelarBotao.action = #selector(cancelarAcao)
+        cancelarBotao.target = self
+        cancelarBotao.style = .plain
         
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
@@ -91,6 +95,38 @@ class TerceiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
+        if (multiCell?.nomeField.text == "") || (multiCell1?.nomeField.text == "") || (multiCell3?.novaTextView?.text == "") {
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
+        
+    }
+    @objc func backViewController(){
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? BemvindosViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
+            }
+        })
+    }
+    @objc func cancelarAcao(){
+        
+        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.backViewController()
+        }))
+        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+            
+            
+        }))
+        present(ac,animated: true)
     }
     //Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -198,8 +234,8 @@ extension TerceiraPageViewController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "novaTextCell", for: indexPath) as! NovaTableViewCell
             cell.selectionStyle = .none
             return cell
-//            guard let safeCell = cell else {return UITableViewCell()}
-//            return safeCell
+            //            guard let safeCell = cell else {return UITableViewCell()}
+            //            return safeCell
         }
         
     }
