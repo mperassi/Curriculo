@@ -315,7 +315,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="789" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="784" width="390" height="49"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="qPz-Ue-2F7"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
@@ -375,7 +375,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -611,7 +611,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="636.66666666666663" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -1129,9 +1129,9 @@
                                                 <rect key="frame" x="277.66666666666669" y="646" width="51" height="31"/>
                                                 <color key="onTintColor" name="Ciano"/>
                                             </switch>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="segundaTabela" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-bD-EKQ">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="segundaTabela" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-bD-EKQ">
                                                 <rect key="frame" x="15" y="692" width="360" height="308"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Fundo"/>
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="kiC-TU-R5e" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
@@ -1267,11 +1267,15 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-px-WdG">
-                                        <rect key="frame" x="0.0" y="1017.6666666666665" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="1067.6666666666667" width="390" height="49"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zSB-kM-qYs"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
-                                            <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E"/>
+                                            <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E">
+                                                <connections>
+                                                    <segue destination="nLl-ta-YLc" kind="show" id="mRZ-GK-Pi6"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                         <color key="tintColor" name="Ciano"/>
                                     </toolbar>
@@ -1320,6 +1324,84 @@
             </objects>
             <point key="canvasLocation" x="4527.6923076923076" y="-286.49289099526067"/>
         </scene>
+        <!--Templates-->
+        <scene sceneID="N9n-Ru-OL6">
+            <objects>
+                <viewController id="nLl-ta-YLc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0rm-IQ-Hap">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-fS-HOr">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-01-ERQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="570" id="E8k-Vt-xo0"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-Hl-bpe">
+                                        <rect key="frame" x="10" y="9.3333333333333428" width="360" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-1t-ksY">
+                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <items>
+                                            <barButtonItem title="Anterior" width="113" id="gyf-mG-ZYC"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="tDh-PQ-9xR"/>
+                                            <barButtonItem title="Próximo" width="112.66666412353516" id="FQr-N8-swl"/>
+                                        </items>
+                                        <color key="tintColor" name="Ciano"/>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="width" secondItem="L0l-fS-HOr" secondAttribute="width" id="638-p0-GYW"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="bottom" secondItem="bPO-ze-YpU" secondAttribute="bottom" constant="-48" id="AWd-Yf-9kR"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="leading" secondItem="bPO-ze-YpU" secondAttribute="leading" id="AyZ-Qb-OiL"/>
+                                    <constraint firstItem="UyG-1t-ksY" firstAttribute="trailing" secondItem="ytb-01-ERQ" secondAttribute="trailing" id="Cq6-QE-vnb"/>
+                                    <constraint firstAttribute="width" constant="390" id="Iqg-qY-s5j"/>
+                                    <constraint firstAttribute="height" constant="700" id="YDy-7D-fYg"/>
+                                    <constraint firstItem="UyG-1t-ksY" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" id="oYT-wi-rtE"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="width" secondItem="L08-sr-8dV" secondAttribute="width" id="pe0-ct-bz4"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="trailing" secondItem="bPO-ze-YpU" secondAttribute="trailing" id="tm7-np-exn"/>
+                                    <constraint firstItem="L08-sr-8dV" firstAttribute="bottom" secondItem="UyG-1t-ksY" secondAttribute="bottom" constant="27" id="zq7-wi-vx6"/>
+                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="top" secondItem="bPO-ze-YpU" secondAttribute="top" id="zug-dO-sQ1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="bPO-ze-YpU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="L08-sr-8dV"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uML-Lr-vpG"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="L0l-fS-HOr" secondAttribute="bottom" id="W13-ke-cMj"/>
+                            <constraint firstItem="L0l-fS-HOr" firstAttribute="leading" secondItem="uML-Lr-vpG" secondAttribute="leading" id="cee-px-hhy"/>
+                            <constraint firstItem="L0l-fS-HOr" firstAttribute="trailing" secondItem="uML-Lr-vpG" secondAttribute="trailing" id="nBB-ud-XNw"/>
+                            <constraint firstItem="L0l-fS-HOr" firstAttribute="top" secondItem="0rm-IQ-Hap" secondAttribute="top" id="pBK-vn-MpE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Templates" id="nE8-2e-Pd4">
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="9Qb-qP-klJ">
+                            <color key="tintColor" name="Ciano"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="700"/>
+                    <connections>
+                        <outlet property="botaoAnterior" destination="gyf-mG-ZYC" id="1pT-O5-c8M"/>
+                        <outlet property="scrollView" destination="L0l-fS-HOr" id="hiy-NM-tJl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08U-5P-TRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5672" y="-286"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="Ciano"/>
     <resources>
@@ -1338,9 +1420,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
