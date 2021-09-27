@@ -8,13 +8,16 @@
 import UIKit
 import NotificationCenter
 
-class FirstPageViewController: UIViewController {
+class PrimeiraPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addLink: UIButton!
-    
-    @IBOutlet weak var botaoProximo: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBSegueAction func mudaPagina(_ coder: NSCoder) -> SegundaPageViewController? {
+        dicionario1Pagina()
+        return SegundaPageViewController(coder: coder)
+    }
     
+    //Dicionário
     let defaults = UserDefaults.standard
     var dictionary: [String : String] = [:]  //Dictionary which you want to save
 //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
@@ -22,25 +25,25 @@ class FirstPageViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        //TableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        //Navegação
         addLink.layer.cornerRadius = 10
         self.navigationItem.setHidesBackButton(true, animated: false)
-
-        defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //Dicionário
+
+        //Scroll
+        NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            
-           NotificationCenter.default.addObserver(self, selector: #selector(FirstPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+           NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
-        addLink.addTarget(self, action: #selector(dicionario1Pagina), for: .touchDown)
-
-
-        
-        // Do any additional setup after loading the view.
     }
-
-    @IBAction func dicionario1Pagina(_ sender: UIBarButtonItem){
+    //Dicionário
+    @IBAction func dicionario1Pagina(){
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
         let indexPath = NSIndexPath(row: 0, section: 0)
         let multiCell = tableView.cellForRow(at: indexPath as IndexPath) as? TextoTableViewCell
@@ -79,11 +82,11 @@ class FirstPageViewController: UIViewController {
         let multiCell5 = tableView.cellForRow(at: indexPathLink as IndexPath) as? TextoTableViewCell
         self.dictionary["Link"] = multiCell5?.nomeField.text
         
+        defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
     }
-    
-    
+    //Funções Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
       guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
       else {
@@ -91,7 +94,7 @@ class FirstPageViewController: UIViewController {
         return
       }
 
-      let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+      let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
       scrollView.contentInset = contentInsets
       scrollView.scrollIndicatorInsets = contentInsets
     }
@@ -104,14 +107,14 @@ class FirstPageViewController: UIViewController {
       scrollView.contentInset = contentInsets
       scrollView.scrollIndicatorInsets = contentInsets
     }
-    
+
 }
-    
-extension FirstPageViewController: UITableViewDelegate{
+    //Config TableView
+extension PrimeiraPageViewController: UITableViewDelegate{
     
 }
 
-extension FirstPageViewController: UITableViewDataSource{
+extension PrimeiraPageViewController: UITableViewDataSource{
 
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
@@ -122,9 +125,21 @@ extension FirstPageViewController: UITableViewDataSource{
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "Nome"
             cell.nomeField.keyboardType = .default
-            cell.nomeField.placeholder = "Digite seu nome completo"
+            cell.nomeField.placeholder = "Digite o nome completo"
             cell.nomeObs.text = "*Obrigatório"
 //            print(dictValue)  // Printing the value
+            
+            //MARK: Acessibilidade - Email
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Nome"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Digite seu nome completo"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -140,6 +155,15 @@ extension FirstPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .numberPad
             cell.nomeObs.text = "*Obrigatório"
    
+            //MARK: Acessibilidade - Telefone
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Telefone"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: (ddd) 0 1234-5678"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
             return cell
             
@@ -149,6 +173,16 @@ extension FirstPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .default
             cell.nomeField.placeholder = "Exemplo: São Paulo - SP"
             cell.nomeObs.text = "*Obrigatório"
+            
+            //MARK: Acessibilidade - Localização
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Localidade"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: São Paulo - SP"
+        
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             return cell
             
         } else if indexPath.row == 4 {
@@ -157,6 +191,17 @@ extension FirstPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .emailAddress
             cell.nomeField.placeholder = "Exemplo: email@exemplo.com"
             cell.nomeObs.text = "*Obrigatório"
+            
+            //MARK: Acessibilidade - Email
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "E-mail"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: email@exemplo.com"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
             return cell
             
         } else {
@@ -165,13 +210,20 @@ extension FirstPageViewController: UITableViewDataSource{
             cell.nomeField.placeholder = "Exemplo: LinkedIn, Behance, Github"
             cell.nomeField.keyboardType = .URL
             cell.nomeObs.text = " "
+            
+            //MARK: Acessibilidade - Links adicionais
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Links adicionais"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: LinkedIn, Behance, Github"
+        
+            
             return cell
             
         }
         
     }
-    
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 105
@@ -179,5 +231,6 @@ extension FirstPageViewController: UITableViewDataSource{
     
     
 }
+
 
 
