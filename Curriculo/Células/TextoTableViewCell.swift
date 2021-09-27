@@ -17,23 +17,7 @@ class TextoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-        //MARK: Acessibilidade
-        nomeLabel.isAccessibilityElement = true
-        nomeLabel.accessibilityLabel = "Nome"
-        
-        nomeField.isAccessibilityElement = true
-        nomeField.accessibilityLabel = "Nome"
-        nomeField.accessibilityTraits = .staticText
-        nomeField.accessibilityHint = "Digite seu nome completo"
-        
-        nomeObs.isAccessibilityElement = true
-        nomeObs.accessibilityLabel = "Obrigatório"
-        nomeObs.accessibilityTraits = .staticText
-        nomeObs.accessibilityHint = "Este item é de preenchimento obrigatório"
-        
-        
-        self.accessibilityElements = [nomeLabel, nomeField, nomeObs]
+
 
         
     }

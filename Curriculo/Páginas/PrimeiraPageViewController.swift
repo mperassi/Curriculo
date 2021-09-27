@@ -85,6 +85,15 @@ class PrimeiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
+        if (multiCell?.nomeField.text == "") || (multiCell2?.nomeField.text == "") || (multiCell3?.nomeField.text == "") || (multiCell4?.nomeField.text == ""){
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
     }
     //Funções Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -107,6 +116,7 @@ class PrimeiraPageViewController: UIViewController {
       scrollView.contentInset = contentInsets
       scrollView.scrollIndicatorInsets = contentInsets
     }
+
 
 }
     //Config TableView
@@ -164,6 +174,10 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             
@@ -229,7 +243,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         return 105
     }
     
-    
+
 }
 
 
