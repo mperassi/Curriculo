@@ -81,6 +81,7 @@
                                                         <color key="backgroundColor" name="Fundo"/>
                                                         <connections>
                                                             <outlet property="largeTextLabel" destination="WLu-JR-Ijr" id="Xew-C7-gIK"/>
+                                                            <outlet property="largeTextObs" destination="poU-zp-f8h" id="2Lt-q7-NKt"/>
                                                             <outlet property="largeTextView" destination="HEk-3q-Iyl" id="lb5-Zl-9ak"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -315,7 +316,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="789" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="776.33333333333337" width="390" height="49"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="qPz-Ue-2F7"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
@@ -375,7 +376,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -611,7 +612,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="636.66666666666663" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -895,7 +896,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpi-5S-dnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3672" y="-286"/>
+            <point key="canvasLocation" x="3670.7692307692305" y="-286.49289099526067"/>
         </scene>
         <!--Dados adicionais-->
         <scene sceneID="i9y-NX-EbM">
@@ -1267,7 +1268,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-px-WdG">
-                                        <rect key="frame" x="0.0" y="1017.6666666666665" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="826.33333333333337" width="390" height="49"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zSB-kM-qYs"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>

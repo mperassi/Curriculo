@@ -128,6 +128,18 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.placeholder = "Digite o nome completo"
             cell.nomeObs.text = "*Obrigatório"
 //            print(dictValue)  // Printing the value
+            
+            //MARK: Acessibilidade - Email
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Nome"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Digite seu nome completo"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -143,6 +155,15 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .numberPad
             cell.nomeObs.text = "*Obrigatório"
    
+            //MARK: Acessibilidade - Telefone
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Telefone"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: (ddd) 0 1234-5678"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
             return cell
             
@@ -152,6 +173,16 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .default
             cell.nomeField.placeholder = "Exemplo: São Paulo - SP"
             cell.nomeObs.text = "*Obrigatório"
+            
+            //MARK: Acessibilidade - Localização
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Localidade"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: São Paulo - SP"
+        
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             return cell
             
         } else if indexPath.row == 4 {
@@ -160,6 +191,17 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .emailAddress
             cell.nomeField.placeholder = "Exemplo: email@exemplo.com"
             cell.nomeObs.text = "*Obrigatório"
+            
+            //MARK: Acessibilidade - Email
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "E-mail"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: email@exemplo.com"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
             return cell
             
         } else {
@@ -168,6 +210,15 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.placeholder = "Exemplo: LinkedIn, Behance, Github"
             cell.nomeField.keyboardType = .URL
             cell.nomeObs.text = " "
+            
+            //MARK: Acessibilidade - Links adicionais
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Links adicionais"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Exemplo: LinkedIn, Behance, Github"
+        
+            
             return cell
             
         }

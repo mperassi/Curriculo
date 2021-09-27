@@ -15,9 +15,17 @@ class QuartaPageViewController: UIViewController {
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
     @IBSegueAction func mudaQuartaPagina(_ coder: NSCoder) -> QuintaPageViewController? {
         dicionario4Pagina()
+       
+        //MARK: Acessibilidade
+        addForm.isAccessibilityElement = true
+        addForm.accessibilityLabel = "Adicionar nova formação acadêmica"
+        
         return QuintaPageViewController(coder: coder)
+        
     }
 
+     
+    
     //Dicionário
     
     let defaults = UserDefaults.standard
@@ -139,6 +147,17 @@ extension QuartaPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .default
             cell.nomeField.placeholder = "Digite a instituição de ensino"
             cell.nomeObs.text = "*Obrigatório"
+            
+            //MARK: Acessibilidade - Instituição
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Nome da Instituição"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Digite o nome da instituição de ensino"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -147,6 +166,17 @@ extension QuartaPageViewController: UITableViewDataSource{
             cell.nomeField.keyboardType = .default
             cell.nomeField.placeholder = "Digite o curso ou grau de ensino"
             cell.nomeObs.text = "*Obrigatório"
+            
+            //MARK: Acessibilidade - Curso
+            cell.nomeLabel.isAccessibilityElement = true
+            cell.nomeLabel.accessibilityLabel = "Curso"
+            
+            cell.nomeField.isAccessibilityElement = true
+            cell.nomeField.accessibilityLabel = "Digite o curso ou grau de ensino"
+            
+            cell.nomeObs.isAccessibilityElement = true
+            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
             return cell
             
         } else {
