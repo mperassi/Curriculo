@@ -9,6 +9,7 @@ import UIKit
 import NotificationCenter
 
 class QuartaPageViewController: UIViewController {
+    @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addForm: UIButton!
@@ -44,6 +45,9 @@ class QuartaPageViewController: UIViewController {
          //MARK: Acessibilidade
          addForm.isAccessibilityElement = true
          addForm.accessibilityLabel = "Adicionar nova formação acadêmica"
+        cancelarBotao.action = #selector(cancelarAcao)
+        cancelarBotao.target = self
+        cancelarBotao.style = .plain
   
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
@@ -54,6 +58,28 @@ class QuartaPageViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
+    }
+    @objc func backViewController(){
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? BemvindosViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
+            }
+        })
+    }
+    @objc func cancelarAcao(){
+        
+        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.backViewController()
+        }))
+        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        
+            
+        }))
+      present(ac,animated: true)
     }
     //Navegação
     @objc func changeViewController(){
