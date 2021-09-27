@@ -16,6 +16,10 @@ class QuintaPageViewController: UIViewController {
     @IBOutlet var addConq: UIButton!
     @IBOutlet var segundaTableView: UITableView!
     @IBOutlet var `switch`: UISwitch!
+    @IBSegueAction func mudaPagina(_ coder: NSCoder) -> TemplatesPageViewController? {
+        dicionario5Pagina()
+        return TemplatesPageViewController(coder: coder)
+    }
     
     
     
@@ -53,7 +57,6 @@ class QuintaPageViewController: UIViewController {
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
         addConq.layer.cornerRadius = 10
-        addConq.addTarget(self, action: #selector(dicionario4Pagina), for: .touchDown)
 
         
         //Dicionário
@@ -72,16 +75,16 @@ class QuintaPageViewController: UIViewController {
    }
     
     //Dicionário
-    @IBAction func dicionario4Pagina() {
+    @IBAction func dicionario5Pagina() {
         primeiraTableView.dequeueReusableCell(withIdentifier: "textoCell")
         let indexPath = NSIndexPath(row: 0, section: 0)
         let multiCell = primeiraTableView.cellForRow(at: indexPath as IndexPath) as? TextoTableViewCell
         self.dictionary["NomeConq"] = multiCell?.nomeField.text
         
         primeiraTableView.dequeueReusableCell(withIdentifier: "descCell")
-        let indexPath3 = NSIndexPath(row: 1, section: 0)
-        let multiCell3 = primeiraTableView.cellForRow(at: indexPath3 as IndexPath) as? DescTableViewCell
-        self.dictionary["DescConq"] = multiCell3?.descTextView?.text
+        let indexPath1 = NSIndexPath(row: 1, section: 0)
+        let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescTableViewCell
+        self.dictionary["DescConq"] = multiCell1?.descTextView?.text
         
         let indexPathDatas = NSIndexPath(row: 2, section: 0)
         let multiCell2 = primeiraTableView.cellForRow(at: indexPathDatas as IndexPath) as? DuasDatasTableViewCell
@@ -113,6 +116,8 @@ class QuintaPageViewController: UIViewController {
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
+        
+
       
 }
     @objc func backViewController(){
@@ -181,6 +186,9 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.isAccessibilityElement = true
                 cell.nomeField.accessibilityLabel = "Digite uma realização profissional"
                 
+                if UIAccessibility.isVoiceOverRunning {
+                    cell.nomeField.placeholder = ""
+                }
                 
                 return cell
                 
@@ -215,6 +223,10 @@ extension QuintaPageViewController: UITableViewDataSource{
                 
                 cell.nomeObs.isAccessibilityElement = true
                 cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+                
+                if UIAccessibility.isVoiceOverRunning {
+                    cell.nomeField.placeholder = ""
+                }
                 
                 return cell
                 

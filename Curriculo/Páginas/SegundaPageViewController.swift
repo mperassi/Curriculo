@@ -21,7 +21,7 @@ class SegundaPageViewController: UIViewController {
     //Dicionário
     let defaults = UserDefaults.standard
     var dictionary: [String : Any] = [:]  //Dictionary which you want to save
-//    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
+    //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +49,15 @@ class SegundaPageViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(SegundaPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(SegundaPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
+        
         
     }
+    
+    
+    deinit{
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -76,44 +82,42 @@ class SegundaPageViewController: UIViewController {
     }
 
     @objc func changeViewController(){
-            let viewcontrollers = self.navigationController?.viewControllers
-            
-            viewcontrollers?.forEach({ (vc) in
-                if  let inventoryListVC = vc as? PrimeiraPageViewController {
-                    self.navigationController!.popToViewController(inventoryListVC, animated: true)
-                }
-            })
-            
+        let viewcontrollers = self.navigationController?.viewControllers
+        
+        viewcontrollers?.forEach({ (vc) in
+            if  let inventoryListVC = vc as? PrimeiraPageViewController {
+                self.navigationController!.popToViewController(inventoryListVC, animated: true)
             }
-
+        })
+        
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
-      guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-      else {
-        // if keyboard size is not available for some reason, dont do anything
-        return
-      }
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
 
-      let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
-      scrollView.contentInset = contentInsets
-//      scrollView.scrollIndicatorInsets = contentInsets
+    
+        
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
-      let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-
-
-      // reset back the content inset to zero after keyboard is gone
-      scrollView.contentInset = contentInsets
-      scrollView.scrollIndicatorInsets = contentInsets
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        let scrollPoint : CGPoint = CGPoint.init(x:0, y:textView.frame.origin.y)
-        self.scrollView.setContentOffset(scrollPoint, animated: true)
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-        self.scrollView.setContentOffset(CGPoint.zero, animated: true)
-    }
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        let scrollPoint : CGPoint = CGPoint.init(x:0, y:textView.frame.origin.y)
+//        self.scrollView.setContentOffset(scrollPoint, animated: true)
+//    }
+//
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        self.scrollView.setContentOffset(CGPoint.zero, animated: true)
+//    }
     
     //Dicionário
     
@@ -131,6 +135,16 @@ class SegundaPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
+        if (multiCell?.largeTextView?.text == "") || (multiCell1?.largeTextView?.text == ""){
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
+        
     }
 }
 //TableView
@@ -139,7 +153,7 @@ extension SegundaPageViewController: UITableViewDelegate{
 }
 
 extension SegundaPageViewController: UITableViewDataSource{
-
+    
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -154,7 +168,7 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.isAccessibilityElement = true
             cell.largeTextLabel.accessibilityLabel = "Objetivo profissional"
             
-
+            
             return cell
             
         } else {
@@ -166,7 +180,7 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.isAccessibilityElement = true
             cell.largeTextLabel.accessibilityLabel = "Resumo profissinoal"
             
-        
+            
             
             return cell
             

@@ -51,6 +51,11 @@ class PrimeiraPageViewController: UIViewController {
            NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
     }
+    
+    deinit{
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     //Dicionário
     @IBAction func dicionario1Pagina(){
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
@@ -94,6 +99,15 @@ class PrimeiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
+        if (multiCell?.nomeField.text == "") || (multiCell2?.nomeField.text == "") || (multiCell3?.nomeField.text == "") || (multiCell4?.nomeField.text == ""){
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
     }
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
@@ -145,6 +159,7 @@ class PrimeiraPageViewController: UIViewController {
       scrollView.scrollIndicatorInsets = contentInsets
     }
 
+
 }
     //Config TableView
 extension PrimeiraPageViewController: UITableViewDelegate{
@@ -176,6 +191,9 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             
@@ -202,6 +220,9 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             return cell
             
         } else if indexPath.row == 3 {
@@ -220,6 +241,11 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else if indexPath.row == 4 {
@@ -239,6 +265,10 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else {
@@ -255,6 +285,9 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Exemplo: LinkedIn, Behance, Github"
         
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             
@@ -266,7 +299,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         return 105
     }
     
-    
+
 }
 
 

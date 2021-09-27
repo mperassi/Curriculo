@@ -16,11 +16,6 @@ class QuartaPageViewController: UIViewController {
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
     @IBSegueAction func mudaQuartaPagina(_ coder: NSCoder) -> QuintaPageViewController? {
         dicionario4Pagina()
-       
-        //MARK: Acessibilidade
-        addForm.isAccessibilityElement = true
-        addForm.accessibilityLabel = "Adicionar nova formação acadêmica"
-        
         return QuintaPageViewController(coder: coder)
         
     }
@@ -47,6 +42,9 @@ class QuartaPageViewController: UIViewController {
         botaoAnterior.action = #selector(changeViewController)
         addForm.layer.cornerRadius = 10
         
+         //MARK: Acessibilidade
+         addForm.isAccessibilityElement = true
+         addForm.accessibilityLabel = "Adicionar nova formação acadêmica"
         cancelarBotao.action = #selector(cancelarAcao)
         cancelarBotao.target = self
         cancelarBotao.style = .plain
@@ -128,6 +126,16 @@ class QuartaPageViewController: UIViewController {
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
+        
+        if (multiCell?.nomeField.text == "") || (multiCell1?.nomeField.text == ""){
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
     }
     //Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -184,6 +192,10 @@ extension QuartaPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -202,6 +214,10 @@ extension QuartaPageViewController: UITableViewDataSource{
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             

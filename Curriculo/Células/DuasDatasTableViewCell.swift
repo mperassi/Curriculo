@@ -27,29 +27,7 @@ class DuasDatasTableViewCell: UITableViewCell {
         dataFim.topAnchor.constraint(equalTo: dataInicio.topAnchor).isActive = true
         dataFim.leadingAnchor.constraint(equalTo: fimLabel.leadingAnchor, constant: 5).isActive = true
         dataFim.widthAnchor.constraint(equalToConstant: 100).isActive = true
-
-//func acessibilidade() {}
-        //MARK: Acessibilidade
-       duasDatasLabel.isAccessibilityElement = true
-       duasDatasLabel.accessibilityLabel = "Período"
         
-       duasDatasObs.isAccessibilityElement = true
-       duasDatasObs.accessibilityLabel = "Item de preenchimento obrigatório"
-
-        inicioLabel.isAccessibilityElement = true
-        inicioLabel.accessibilityLabel = "Início do período"
-        
-        fimLabel.isAccessibilityElement = true
-        fimLabel.accessibilityLabel = "Fim do período"
-        
-        dataInicio.isAccessibilityElement = true
-        dataInicio.accessibilityLabel = "Selecione a data de início da realização"
-        
-        dataFim.isAccessibilityElement = true
-        dataFim.accessibilityLabel = "Selecione a data do fim da realização"
-
-        self.accessibilityElements = [duasDatasLabel, duasDatasObs, dataInicio, dataFim, inicioLabel, fimLabel]
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -22,7 +22,7 @@ class ObsTableViewCell: UITableViewCell {
        obsLabel.accessibilityLabel = "Observações"
         
         obsLabelObs.isAccessibilityElement = true
-        obsLabelObs.accessibilityLabel = "Observações"
+        obsLabelObs.accessibilityLabel = "Este campo é de preenchimento obrigatório"
         
         obsTextView.isAccessibilityElement = true
         obsTextView.accessibilityLabel = "Fale brevemente sobre a sua deficiência e das possíveis adaptações necessárias ao ambiente de trabalho."

@@ -95,6 +95,16 @@ class TerceiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
+        if (multiCell?.nomeField.text == "") || (multiCell1?.nomeField.text == "") || (multiCell3?.novaTextView?.text == "") {
+            print("vazio")
+            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            ac.view.tintColor = UIColor(named: "Ciano")
+            present(ac, animated: true)
+        } else{
+            print("cheio")
+        }
+        
     }
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
@@ -184,6 +194,10 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
+            
             return cell
             
         } else if indexPath.row == 1 {
@@ -203,6 +217,10 @@ extension TerceiraPageViewController: UITableViewDataSource{
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            if UIAccessibility.isVoiceOverRunning {
+                cell.nomeField.placeholder = ""
+            }
             
             return cell
             

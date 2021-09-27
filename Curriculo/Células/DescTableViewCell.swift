@@ -8,7 +8,7 @@
 import UIKit
 
 class DescTableViewCell: UITableViewCell {
-    @IBOutlet var descLabel: UILabel! //TextView de descrição da página de Conquistas (5a página)
+    @IBOutlet var descLabel: UILabel!
     @IBOutlet var descObsLabel: UILabel! 
     @IBOutlet var descTextView: UITextView!
     
