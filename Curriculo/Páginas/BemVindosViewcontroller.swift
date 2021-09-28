@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 
 class BemvindosViewController: UIViewController {
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var fraseSemCurriculo: UILabel!
     @IBOutlet weak var botaoAdd: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
+
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         fraseSemCurriculo.numberOfLines = 0
         fraseSemCurriculo.textAlignment = .center
