@@ -42,6 +42,7 @@ class TemplatesPageViewController: UIViewController {
             }
         })
     }
+<<<<<<< Updated upstream
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -64,6 +65,33 @@ class TemplatesPageViewController: UIViewController {
         }))
       present(ac,animated: true)
     }
+=======
+    @objc func shareAction() {
+      // 1
+      guard
+        let title = flyerTextEntry.text,
+        let body = bodyTextView.text,
+        let contact = contactTextView.text,
+        let email = emailTextView.text,
+        let local = localTextView.text,
+        let links = linksTextView.text
+
+        else {
+          // 2
+          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+          present(alert, animated: true, completion: nil)
+          return
+      }
+      
+      // 3
+      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
+      let pdfData = pdfCreator.createFlyer()
+      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+      present(vc, animated: true, completion: nil)
+    }
+
+>>>>>>> Stashed changes
 
 
 }
