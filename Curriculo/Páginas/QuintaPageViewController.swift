@@ -117,7 +117,6 @@ class QuintaPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
-
       
 }
     @objc func backViewController(){
@@ -131,12 +130,12 @@ class QuintaPageViewController: UIViewController {
     }
     @objc func cancelarAcao(){
         
-        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Tem certeza?", message: "Cancelando você perderá todas as informações inseridas", preferredStyle: .alert)
         ac.view.tintColor = UIColor(named: "Ciano")
-        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
             self.backViewController()
         }))
-        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
         
             
         }))
@@ -186,6 +185,9 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.isAccessibilityElement = true
                 cell.nomeField.accessibilityLabel = "Digite uma realização profissional"
                 
+                self.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
+
+                
                 if UIAccessibility.isVoiceOverRunning {
                     cell.nomeField.placeholder = ""
                 }
@@ -223,6 +225,8 @@ extension QuintaPageViewController: UITableViewDataSource{
                 
                 cell.nomeObs.isAccessibilityElement = true
                 cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+                
+                self.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
                 
                 if UIAccessibility.isVoiceOverRunning {
                     cell.nomeField.placeholder = ""

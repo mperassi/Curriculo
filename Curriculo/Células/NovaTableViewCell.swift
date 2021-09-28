@@ -21,7 +21,6 @@ class NovaTableViewCell: UITableViewCell {
 
       novaTextView.isAccessibilityElement = true
       novaTextView.accessibilityLabel = "Digite aqui detalhes da sua experiência acadêmica ou profissional"
-
         
         self.accessibilityElements = [novaLabel, novaTextView!]
 

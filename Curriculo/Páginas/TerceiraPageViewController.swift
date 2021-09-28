@@ -97,7 +97,7 @@ class TerceiraPageViewController: UIViewController {
         
         if (multiCell?.nomeField.text == "") || (multiCell1?.nomeField.text == "") || (multiCell3?.novaTextView?.text == "") {
             print("vazio")
-            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             ac.view.tintColor = UIColor(named: "Ciano")
             present(ac, animated: true)
@@ -117,16 +117,16 @@ class TerceiraPageViewController: UIViewController {
     }
     @objc func cancelarAcao(){
         
-        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Tem certeza?", message: "Cancelando você perderá todas as informações inseridas", preferredStyle: .alert)
         ac.view.tintColor = UIColor(named: "Ciano")
-        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
             self.backViewController()
         }))
-        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
-            
+        ac.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        
             
         }))
-        present(ac,animated: true)
+      present(ac,animated: true)
     }
     //Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -193,6 +193,9 @@ extension TerceiraPageViewController: UITableViewDataSource{
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+           
+            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -217,6 +220,9 @@ extension TerceiraPageViewController: UITableViewDataSource{
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+            
+            self.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
+
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""

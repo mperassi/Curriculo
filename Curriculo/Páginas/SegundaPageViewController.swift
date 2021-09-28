@@ -69,12 +69,12 @@ class SegundaPageViewController: UIViewController {
     }
     @objc func cancelarAcao(){
         
-        let ac = UIAlertController(title: "Progresso", message: "Parece que você não fez a sua reflexão diária.. 😥\n Que tal dar uma passada por lá?", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Tem certeza?", message: "Cancelando você perderá todas as informações inseridas", preferredStyle: .alert)
         ac.view.tintColor = UIColor(named: "Ciano")
-        ac.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
             self.backViewController()
         }))
-        ac.addAction(UIAlertAction(title: "Agora não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
         
             
         }))
@@ -137,7 +137,7 @@ class SegundaPageViewController: UIViewController {
         
         if (multiCell?.largeTextView?.text == "") || (multiCell1?.largeTextView?.text == ""){
             print("vazio")
-            let ac = UIAlertController(title: "Dados faltando", message: "Um dos campos não foi preenchido...", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             ac.view.tintColor = UIColor(named: "Ciano")
             present(ac, animated: true)
@@ -168,6 +168,8 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.isAccessibilityElement = true
             cell.largeTextLabel.accessibilityLabel = "Objetivo profissional"
             
+            self.tableView.accessibilityElements = [cell.largeTextLabel]
+
             
             return cell
             
@@ -180,8 +182,8 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.isAccessibilityElement = true
             cell.largeTextLabel.accessibilityLabel = "Resumo profissinoal"
             
-            
-            
+            self.tableView.accessibilityElements = [cell.largeTextLabel]
+
             return cell
             
         }
