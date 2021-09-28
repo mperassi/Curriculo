@@ -55,6 +55,11 @@
                                                                     <color key="textColor" systemColor="labelColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <integer key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poU-zp-f8h">
                                                                     <rect key="frame" x="260" y="15.666666666666664" width="70" height="14.333333333333336"/>
@@ -101,7 +106,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -317,7 +322,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="776.33333333333337" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="784" width="390" height="49"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
                                             <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
@@ -377,12 +382,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="41a-lX-Zfq" kind="relationship" relationship="rootViewController" id="VdC-fH-xYZ"/>
+                        <segue destination="z7U-Kc-2uj" kind="relationship" relationship="rootViewController" id="8W2-kj-DFj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-xu-Fxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1355,7 +1360,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modelo1" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-ii-xYQ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modelo1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-ii-xYQ">
                                                 <rect key="frame" x="28" y="92" width="155" height="210"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="210" id="DaS-qJ-HvB"/>
@@ -1386,7 +1391,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-1t-ksY">
-                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <rect key="frame" x="0.0" y="485.33333333333331" width="390" height="43.999999999999943"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="gyf-mG-ZYC"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="tDh-PQ-9xR"/>
@@ -1431,7 +1436,8 @@
                     <size key="freeformSize" width="390" height="700"/>
                     <connections>
                         <outlet property="botaoAnterior" destination="gyf-mG-ZYC" id="UvF-bp-yU4"/>
-                        <outlet property="botaoProximo" destination="FQr-N8-swl" id="fM7-28-2Fs"/>
+                        <outlet property="botaoConcluir" destination="FQr-N8-swl" id="fM7-28-2Fs"/>
+                        <outlet property="cancelarBotao" destination="9Qb-qP-klJ" id="rI8-ce-EYG"/>
                         <outlet property="primeiroModelo" destination="vq7-ii-xYQ" id="6HI-8A-E0a"/>
                         <outlet property="scrollView" destination="L0l-fS-HOr" id="y2F-Mc-6Z0"/>
                         <outlet property="segundoModelo" destination="p4i-bw-e4M" id="hAd-pu-SGS"/>
@@ -1439,68 +1445,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08U-5P-TRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5670.7692307692305" y="-286.49289099526067"/>
+            <point key="canvasLocation" x="5453.8461538461534" y="-286.49289099526067"/>
         </scene>
-        <!--Cúrriculos-->
-        <scene sceneID="0m3-v2-jZy">
+        <!--Currículos-->
+        <scene sceneID="fbz-8h-djP">
             <objects>
-                <viewController id="41a-lX-Zfq" customClass="BemvindosViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KGh-OW-cuY">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                <viewController id="z7U-Kc-2uj" customClass="BemvindosViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GPG-mu-acn">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-Xf-9nx">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-tA-gmF">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-Xy-AYz">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="696"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEd-Wv-Cya">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Component 1" translatesAutoresizingMaskIntoConstraints="NO" id="fHM-DZ-L8c">
-                                                <rect key="frame" x="43" y="101" width="304" height="324"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fotoInicio" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-je-eKi">
+                                                <rect key="frame" x="90" y="140" width="210" height="200"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clique em ”Adicionar” para criar seu primeiro currículo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRP-6V-Qlo" customClass="fraseSemCurriculo">
-                                                <rect key="frame" x="35" y="425" width="320" height="111"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique em ”Adicionar” para criar seu primeiro currículo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ni-1h-jSg" customClass="fraseSemCurriculo">
+                                                <rect key="frame" x="35" y="385" width="320" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.34509803919999998" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="570" id="07q-kX-yXJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="5ni-1h-jSg" secondAttribute="trailing" constant="35" id="08m-f0-XCG"/>
+                                            <constraint firstItem="0VO-je-eKi" firstAttribute="leading" secondItem="uEd-Wv-Cya" secondAttribute="leading" constant="90" id="8rf-9U-l9N"/>
+                                            <constraint firstItem="5ni-1h-jSg" firstAttribute="leading" secondItem="uEd-Wv-Cya" secondAttribute="leading" constant="35" id="AW0-T4-Bvk"/>
+                                            <constraint firstItem="0VO-je-eKi" firstAttribute="top" secondItem="uEd-Wv-Cya" secondAttribute="top" constant="140" id="OUW-fG-EKa"/>
+                                            <constraint firstAttribute="bottom" secondItem="0VO-je-eKi" secondAttribute="bottom" constant="230" id="XzP-GL-gbh"/>
+                                            <constraint firstItem="5ni-1h-jSg" firstAttribute="top" secondItem="0VO-je-eKi" secondAttribute="bottom" constant="45" id="YZ5-hO-REK"/>
+                                            <constraint firstAttribute="trailing" secondItem="0VO-je-eKi" secondAttribute="trailing" constant="90" id="sFn-4B-VWW"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <viewLayoutGuide key="contentLayoutGuide" id="86Y-86-69p"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="xHI-pn-lHr"/>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="width" secondItem="ezb-tA-gmF" secondAttribute="width" id="85P-ev-VQM"/>
+                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="bottom" secondItem="j03-eo-cEt" secondAttribute="bottom" constant="-48" id="CJ5-57-fNk"/>
+                                    <constraint firstAttribute="width" constant="390" id="IU4-F3-kxY"/>
+                                    <constraint firstAttribute="height" constant="700" id="SNP-oS-uK1"/>
+                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="trailing" secondItem="j03-eo-cEt" secondAttribute="trailing" id="UJU-3o-Ee6"/>
+                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="top" secondItem="j03-eo-cEt" secondAttribute="top" id="W6P-e3-RYq"/>
+                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="leading" secondItem="j03-eo-cEt" secondAttribute="leading" id="ibS-JR-KfL"/>
+                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="width" secondItem="y6I-cX-L7L" secondAttribute="width" id="nGD-Hh-2mE"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="j03-eo-cEt"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="y6I-cX-L7L"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="PNF-JB-di2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="wB3-mw-h5o"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstItem="ezb-tA-gmF" firstAttribute="leading" secondItem="wB3-mw-h5o" secondAttribute="leading" id="8lh-l9-7Q6"/>
+                            <constraint firstItem="ezb-tA-gmF" firstAttribute="top" secondItem="GPG-mu-acn" secondAttribute="top" id="IB1-PP-DN9"/>
+                            <constraint firstAttribute="bottom" secondItem="ezb-tA-gmF" secondAttribute="bottom" id="ZSZ-E7-6CK"/>
+                            <constraint firstItem="ezb-tA-gmF" firstAttribute="trailing" secondItem="wB3-mw-h5o" secondAttribute="trailing" id="z6h-zm-i7K"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cúrriculos" id="1VS-nU-AcJ">
-                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="dsn-Xp-0CJ" customClass="botaoAdd">
+                    <navigationItem key="navigationItem" title="Currículos" id="U8I-9f-cbm">
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="pf5-LG-CNu">
+                            <color key="tintColor" name="Ciano"/>
                             <connections>
-                                <segue destination="6Ti-xJ-f2Z" kind="show" id="Im8-qy-cZu"/>
+                                <segue destination="6Ti-xJ-f2Z" kind="show" id="lYc-ZM-5az"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="390" height="844"/>
+                    <size key="freeformSize" width="390" height="700"/>
                     <connections>
-                        <outlet property="botaoAdd" destination="dsn-Xp-0CJ" id="xTN-CX-p0v"/>
-                        <outlet property="fraseSemCurriculo" destination="DRP-6V-Qlo" id="v8M-bX-Pat"/>
+                        <outlet property="botaoAdd" destination="pf5-LG-CNu" id="omh-Bl-mfv"/>
+                        <outlet property="fraseSemCurriculo" destination="5ni-1h-jSg" id="Kyv-EL-wK1"/>
+                        <outlet property="scrollView" destination="ezb-tA-gmF" id="1cH-f4-XJB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LBh-U5-x3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="um0-0K-VeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.38461538461539" y="-286.49289099526067"/>
+            <point key="canvasLocation" x="137" y="-286"/>
         </scene>
     </scenes>
     <color key="tintColor" name="Ciano"/>
     <resources>
-        <image name="modelo1" width="155" height="210"/>
-        <image name="modelo2" width="155.66667175292969" height="209.33332824707031"/>
+        <image name="fotoInicio" width="212" height="212"/>
+        <image name="modelo1" width="163" height="218"/>
+        <image name="modelo2" width="163.66667175292969" height="217.33332824707031"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Campos">
             <color red="0.78799998760223389" green="0.20399999618530273" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1516,9 +1549,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
