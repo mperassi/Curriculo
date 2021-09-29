@@ -192,7 +192,7 @@ extension QuartaPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
 
             
             if UIAccessibility.isVoiceOverRunning {
@@ -218,7 +218,7 @@ extension QuartaPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
 
             
             if UIAccessibility.isVoiceOverRunning {

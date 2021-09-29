@@ -168,7 +168,7 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.isAccessibilityElement = true
             cell.largeTextLabel.accessibilityLabel = "Objetivo profissional"
             
-            self.tableView.accessibilityElements = [cell.largeTextLabel]
+            cell.accessibilityElements = [cell.largeTextLabel]
 
             
             return cell
@@ -182,7 +182,7 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.isAccessibilityElement = true
             cell.largeTextLabel.accessibilityLabel = "Resumo profissinoal"
             
-            self.tableView.accessibilityElements = [cell.largeTextLabel]
+            cell.accessibilityElements = [cell.largeTextLabel]
 
             return cell
             

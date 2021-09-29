@@ -192,7 +192,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Digite seu nome completo"
             
-            self.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -224,7 +224,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -249,7 +249,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -274,7 +274,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -296,7 +296,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Exemplo: LinkedIn, Behance, Github"
         
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeField]
 
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
