@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		99321EFF27025B820057C83B /* BemVindosViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99321EFE27025B820057C83B /* BemVindosViewcontroller.swift */; };
+		996FE1612703B8D7008F4D8F /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE1602703B8D7008F4D8F /* PDFCreator.swift */; };
 		A01913C926FB9C6C003BC29E /* TextoMaiorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913C826FB9C6C003BC29E /* TextoMaiorTableViewCell.swift */; };
 		A01913CD26FBCE41003BC29E /* TerceiraPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913CC26FBCE41003BC29E /* TerceiraPageViewController.swift */; };
 		A01913CF26FBD211003BC29E /* DuasDatasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		99321EFE27025B820057C83B /* BemVindosViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BemVindosViewcontroller.swift; sourceTree = "<group>"; };
+		996FE1602703B8D7008F4D8F /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		A01913C826FB9C6C003BC29E /* TextoMaiorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoMaiorTableViewCell.swift; sourceTree = "<group>"; };
 		A01913CC26FBCE41003BC29E /* TerceiraPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiraPageViewController.swift; sourceTree = "<group>"; };
 		A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuasDatasTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		996FE15F2703B8C7008F4D8F /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				996FE1602703B8D7008F4D8F /* PDFCreator.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
 		A01913C726FB9BF4003BC29E /* Células */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		FA4B8E6826F8F3A70006C064 = {
 			isa = PBXGroup;
 			children = (
+				996FE15F2703B8C7008F4D8F /* PDF */,
 				FA4B8E7326F8F3A80006C064 /* Curriculo */,
 				FA4B8E7226F8F3A80006C064 /* Products */,
 			);
@@ -214,6 +225,7 @@
 				FA4B8E7726F8F3A80006C064 /* SceneDelegate.swift in Sources */,
 				99321EFF27025B820057C83B /* BemVindosViewcontroller.swift in Sources */,
 				A033746E26F9315600BE2CBA /* TextoTableViewCell.swift in Sources */,
+				996FE1612703B8D7008F4D8F /* PDFCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UZ6JTAUWH8;
+				DEVELOPMENT_TEAM = 7Y74F655Y8;
 				INFOPLIST_FILE = Curriculo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -380,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UZ6JTAUWH8;
+				DEVELOPMENT_TEAM = 7Y74F655Y8;
 				INFOPLIST_FILE = Curriculo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
