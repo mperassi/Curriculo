@@ -106,7 +106,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -1449,9 +1449,9 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-wJ-MLT">
-                                                <rect key="frame" x="193" y="92.000000000000014" width="187" height="253.33333333333337"/>
+                                                <rect key="frame" x="193" y="92" width="187" height="254"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="modelo2" imagePlacement="top" title="Com bordinha" imagePadding="5">
+                                                <buttonConfiguration key="configuration" style="plain" image="modelo2" imagePlacement="top" title="Formas" imagePadding="5">
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -1472,11 +1472,15 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBo-O8-VLi">
-                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <rect key="frame" x="0.0" y="505.33333333333326" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="9R6-uA-NyZ"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="gSX-dh-sdx"/>
-                                            <barButtonItem title="Concluir" width="112.66666412353516" id="yLS-Rq-KXx"/>
+                                            <barButtonItem title="Concluir" width="112.66666412353516" id="yLS-Rq-KXx">
+                                                <connections>
+                                                    <segue destination="V3N-jc-UXa" kind="show" identifier="previewSegue" destinationCreationSelector="mudaPagina:" id="Qzm-H4-kNw"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                         <color key="tintColor" name="Ciano"/>
                                     </toolbar>
@@ -1528,10 +1532,10 @@
             </objects>
             <point key="canvasLocation" x="5574" y="-286"/>
         </scene>
-        <!--Templates-->
+        <!--Pronto!-->
         <scene sceneID="2OK-h4-Csh">
             <objects>
-                <viewController id="V3N-jc-UXa" customClass="TemplatesPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V3N-jc-UXa" customClass="ProntoPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ajt-X1-vdq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1542,54 +1546,35 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpI-dk-P7T">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 6 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnz-2e-HuP">
-                                                <rect key="frame" x="20" y="15" width="350" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu currículo está concluído!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kr-A0-UF5">
+                                                <rect key="frame" x="20" y="20" width="350" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kr-A0-UF5">
-                                                <rect key="frame" x="20" y="48" width="350" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWe-5R-FMO">
-                                                <rect key="frame" x="10" y="92" width="187" height="254"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="modelo1" imagePlacement="top" title="Simples" imagePadding="5">
-                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Le-XS-0Wi">
-                                                <rect key="frame" x="193" y="92.000000000000014" width="187" height="253.33333333333337"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="modelo2" imagePlacement="top" title="Com bordinha" imagePadding="5">
-                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                                </buttonConfiguration>
-                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWM-dx-9TE">
+                                                <rect key="frame" x="40" y="74" width="310" height="456"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" name="Fundo"/>
                                         <constraints>
-                                            <constraint firstItem="yWe-5R-FMO" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="10" id="3Lj-aX-sd5"/>
+                                            <constraint firstItem="sWM-dx-9TE" firstAttribute="top" secondItem="3Kr-A0-UF5" secondAttribute="bottom" constant="25" id="5ZU-fv-tZj"/>
                                             <constraint firstItem="3Kr-A0-UF5" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="20" id="6eH-8p-aXl"/>
-                                            <constraint firstAttribute="trailing" secondItem="Nnz-2e-HuP" secondAttribute="trailing" constant="20" id="9XX-y8-4v0"/>
-                                            <constraint firstItem="Nnz-2e-HuP" firstAttribute="top" secondItem="lpI-dk-P7T" secondAttribute="top" constant="15" id="CGI-ob-8Yc"/>
-                                            <constraint firstItem="1Le-XS-0Wi" firstAttribute="top" secondItem="3Kr-A0-UF5" secondAttribute="bottom" constant="15" id="EdF-Ak-5OM"/>
+                                            <constraint firstItem="sWM-dx-9TE" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="40" id="8B8-YO-G3F"/>
                                             <constraint firstAttribute="height" constant="570" id="FIV-k4-Vkn"/>
-                                            <constraint firstItem="Nnz-2e-HuP" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="20" id="M2D-9d-olx"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Le-XS-0Wi" secondAttribute="trailing" constant="10" id="QII-VY-5xs"/>
                                             <constraint firstAttribute="trailing" secondItem="3Kr-A0-UF5" secondAttribute="trailing" constant="20" id="TGs-X9-iLF"/>
-                                            <constraint firstItem="3Kr-A0-UF5" firstAttribute="top" secondItem="Nnz-2e-HuP" secondAttribute="bottom" constant="15" id="VRh-1W-AOn"/>
-                                            <constraint firstItem="yWe-5R-FMO" firstAttribute="top" secondItem="3Kr-A0-UF5" secondAttribute="bottom" constant="15" id="Z5W-HO-7mw"/>
+                                            <constraint firstItem="3Kr-A0-UF5" firstAttribute="top" secondItem="lpI-dk-P7T" secondAttribute="top" constant="20" id="mGu-6T-anr"/>
+                                            <constraint firstAttribute="bottom" secondItem="sWM-dx-9TE" secondAttribute="bottom" constant="40" id="rSK-Aa-kwS"/>
+                                            <constraint firstAttribute="trailing" secondItem="sWM-dx-9TE" secondAttribute="trailing" constant="40" id="zyk-gp-jJ5"/>
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-6d-7Mu">
-                                        <rect key="frame" x="0.0" y="629" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="496.33333333333326" width="390" height="44"/>
                                         <items>
-                                            <barButtonItem title="Anterior" width="113" id="1kd-Kp-NAd"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="2yJ-eZ-eFA"/>
-                                            <barButtonItem title="Concluir" width="112.66666412353516" id="ENg-xA-bqE"/>
+                                            <barButtonItem title="Compartilhar" id="fIc-cX-2Qd"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="rnl-VZ-m9S"/>
                                         </items>
                                         <color key="tintColor" name="Ciano"/>
                                     </toolbar>
@@ -1622,19 +1607,17 @@
                             <constraint firstItem="XRu-U6-4vO" firstAttribute="trailing" secondItem="otb-U4-gGN" secondAttribute="trailing" id="nZ3-CK-ehD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Templates" id="cMn-Ib-dDp">
+                    <navigationItem key="navigationItem" title="Pronto!" id="cMn-Ib-dDp">
                         <barButtonItem key="rightBarButtonItem" title="Cancelar" id="dHz-na-YdO">
                             <color key="tintColor" name="Ciano"/>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="390" height="700"/>
                     <connections>
-                        <outlet property="botaoAnterior" destination="1kd-Kp-NAd" id="Kc7-bE-1H8"/>
-                        <outlet property="botaoConcluir" destination="ENg-xA-bqE" id="gAG-1a-3L3"/>
-                        <outlet property="cancelarBotao" destination="dHz-na-YdO" id="l7u-xh-3un"/>
-                        <outlet property="primeiroModelo" destination="yWe-5R-FMO" id="Drk-R6-WHT"/>
-                        <outlet property="scrollView" destination="XRu-U6-4vO" id="Rau-cl-ZX5"/>
-                        <outlet property="segundoModelo" destination="1Le-XS-0Wi" id="YOi-p2-eYt"/>
+                        <outlet property="botaoCompartilhar" destination="fIc-cX-2Qd" id="RHd-vI-iXn"/>
+                        <outlet property="cancelarBotao" destination="dHz-na-YdO" id="TiW-cO-Szk"/>
+                        <outlet property="pdfView" destination="sWM-dx-9TE" id="Ztq-MP-m1i"/>
+                        <outlet property="scrollView" destination="XRu-U6-4vO" id="sAj-Vp-j7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahk-A1-fih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1662,6 +1645,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

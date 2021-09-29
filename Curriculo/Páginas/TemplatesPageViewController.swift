@@ -13,13 +13,18 @@ class TemplatesPageViewController: UIViewController {
     @IBOutlet var botaoConcluir: UIBarButtonItem!
     @IBOutlet var primeiroModelo: UIButton!
     @IBOutlet var segundoModelo: UIButton!
+    
+    @IBSegueAction func mudaPagina(_ coder: NSCoder) -> ProntoPageViewController? {
+        return ProntoPageViewController(coder: coder)
+    }
+    
     //Dicionário
     let defaults = UserDefaults.standard
     var dictionary: [String : Any] = [:]  //Dictionary which you want to save
     //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
     
-    
     @IBOutlet var cancelarBotao: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +38,10 @@ class TemplatesPageViewController: UIViewController {
         cancelarBotao.target = self
         cancelarBotao.style = .plain
         
+        //        botaoConcluir.action = #selector(shareAction)
+        botaoConcluir.target = self
+        botaoConcluir.style = .plain
+        
         primeiroModelo.addTarget(self, action: #selector(acaoModelo1), for: .touchUpInside)
         segundoModelo.addTarget(self, action: #selector(acaoModelo2), for: .touchUpInside)
         //Dicionário
@@ -42,7 +51,7 @@ class TemplatesPageViewController: UIViewController {
         
         
     }
-
+    
     //Navegação
     @objc func changeViewController(){
         
@@ -54,7 +63,6 @@ class TemplatesPageViewController: UIViewController {
             }
         })
     }
-<<<<<<< Updated upstream
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -109,37 +117,67 @@ class TemplatesPageViewController: UIViewController {
         segundoModelo.isSelected = !segundoModelo.isSelected
         
     }
-<<<<<<< Updated upstream
-=======
-    @objc func shareAction() {
-      // 1
-      guard
-        let title = flyerTextEntry.text,
-        let body = bodyTextView.text,
-        let contact = contactTextView.text,
-        let email = emailTextView.text,
-        let local = localTextView.text,
-        let links = linksTextView.text
-
-        else {
-          // 2
-          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-          present(alert, animated: true, completion: nil)
-          return
-      }
-      
-      // 3
-      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
-      let pdfData = pdfCreator.createFlyer()
-      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
-      present(vc, animated: true, completion: nil)
-    }
-
->>>>>>> Stashed changes
-
-
-=======
->>>>>>> Stashed changes
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "previewSegue" {
+//            guard let vc = segue.destination as? ProntoPageViewController else { return }
+//            
+//            if let nome = dictionary["Nome"]!,
+//               let nascimento = dictionary["Data"]!,
+//               let tel = dictionary["Tel"]!,
+//               let local = dictionary["Local"]!,
+//               let email = dictionary["Email"]!,
+//               let link = dictionary["Link"]!,
+//               let objetivoProf = dictionary["Objetivo"]!,
+//               let resumoProf = dictionary["Resumo"]!,
+//               let nomeEmp = dictionary["NomeEmpresa"]!,
+//               let cargoEmp = dictionary["NomeCargo"]!,
+//               let dataIniEmp = dictionary["EmpregoDataIni"]!,
+//               let dataFimEmp = dictionary["EmpregoDataFim"]!,
+//               let detalhesEmp = dictionary["Detalhes"]!,
+//               let nomeInst = dictionary["NomeInst"]!,
+//               let cursoInst = dictionary["NomeCurso"]!,
+//               let dataIniInst = dictionary["InstDataIni"]!,
+//               let dataFimInst = dictionary["InstDataFim"]!,
+//               let realizacao = dictionary["NomeConq"]!,
+//               let descReal = dictionary["DescConq"]!,
+//               let dataIniReal = dictionary["ConqDataIni"]!,
+//               let dataFimReal = dictionary["ConqDataFim"]!,
+//               let deficiencia = dictionary["NomeDef"]!,
+//               let deficienciaObs = dictionary["ObsDef"]!,
+//               let modelo = dictionary["Modelo"]!
+//                vc.documentData = pdfCreator.createFlyer()
+//        }
+//    }
 }
+
+//    @objc func shareAction() {
+//      // 1
+//      guard
+//        let title = flyerTextEntry.text,
+//        let body = bodyTextView.text,
+//        let contact = contactTextView.text,
+//        let email = emailTextView.text,
+//        let local = localTextView.text,
+//        let links = linksTextView.text
+//
+//        else {
+//          // 2
+//          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
+//          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//          present(alert, animated: true, completion: nil)
+//          return
+//      }
+//
+//      // 3
+//      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
+//      let pdfData = pdfCreator.createFlyer()
+//      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+//      present(vc, animated: true, completion: nil)
+//    }
+
+
+
+
+
+
 

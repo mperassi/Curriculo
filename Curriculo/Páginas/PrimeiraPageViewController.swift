@@ -249,7 +249,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            cell.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
