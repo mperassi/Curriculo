@@ -164,11 +164,15 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.text = "Objetivo profissional"
             cell.selectionStyle = .none
             
-            //MARK: Acessibilidade - Objetivo profissional
-            cell.largeTextLabel.isAccessibilityElement = true
-            cell.largeTextLabel.accessibilityLabel = "Objetivo profissional"
-            
-            cell.accessibilityElements = [cell.largeTextLabel]
+            if cell.largeTextLabel.text == "Objetivo profissional" {
+                cell.largeTextLabel.isAccessibilityElement = true
+                cell.largeTextLabel.accessibilityLabel = "Objetivo Profissional"
+                
+                cell.largeTextView?.isAccessibilityElement = true
+                cell.largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional"
+                
+            }
+                
 
             
             return cell
@@ -179,10 +183,16 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.selectionStyle = .none
             
             //MARK: Acessibilidade - Resumo profissional
-            cell.largeTextLabel.isAccessibilityElement = true
-            cell.largeTextLabel.accessibilityLabel = "Resumo profissinoal"
+            if cell.largeTextLabel.text == "Resumo profissional" {
+                cell.largeTextLabel.isAccessibilityElement = true
+                cell.largeTextLabel.accessibilityLabel = "Resumo Profissional"
+                
+                cell.largeTextView?.isAccessibilityElement = true
+                cell.largeTextView?.accessibilityLabel = "Digite aqui seu resumo profissional"
+                
+            }
             
-            cell.accessibilityElements = [cell.largeTextLabel]
+//            cell.accessibilityElements = [cell.largeTextLabel!]
 
             return cell
             

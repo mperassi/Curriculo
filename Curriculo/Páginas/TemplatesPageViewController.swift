@@ -38,6 +38,16 @@ class TemplatesPageViewController: UIViewController {
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
             dictionary = userDataDictionary
+            
+            //MARK: Acessibilidade - Descrição dos modelos de currículo
+            primeiroModelo.isAccessibilityElement = true
+            segundoModelo.isAccessibilityElement = true
+        
+            
+            primeiroModelo.accessibilityLabel = "Este currículo é um modelo simples no qual o seu nome está centralizado. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+         
+            segundoModelo.accessibilityLabel = "Este currículo é um modelo personalizado no qual possui semi formas geométricas pequenas no canto superior direito da página, no canto inferior direito, e na esquerda levemente abaixo do centro. Seu nome está centralizado como título da página. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+            
         }
         
         
@@ -54,7 +64,7 @@ class TemplatesPageViewController: UIViewController {
             }
         })
     }
-<<<<<<< Updated upstream
+
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -85,8 +95,7 @@ class TemplatesPageViewController: UIViewController {
             segundoModelo.isSelected = false
             self.dictionary["Modelo"] = "Modelo 1 escolhido"
             print(dictionary)
-            
-            
+                        
         } else{
             primeiroModelo.setImage(UIImage(named: "modelo1.png"), for: .normal)
             
@@ -109,37 +118,30 @@ class TemplatesPageViewController: UIViewController {
         segundoModelo.isSelected = !segundoModelo.isSelected
         
     }
-<<<<<<< Updated upstream
-=======
-    @objc func shareAction() {
-      // 1
-      guard
-        let title = flyerTextEntry.text,
-        let body = bodyTextView.text,
-        let contact = contactTextView.text,
-        let email = emailTextView.text,
-        let local = localTextView.text,
-        let links = linksTextView.text
 
-        else {
-          // 2
-          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-          present(alert, animated: true, completion: nil)
-          return
+    @objc func shareAction() {
+//      // 1
+//      guard
+//        let title = flyerTextEntry.text,
+//        let body = bodyTextView.text,
+//        let contact = contactTextView.text,
+//        let email = emailTextView.text,
+//        let local = localTextView.text,
+//        let links = linksTextView.text
+//
+//        else {
+//          // 2
+//          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
+//          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//          present(alert, animated: true, completion: nil)
+//          return
       }
       
-      // 3
-      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
-      let pdfData = pdfCreator.createFlyer()
-      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
-      present(vc, animated: true, completion: nil)
+//      // 3
+//      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
+//      let pdfData = pdfCreator.createFlyer()
+//      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+//      present(vc, animated: true, completion: nil)
     }
-
->>>>>>> Stashed changes
-
-
-=======
->>>>>>> Stashed changes
-}
+//}
 

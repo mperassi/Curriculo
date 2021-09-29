@@ -20,9 +20,9 @@ class NovaTableViewCell: UITableViewCell {
        novaLabel.accessibilityLabel = "Detalhes"
 
       novaTextView.isAccessibilityElement = true
-      novaTextView.accessibilityLabel = "Digite aqui detalhes da sua experiência acadêmica ou profissional"
+      novaTextView.accessibilityLabel = "Digite aqui detalhes da sua experiência profissional"
         
-        self.accessibilityElements = [novaLabel, novaTextView!]
+        self.accessibilityElements = [novaLabel!, novaTextView!]
 
     }
 

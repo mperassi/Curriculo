@@ -87,6 +87,7 @@ class TerceiraPageViewController: UIViewController {
         self.dictionary["EmpregoDataIni"] = dataini
         self.dictionary["EmpregoDataFim"] = datafim
         
+        
         tableView.dequeueReusableCell(withIdentifier: "novaTextCell")
         let indexPath3 = NSIndexPath(row: 3, section: 0)
         let multiCell3 = tableView.cellForRow(at: indexPath3 as IndexPath) as? NovaTableViewCell
@@ -194,8 +195,8 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
            
-            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
-
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+            
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -211,18 +212,16 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeObs.text = "*Obrigatório"
             //            print(dictValue)  // Printing the value
             
-            //MARK: Acessibilidade - Cargo na empresa
+            //MARK: Acessibilidade - Detalhes da empresa
             cell.nomeLabel.isAccessibilityElement = true
             cell.nomeLabel.accessibilityLabel = "Cargo"
             
             cell.nomeField.isAccessibilityElement = true
-            cell.nomeField.accessibilityLabel = "Digite o cargo na empresa"
+            cell.nomeField.accessibilityLabel = "Digite o cargo que você ocupa ou ocupava na sua experiência profissional ou acadêmica"
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            cell.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
-
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
