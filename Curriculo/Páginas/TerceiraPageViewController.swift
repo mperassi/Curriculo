@@ -194,7 +194,7 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
            
-            self.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
 
             
             if UIAccessibility.isVoiceOverRunning {
@@ -221,7 +221,7 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            self.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
+            cell.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
 
             
             if UIAccessibility.isVoiceOverRunning {

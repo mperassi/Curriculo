@@ -185,7 +185,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.isAccessibilityElement = true
                 cell.nomeField.accessibilityLabel = "Digite uma realização profissional"
                 
-                self.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
+                cell.accessibilityElements = [cell.nomeLabel, cell.nomeField, cell.nomeObs]
 
                 
                 if UIAccessibility.isVoiceOverRunning {
@@ -226,7 +226,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeObs.isAccessibilityElement = true
                 cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
                 
-                self.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+                cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
                 
                 if UIAccessibility.isVoiceOverRunning {
                     cell.nomeField.placeholder = ""
