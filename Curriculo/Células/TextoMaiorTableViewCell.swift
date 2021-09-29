@@ -16,20 +16,6 @@ class TextoMaiorTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        if largeTextLabel.text == "Objetivo profissional" {
-            largeTextLabel.isAccessibilityElement = true
-            largeTextLabel.accessibilityLabel = "Objetivo Profissional"
-            
-            largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional. Limite máximo de 300 caracteres"
-            
-        } else {
-            largeTextLabel.isAccessibilityElement = true
-            largeTextLabel.accessibilityLabel = "Resumo profissional"
-            
-            largeTextView?.isAccessibilityElement = true
-//            largeTextView.accessibilityLabel = "Digite aqui seu resumo profissional"
-            
-        }
         
     }
     

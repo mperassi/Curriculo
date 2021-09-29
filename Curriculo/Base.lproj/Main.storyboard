@@ -106,7 +106,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -322,7 +322,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="784" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="776.33333333333337" width="390" height="49"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
                                             <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
@@ -1282,7 +1282,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
                                             <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E">
                                                 <connections>
-                                                    <segue destination="lto-xi-Zj4" kind="show" id="Plw-hw-mkc"/>
+                                                    <segue destination="lto-xi-Zj4" kind="show" destinationCreationSelector="mudaPagina:" id="Plw-hw-mkc"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -1436,49 +1436,78 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-8O-KHC">
-                                                <rect key="frame" x="20" y="48" width="350" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="25" y="146" width="340" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" name="Ciano"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vy-Bq-thK">
-                                                <rect key="frame" x="10" y="92" width="187" height="254"/>
+                                                <rect key="frame" x="10" y="185" width="187" height="254"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="modelo1" imagePlacement="top" title="Simples" imagePadding="5">
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-wJ-MLT">
-                                                <rect key="frame" x="193" y="92" width="187" height="254"/>
+                                                <rect key="frame" x="193" y="185" width="187" height="254"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="modelo2" imagePlacement="top" title="Formas" imagePadding="5">
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do currículo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsJ-ma-0dx">
+                                                <rect key="frame" x="25" y="48" width="340" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" name="Ciano"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E6D-Oi-tgl">
+                                                <rect key="frame" x="30" y="82" width="315" height="34"/>
+                                                <color key="backgroundColor" name="TextField"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbE-Lg-DbM">
+                                                <rect key="frame" x="275" y="52.666666666666664" width="70" height="14.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="fn3-gW-gxQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="Campos"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="Fundo"/>
                                         <constraints>
                                             <constraint firstItem="4vy-Bq-thK" firstAttribute="top" secondItem="XFL-8O-KHC" secondAttribute="bottom" constant="15" id="1so-aF-4hK"/>
+                                            <constraint firstItem="E6D-Oi-tgl" firstAttribute="top" secondItem="HsJ-ma-0dx" secondAttribute="bottom" constant="10" id="95Z-NK-6h6"/>
                                             <constraint firstItem="Ley-tv-QgF" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="20" id="INR-Nc-gAq"/>
                                             <constraint firstItem="Ley-tv-QgF" firstAttribute="top" secondItem="wef-wA-QaY" secondAttribute="top" constant="15" id="NRU-Ib-4nr"/>
+                                            <constraint firstItem="HsJ-ma-0dx" firstAttribute="top" secondItem="Ley-tv-QgF" secondAttribute="bottom" constant="15" id="P5g-ks-oEF"/>
                                             <constraint firstAttribute="trailing" secondItem="Ley-tv-QgF" secondAttribute="trailing" constant="20" id="X5x-xk-3un"/>
-                                            <constraint firstAttribute="trailing" secondItem="XFL-8O-KHC" secondAttribute="trailing" constant="20" id="Y3a-aw-x1y"/>
+                                            <constraint firstAttribute="trailing" secondItem="XFL-8O-KHC" secondAttribute="trailing" constant="25" id="Y3a-aw-x1y"/>
+                                            <constraint firstItem="GbE-Lg-DbM" firstAttribute="trailing" secondItem="E6D-Oi-tgl" secondAttribute="trailing" id="dTi-tx-5lV"/>
                                             <constraint firstItem="4vy-Bq-thK" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="10" id="gWg-8P-4Mo"/>
-                                            <constraint firstItem="XFL-8O-KHC" firstAttribute="top" secondItem="Ley-tv-QgF" secondAttribute="bottom" constant="15" id="jCR-rG-Idl"/>
+                                            <constraint firstItem="E6D-Oi-tgl" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="30" id="hrW-7V-Z8V"/>
+                                            <constraint firstAttribute="trailing" secondItem="E6D-Oi-tgl" secondAttribute="trailing" constant="45" id="j4u-Oy-7Fl"/>
                                             <constraint firstAttribute="height" constant="570" id="jm6-fp-MFM"/>
-                                            <constraint firstItem="XFL-8O-KHC" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="20" id="xr0-wW-uOI"/>
+                                            <constraint firstItem="E6D-Oi-tgl" firstAttribute="top" secondItem="GbE-Lg-DbM" secondAttribute="bottom" constant="15" id="r9I-60-Cez"/>
+                                            <constraint firstItem="XFL-8O-KHC" firstAttribute="top" secondItem="E6D-Oi-tgl" secondAttribute="bottom" constant="30" id="wAa-6w-T4c"/>
+                                            <constraint firstAttribute="trailing" secondItem="HsJ-ma-0dx" secondAttribute="trailing" constant="25" id="x1Z-NR-gck"/>
+                                            <constraint firstItem="XFL-8O-KHC" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="25" id="xr0-wW-uOI"/>
                                             <constraint firstAttribute="trailing" secondItem="BY7-wJ-MLT" secondAttribute="trailing" constant="10" id="ycR-Sv-f27"/>
                                             <constraint firstItem="BY7-wJ-MLT" firstAttribute="top" secondItem="XFL-8O-KHC" secondAttribute="bottom" constant="15" id="yuy-Tm-vEC"/>
+                                            <constraint firstItem="HsJ-ma-0dx" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="25" id="zUu-mM-4o2"/>
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBo-O8-VLi">
-                                        <rect key="frame" x="0.0" y="505.33333333333326" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="514.33333333333337" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="9R6-uA-NyZ"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="gSX-dh-sdx"/>
                                             <barButtonItem title="Concluir" width="112.66666412353516" id="yLS-Rq-KXx">
                                                 <connections>
-                                                    <segue destination="V3N-jc-UXa" kind="show" identifier="previewSegue" destinationCreationSelector="mudaPagina:" id="Qzm-H4-kNw"/>
+                                                    <segue destination="V3N-jc-UXa" kind="show" identifier="previewSegue" id="MMp-Sc-OZX"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -1521,7 +1550,7 @@
                     <size key="freeformSize" width="390" height="700"/>
                     <connections>
                         <outlet property="botaoAnterior" destination="9R6-uA-NyZ" id="D9y-GC-eDO"/>
-                        <outlet property="botaoConcluir" destination="yLS-Rq-KXx" id="iid-q4-42b"/>
+                        <outlet property="botaoConcluir" destination="yLS-Rq-KXx" id="0Qa-Uu-dFH"/>
                         <outlet property="cancelarBotao" destination="ClX-xF-F0U" id="eGd-fn-bXq"/>
                         <outlet property="primeiroModelo" destination="4vy-Bq-thK" id="aQ4-oO-EWl"/>
                         <outlet property="scrollView" destination="MNA-yQ-v2l" id="LFd-jc-XBq"/>
@@ -1552,7 +1581,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWM-dx-9TE">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWM-dx-9TE" customClass="PDFView">
                                                 <rect key="frame" x="40" y="74" width="310" height="456"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                             </view>
@@ -1570,7 +1599,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-6d-7Mu">
-                                        <rect key="frame" x="0.0" y="496.33333333333326" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="2yJ-eZ-eFA"/>
                                             <barButtonItem title="Compartilhar" id="fIc-cX-2Qd"/>

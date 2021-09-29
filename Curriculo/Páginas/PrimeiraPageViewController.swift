@@ -260,7 +260,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         } else if indexPath.row == 4 {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "E-mail"
-            cell.nomeField.keyboardType = .emailAddress
+            cell.nomeField.keyboardType = .twitter
             cell.nomeField.placeholder = "Exemplo: email@exemplo.com"
             cell.nomeObs.text = "*Obrigatório"
             
@@ -286,7 +286,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "Links adicionais"
             cell.nomeField.placeholder = "Exemplo: LinkedIn, Behance, Github"
-            cell.nomeField.keyboardType = .URL
+            cell.nomeField.keyboardType = .webSearch
             cell.nomeObs.text = " "
             
             //MARK: Acessibilidade - Links adicionais
