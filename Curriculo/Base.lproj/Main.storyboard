@@ -382,7 +382,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -618,7 +618,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -1282,7 +1282,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
                                             <barButtonItem title="Próximo" width="112.66666412353516" id="GA5-2d-e4E">
                                                 <connections>
-                                                    <segue destination="nLl-ta-YLc" kind="show" destinationCreationSelector="mudaPagina:" id="7As-G4-Nwu"/>
+                                                    <segue destination="lto-xi-Zj4" kind="show" id="Plw-hw-mkc"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -1333,119 +1333,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ow-Nq-z0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4527.6923076923076" y="-286.49289099526067"/>
-        </scene>
-        <!--Templates-->
-        <scene sceneID="N9n-Ru-OL6">
-            <objects>
-                <viewController id="nLl-ta-YLc" customClass="TemplatesPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0rm-IQ-Hap">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-fS-HOr">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-01-ERQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 6 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8J-Pd-xDV">
-                                                <rect key="frame" x="20" y="15" width="350" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-Hl-bpe">
-                                                <rect key="frame" x="20" y="48" width="350" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modelo1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-ii-xYQ">
-                                                <rect key="frame" x="28" y="92" width="155" height="210"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="210" id="DaS-qJ-HvB"/>
-                                                    <constraint firstAttribute="width" constant="155" id="Lv9-e1-pNb"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modelo2" translatesAutoresizingMaskIntoConstraints="NO" id="p4i-bw-e4M">
-                                                <rect key="frame" x="208" y="92" width="155" height="210"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="155" id="LN9-f8-l2u"/>
-                                                    <constraint firstAttribute="height" constant="210" id="cak-Oh-Knz"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" name="Fundo"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="570" id="E8k-Vt-xo0"/>
-                                            <constraint firstItem="T8J-Pd-xDV" firstAttribute="top" secondItem="ytb-01-ERQ" secondAttribute="top" constant="15" id="FXv-15-dNM"/>
-                                            <constraint firstAttribute="trailing" secondItem="T8J-Pd-xDV" secondAttribute="trailing" constant="20" id="Hhs-1y-CUK"/>
-                                            <constraint firstItem="p4i-bw-e4M" firstAttribute="leading" secondItem="vq7-ii-xYQ" secondAttribute="trailing" constant="25" id="NcT-vQ-XKh"/>
-                                            <constraint firstItem="WZ2-Hl-bpe" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" constant="20" id="RZ2-B1-ZR3"/>
-                                            <constraint firstItem="WZ2-Hl-bpe" firstAttribute="top" secondItem="T8J-Pd-xDV" secondAttribute="bottom" constant="15" id="TTl-4L-xQQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="WZ2-Hl-bpe" secondAttribute="trailing" constant="20" id="Uqo-D2-k5R"/>
-                                            <constraint firstItem="vq7-ii-xYQ" firstAttribute="top" secondItem="WZ2-Hl-bpe" secondAttribute="bottom" constant="15" id="apJ-zZ-NAj"/>
-                                            <constraint firstItem="vq7-ii-xYQ" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" constant="28" id="gFS-Dz-OkS"/>
-                                            <constraint firstItem="T8J-Pd-xDV" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" constant="20" id="rqn-nm-cR2"/>
-                                            <constraint firstItem="p4i-bw-e4M" firstAttribute="top" secondItem="WZ2-Hl-bpe" secondAttribute="bottom" constant="15" id="y6Z-Si-Agw"/>
-                                        </constraints>
-                                    </view>
-                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-1t-ksY">
-                                        <rect key="frame" x="0.0" y="485.33333333333331" width="390" height="43.999999999999943"/>
-                                        <items>
-                                            <barButtonItem title="Anterior" width="113" id="gyf-mG-ZYC"/>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="tDh-PQ-9xR"/>
-                                            <barButtonItem title="Concluir" width="112.66666412353516" id="FQr-N8-swl"/>
-                                        </items>
-                                        <color key="tintColor" name="Ciano"/>
-                                    </toolbar>
-                                </subviews>
-                                <color key="backgroundColor" name="Fundo"/>
-                                <constraints>
-                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="width" secondItem="L0l-fS-HOr" secondAttribute="width" id="638-p0-GYW"/>
-                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="bottom" secondItem="bPO-ze-YpU" secondAttribute="bottom" constant="-48" id="AWd-Yf-9kR"/>
-                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="leading" secondItem="bPO-ze-YpU" secondAttribute="leading" id="AyZ-Qb-OiL"/>
-                                    <constraint firstItem="UyG-1t-ksY" firstAttribute="trailing" secondItem="ytb-01-ERQ" secondAttribute="trailing" id="Cq6-QE-vnb"/>
-                                    <constraint firstAttribute="width" constant="390" id="Iqg-qY-s5j"/>
-                                    <constraint firstAttribute="height" constant="700" id="YDy-7D-fYg"/>
-                                    <constraint firstItem="UyG-1t-ksY" firstAttribute="leading" secondItem="ytb-01-ERQ" secondAttribute="leading" id="oYT-wi-rtE"/>
-                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="width" secondItem="L08-sr-8dV" secondAttribute="width" id="pe0-ct-bz4"/>
-                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="trailing" secondItem="bPO-ze-YpU" secondAttribute="trailing" id="tm7-np-exn"/>
-                                    <constraint firstItem="L08-sr-8dV" firstAttribute="bottom" secondItem="UyG-1t-ksY" secondAttribute="bottom" constant="27" id="zq7-wi-vx6"/>
-                                    <constraint firstItem="ytb-01-ERQ" firstAttribute="top" secondItem="bPO-ze-YpU" secondAttribute="top" id="zug-dO-sQ1"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="bPO-ze-YpU"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="L08-sr-8dV"/>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="uML-Lr-vpG"/>
-                        <color key="backgroundColor" name="Fundo"/>
-                        <color key="tintColor" name="Ciano"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="L0l-fS-HOr" secondAttribute="bottom" id="W13-ke-cMj"/>
-                            <constraint firstItem="L0l-fS-HOr" firstAttribute="leading" secondItem="uML-Lr-vpG" secondAttribute="leading" id="cee-px-hhy"/>
-                            <constraint firstItem="L0l-fS-HOr" firstAttribute="trailing" secondItem="uML-Lr-vpG" secondAttribute="trailing" id="nBB-ud-XNw"/>
-                            <constraint firstItem="L0l-fS-HOr" firstAttribute="top" secondItem="0rm-IQ-Hap" secondAttribute="top" id="pBK-vn-MpE"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Templates" id="nE8-2e-Pd4">
-                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="9Qb-qP-klJ">
-                            <color key="tintColor" name="Ciano"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <size key="freeformSize" width="390" height="700"/>
-                    <connections>
-                        <outlet property="botaoAnterior" destination="gyf-mG-ZYC" id="UvF-bp-yU4"/>
-                        <outlet property="botaoConcluir" destination="FQr-N8-swl" id="fM7-28-2Fs"/>
-                        <outlet property="cancelarBotao" destination="9Qb-qP-klJ" id="rI8-ce-EYG"/>
-                        <outlet property="primeiroModelo" destination="vq7-ii-xYQ" id="6HI-8A-E0a"/>
-                        <outlet property="scrollView" destination="L0l-fS-HOr" id="y2F-Mc-6Z0"/>
-                        <outlet property="segundoModelo" destination="p4i-bw-e4M" id="hAd-pu-SGS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="08U-5P-TRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5453.8461538461534" y="-286.49289099526067"/>
         </scene>
         <!--Currículos-->
         <scene sceneID="fbz-8h-djP">
@@ -1528,12 +1415,238 @@
             </objects>
             <point key="canvasLocation" x="137" y="-286"/>
         </scene>
+        <!--Templates-->
+        <scene sceneID="aOp-UB-siE">
+            <objects>
+                <viewController id="lto-xi-Zj4" customClass="TemplatesPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KNe-mm-wKu">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="MNA-yQ-v2l">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wef-wA-QaY">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 6 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ley-tv-QgF">
+                                                <rect key="frame" x="20" y="15" width="350" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-8O-KHC">
+                                                <rect key="frame" x="20" y="48" width="350" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vy-Bq-thK">
+                                                <rect key="frame" x="10" y="92" width="187" height="254"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="modelo1" imagePlacement="top" title="Simples" imagePadding="5">
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-wJ-MLT">
+                                                <rect key="frame" x="193" y="92.000000000000014" width="187" height="253.33333333333337"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="modelo2" imagePlacement="top" title="Com bordinha" imagePadding="5">
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstItem="4vy-Bq-thK" firstAttribute="top" secondItem="XFL-8O-KHC" secondAttribute="bottom" constant="15" id="1so-aF-4hK"/>
+                                            <constraint firstItem="Ley-tv-QgF" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="20" id="INR-Nc-gAq"/>
+                                            <constraint firstItem="Ley-tv-QgF" firstAttribute="top" secondItem="wef-wA-QaY" secondAttribute="top" constant="15" id="NRU-Ib-4nr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ley-tv-QgF" secondAttribute="trailing" constant="20" id="X5x-xk-3un"/>
+                                            <constraint firstAttribute="trailing" secondItem="XFL-8O-KHC" secondAttribute="trailing" constant="20" id="Y3a-aw-x1y"/>
+                                            <constraint firstItem="4vy-Bq-thK" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="10" id="gWg-8P-4Mo"/>
+                                            <constraint firstItem="XFL-8O-KHC" firstAttribute="top" secondItem="Ley-tv-QgF" secondAttribute="bottom" constant="15" id="jCR-rG-Idl"/>
+                                            <constraint firstAttribute="height" constant="570" id="jm6-fp-MFM"/>
+                                            <constraint firstItem="XFL-8O-KHC" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" constant="20" id="xr0-wW-uOI"/>
+                                            <constraint firstAttribute="trailing" secondItem="BY7-wJ-MLT" secondAttribute="trailing" constant="10" id="ycR-Sv-f27"/>
+                                            <constraint firstItem="BY7-wJ-MLT" firstAttribute="top" secondItem="XFL-8O-KHC" secondAttribute="bottom" constant="15" id="yuy-Tm-vEC"/>
+                                        </constraints>
+                                    </view>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBo-O8-VLi">
+                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <items>
+                                            <barButtonItem title="Anterior" width="113" id="9R6-uA-NyZ"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="gSX-dh-sdx"/>
+                                            <barButtonItem title="Concluir" width="112.66666412353516" id="yLS-Rq-KXx"/>
+                                        </items>
+                                        <color key="tintColor" name="Ciano"/>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="wef-wA-QaY" firstAttribute="top" secondItem="CqH-wa-hcZ" secondAttribute="top" id="4zP-vZ-jQC"/>
+                                    <constraint firstItem="NBo-O8-VLi" firstAttribute="leading" secondItem="wef-wA-QaY" secondAttribute="leading" id="AJO-in-ehl"/>
+                                    <constraint firstItem="MRc-jf-6kE" firstAttribute="bottom" secondItem="NBo-O8-VLi" secondAttribute="bottom" constant="27" id="Mr4-W4-6hk"/>
+                                    <constraint firstItem="wef-wA-QaY" firstAttribute="bottom" secondItem="CqH-wa-hcZ" secondAttribute="bottom" constant="-48" id="QYw-6l-035"/>
+                                    <constraint firstItem="wef-wA-QaY" firstAttribute="leading" secondItem="CqH-wa-hcZ" secondAttribute="leading" id="fga-b0-3vQ"/>
+                                    <constraint firstAttribute="width" constant="390" id="ft6-LX-wlX"/>
+                                    <constraint firstItem="wef-wA-QaY" firstAttribute="trailing" secondItem="CqH-wa-hcZ" secondAttribute="trailing" id="hLk-jj-FoM"/>
+                                    <constraint firstItem="wef-wA-QaY" firstAttribute="width" secondItem="MRc-jf-6kE" secondAttribute="width" id="jKC-zK-fUj"/>
+                                    <constraint firstItem="wef-wA-QaY" firstAttribute="width" secondItem="MNA-yQ-v2l" secondAttribute="width" id="lGx-1y-jEv"/>
+                                    <constraint firstAttribute="height" constant="700" id="tbv-jd-rnu"/>
+                                    <constraint firstItem="NBo-O8-VLi" firstAttribute="trailing" secondItem="wef-wA-QaY" secondAttribute="trailing" id="veP-kn-ugw"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CqH-wa-hcZ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="MRc-jf-6kE"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nvs-gs-HP0"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstItem="MNA-yQ-v2l" firstAttribute="leading" secondItem="Nvs-gs-HP0" secondAttribute="leading" id="2eK-IA-WBH"/>
+                            <constraint firstItem="MNA-yQ-v2l" firstAttribute="trailing" secondItem="Nvs-gs-HP0" secondAttribute="trailing" id="GEt-aa-VTr"/>
+                            <constraint firstAttribute="bottom" secondItem="MNA-yQ-v2l" secondAttribute="bottom" id="HVt-sS-spJ"/>
+                            <constraint firstItem="MNA-yQ-v2l" firstAttribute="top" secondItem="KNe-mm-wKu" secondAttribute="top" id="cEO-f7-hSu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Templates" id="Z64-JB-LpF">
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="ClX-xF-F0U">
+                            <color key="tintColor" name="Ciano"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="700"/>
+                    <connections>
+                        <outlet property="botaoAnterior" destination="9R6-uA-NyZ" id="D9y-GC-eDO"/>
+                        <outlet property="botaoConcluir" destination="yLS-Rq-KXx" id="iid-q4-42b"/>
+                        <outlet property="cancelarBotao" destination="ClX-xF-F0U" id="eGd-fn-bXq"/>
+                        <outlet property="primeiroModelo" destination="4vy-Bq-thK" id="aQ4-oO-EWl"/>
+                        <outlet property="scrollView" destination="MNA-yQ-v2l" id="LFd-jc-XBq"/>
+                        <outlet property="segundoModelo" destination="BY7-wJ-MLT" id="IUa-af-Dbt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFd-XF-pLv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5574" y="-286"/>
+        </scene>
+        <!--Templates-->
+        <scene sceneID="2OK-h4-Csh">
+            <objects>
+                <viewController id="V3N-jc-UXa" customClass="TemplatesPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ajt-X1-vdq">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="XRu-U6-4vO">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpI-dk-P7T">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 6 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnz-2e-HuP">
+                                                <rect key="frame" x="20" y="15" width="350" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kr-A0-UF5">
+                                                <rect key="frame" x="20" y="48" width="350" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWe-5R-FMO">
+                                                <rect key="frame" x="10" y="92" width="187" height="254"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="modelo1" imagePlacement="top" title="Simples" imagePadding="5">
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Le-XS-0Wi">
+                                                <rect key="frame" x="193" y="92.000000000000014" width="187" height="253.33333333333337"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="modelo2" imagePlacement="top" title="Com bordinha" imagePadding="5">
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstItem="yWe-5R-FMO" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="10" id="3Lj-aX-sd5"/>
+                                            <constraint firstItem="3Kr-A0-UF5" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="20" id="6eH-8p-aXl"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nnz-2e-HuP" secondAttribute="trailing" constant="20" id="9XX-y8-4v0"/>
+                                            <constraint firstItem="Nnz-2e-HuP" firstAttribute="top" secondItem="lpI-dk-P7T" secondAttribute="top" constant="15" id="CGI-ob-8Yc"/>
+                                            <constraint firstItem="1Le-XS-0Wi" firstAttribute="top" secondItem="3Kr-A0-UF5" secondAttribute="bottom" constant="15" id="EdF-Ak-5OM"/>
+                                            <constraint firstAttribute="height" constant="570" id="FIV-k4-Vkn"/>
+                                            <constraint firstItem="Nnz-2e-HuP" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" constant="20" id="M2D-9d-olx"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Le-XS-0Wi" secondAttribute="trailing" constant="10" id="QII-VY-5xs"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Kr-A0-UF5" secondAttribute="trailing" constant="20" id="TGs-X9-iLF"/>
+                                            <constraint firstItem="3Kr-A0-UF5" firstAttribute="top" secondItem="Nnz-2e-HuP" secondAttribute="bottom" constant="15" id="VRh-1W-AOn"/>
+                                            <constraint firstItem="yWe-5R-FMO" firstAttribute="top" secondItem="3Kr-A0-UF5" secondAttribute="bottom" constant="15" id="Z5W-HO-7mw"/>
+                                        </constraints>
+                                    </view>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-6d-7Mu">
+                                        <rect key="frame" x="0.0" y="629" width="390" height="44"/>
+                                        <items>
+                                            <barButtonItem title="Anterior" width="113" id="1kd-Kp-NAd"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="2yJ-eZ-eFA"/>
+                                            <barButtonItem title="Concluir" width="112.66666412353516" id="ENg-xA-bqE"/>
+                                        </items>
+                                        <color key="tintColor" name="Ciano"/>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="lpI-dk-P7T" firstAttribute="top" secondItem="8md-3h-VNl" secondAttribute="top" id="6fk-OO-aVf"/>
+                                    <constraint firstItem="lpI-dk-P7T" firstAttribute="width" secondItem="YHG-Kc-pzy" secondAttribute="width" id="7aT-nI-xvR"/>
+                                    <constraint firstItem="lpI-dk-P7T" firstAttribute="width" secondItem="XRu-U6-4vO" secondAttribute="width" id="CLe-PG-2aL"/>
+                                    <constraint firstItem="YHG-Kc-pzy" firstAttribute="bottom" secondItem="8VH-6d-7Mu" secondAttribute="bottom" constant="27" id="UdM-sc-jdd"/>
+                                    <constraint firstAttribute="width" constant="390" id="WWu-OW-QWc"/>
+                                    <constraint firstItem="8VH-6d-7Mu" firstAttribute="trailing" secondItem="lpI-dk-P7T" secondAttribute="trailing" id="bPa-wS-SSz"/>
+                                    <constraint firstItem="lpI-dk-P7T" firstAttribute="bottom" secondItem="8md-3h-VNl" secondAttribute="bottom" constant="-48" id="g2N-SP-gaO"/>
+                                    <constraint firstItem="8VH-6d-7Mu" firstAttribute="leading" secondItem="lpI-dk-P7T" secondAttribute="leading" id="onN-0x-SnJ"/>
+                                    <constraint firstItem="lpI-dk-P7T" firstAttribute="leading" secondItem="8md-3h-VNl" secondAttribute="leading" id="ukV-Nt-ZPm"/>
+                                    <constraint firstItem="lpI-dk-P7T" firstAttribute="trailing" secondItem="8md-3h-VNl" secondAttribute="trailing" id="uvc-cY-gky"/>
+                                    <constraint firstAttribute="height" constant="700" id="xgd-Yn-D9l"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="8md-3h-VNl"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="YHG-Kc-pzy"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="otb-U4-gGN"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstItem="XRu-U6-4vO" firstAttribute="top" secondItem="ajt-X1-vdq" secondAttribute="top" id="8MG-zQ-xFb"/>
+                            <constraint firstItem="XRu-U6-4vO" firstAttribute="leading" secondItem="otb-U4-gGN" secondAttribute="leading" id="Ioc-QR-EX1"/>
+                            <constraint firstAttribute="bottom" secondItem="XRu-U6-4vO" secondAttribute="bottom" id="QJS-JV-g6Z"/>
+                            <constraint firstItem="XRu-U6-4vO" firstAttribute="trailing" secondItem="otb-U4-gGN" secondAttribute="trailing" id="nZ3-CK-ehD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Templates" id="cMn-Ib-dDp">
+                        <barButtonItem key="rightBarButtonItem" title="Cancelar" id="dHz-na-YdO">
+                            <color key="tintColor" name="Ciano"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="700"/>
+                    <connections>
+                        <outlet property="botaoAnterior" destination="1kd-Kp-NAd" id="Kc7-bE-1H8"/>
+                        <outlet property="botaoConcluir" destination="ENg-xA-bqE" id="gAG-1a-3L3"/>
+                        <outlet property="cancelarBotao" destination="dHz-na-YdO" id="l7u-xh-3un"/>
+                        <outlet property="primeiroModelo" destination="yWe-5R-FMO" id="Drk-R6-WHT"/>
+                        <outlet property="scrollView" destination="XRu-U6-4vO" id="Rau-cl-ZX5"/>
+                        <outlet property="segundoModelo" destination="1Le-XS-0Wi" id="YOi-p2-eYt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahk-A1-fih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6468" y="-286"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="Ciano"/>
     <resources>
         <image name="fotoInicio" width="212" height="212"/>
         <image name="modelo1" width="163" height="218"/>
-        <image name="modelo2" width="163.66667175292969" height="217.33332824707031"/>
+        <image name="modelo2" width="163" height="217.33332824707031"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Campos">
             <color red="0.78799998760223389" green="0.20399999618530273" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
