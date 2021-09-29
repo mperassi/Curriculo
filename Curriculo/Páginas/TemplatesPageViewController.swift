@@ -11,10 +11,15 @@ class TemplatesPageViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var botaoAnterior: UIBarButtonItem!
     @IBOutlet var botaoConcluir: UIBarButtonItem!
-    @IBOutlet var primeiroModelo: UIImageView!
-    @IBOutlet var segundoModelo: UIImageView!
-    @IBOutlet var cancelarBotao: UIBarButtonItem!
+    @IBOutlet var primeiroModelo: UIButton!
+    @IBOutlet var segundoModelo: UIButton!
+    //Dicionário
+    let defaults = UserDefaults.standard
+    var dictionary: [String : Any] = [:]  //Dictionary which you want to save
+    //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
     
+    
+    @IBOutlet var cancelarBotao: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +28,8 @@ class TemplatesPageViewController: UIViewController {
         botaoAnterior.style = .plain
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
+        
+        cancelarBotao.action = #selector(cancelarAcao)
         cancelarBotao.target = self
         cancelarBotao.style = .plain
         cancelarBotao.action = #selector(cancelarAcao)
@@ -30,9 +37,16 @@ class TemplatesPageViewController: UIViewController {
         botaoConcluir.style = .plain
         botaoConcluir.action = #selector(acaoConcluir)
         
-
-      
+        primeiroModelo.addTarget(self, action: #selector(acaoModelo1), for: .touchUpInside)
+        segundoModelo.addTarget(self, action: #selector(acaoModelo2), for: .touchUpInside)
+        //Dicionário
+        if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
+            dictionary = userDataDictionary
+        }
+        
+        
     }
+
     //Navegação
     @objc func changeViewController(){
         
@@ -61,12 +75,49 @@ class TemplatesPageViewController: UIViewController {
             self.backViewController()
         }))
         ac.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
-        
+            
             
         }))
-      present(ac,animated: true)
+        present(ac,animated: true)
     }
+
     @objc func acaoConcluir() {
+
+    }
+    @objc func acaoModelo1(){
+        if !primeiroModelo.isSelected{
+            primeiroModelo.setImage(UIImage(named: "modelo1Selected.png"), for: .normal)
+            segundoModelo.setImage(UIImage(named: "modelo2.png"), for: .normal)
+            segundoModelo.isSelected = false
+            self.dictionary["Modelo"] = "Modelo 1 escolhido"
+            print(dictionary)
+            
+            
+        } else{
+            primeiroModelo.setImage(UIImage(named: "modelo1.png"), for: .normal)
+            
+        }
+        primeiroModelo.isSelected = !primeiroModelo.isSelected
+        
+    }
+    
+    @objc func acaoModelo2(){
+        if !segundoModelo.isSelected{
+            segundoModelo.setImage(UIImage(named: "modelo2Selected.png"), for: .normal)
+            primeiroModelo.setImage(UIImage(named: "modelo1.png"), for: .normal)
+            primeiroModelo.isSelected = false
+            self.dictionary["Modelo"] = "Modelo 2 escolhido"
+            print(dictionary)
+        } else{
+            segundoModelo.setImage(UIImage(named: "modelo2.png"), for: .normal)
+            
+        }
+        segundoModelo.isSelected = !segundoModelo.isSelected
+        
+    }
+
+    @objc func shareAction() {
+
       // 1
 //      guard
 //        let nome = dictionary["Nome"]!

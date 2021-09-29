@@ -22,5 +22,17 @@ class BemvindosViewController: UIViewController {
         fraseSemCurriculo.numberOfLines = 0
         fraseSemCurriculo.textAlignment = .center
         
+        fraseSemCurriculo.isAccessibilityElement = true
+        fraseSemCurriculo.accessibilityLabel = "Clique no botão Adicionar no canto superior direito para criar seu primeiro currículo."
+        
+        accessibilityElements = [fraseSemCurriculo, botaoAdd]
+        
+        if UIAccessibility.isVoiceOverRunning {
+            fraseSemCurriculo.text = ""
+            
+            
+        
+            
+        }
     }
 }
