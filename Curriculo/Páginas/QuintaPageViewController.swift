@@ -16,14 +16,14 @@ class QuintaPageViewController: UIViewController {
     @IBOutlet var addConq: UIButton!
     @IBOutlet var segundaTableView: UITableView!
     @IBOutlet var `switch`: UISwitch!
+    
     @IBSegueAction func mudaPagina(_ coder: NSCoder) -> TemplatesPageViewController? {
         dicionario5Pagina()
         return TemplatesPageViewController(coder: coder)
     }
     
     
-    
-//    var segundaDelegate: SegundaTableViewDelegate
+    //    var segundaDelegate: SegundaTableViewDelegate
     
     //Dicionário
     let defaults = UserDefaults.standard

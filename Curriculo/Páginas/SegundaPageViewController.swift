@@ -75,12 +75,12 @@ class SegundaPageViewController: UIViewController {
             self.backViewController()
         }))
         ac.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
-        
+            
             
         }))
-      present(ac,animated: true)
+        present(ac,animated: true)
     }
-
+    
     @objc func changeViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -101,8 +101,8 @@ class SegundaPageViewController: UIViewController {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         
         scrollView.scrollIndicatorInsets = scrollView.contentInset
-
-    
+        
+        
         
     }
     
@@ -110,14 +110,14 @@ class SegundaPageViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        let scrollPoint : CGPoint = CGPoint.init(x:0, y:textView.frame.origin.y)
-//        self.scrollView.setContentOffset(scrollPoint, animated: true)
-//    }
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        self.scrollView.setContentOffset(CGPoint.zero, animated: true)
-//    }
+    //    func textViewDidBeginEditing(_ textView: UITextView) {
+    //        let scrollPoint : CGPoint = CGPoint.init(x:0, y:textView.frame.origin.y)
+    //        self.scrollView.setContentOffset(scrollPoint, animated: true)
+    //    }
+    //
+    //    func textViewDidEndEditing(_ textView: UITextView) {
+    //        self.scrollView.setContentOffset(CGPoint.zero, animated: true)
+    //    }
     
     //Dicionário
     
@@ -164,6 +164,7 @@ extension SegundaPageViewController: UITableViewDataSource{
             cell.largeTextLabel.text = "Objetivo profissional"
             cell.selectionStyle = .none
             
+            //MARK: Acessibilidade - Objetivo profissional
             if cell.largeTextLabel.text == "Objetivo profissional" {
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Objetivo Profissional"
