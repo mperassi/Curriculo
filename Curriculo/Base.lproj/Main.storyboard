@@ -382,7 +382,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -618,7 +618,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -1391,7 +1391,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-1t-ksY">
-                                        <rect key="frame" x="0.0" y="485.33333333333331" width="390" height="43.999999999999943"/>
+                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="gyf-mG-ZYC"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="tDh-PQ-9xR"/>
@@ -1533,7 +1533,7 @@
     <resources>
         <image name="fotoInicio" width="212" height="212"/>
         <image name="modelo1" width="163" height="218"/>
-        <image name="modelo2" width="163.66667175292969" height="217.33332824707031"/>
+        <image name="modelo2" width="163" height="217.33332824707031"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Campos">
             <color red="0.78799998760223389" green="0.20399999618530273" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
