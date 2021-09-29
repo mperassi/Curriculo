@@ -37,6 +37,10 @@ class TemplatesPageViewController: UIViewController {
         cancelarBotao.action = #selector(cancelarAcao)
         cancelarBotao.target = self
         cancelarBotao.style = .plain
+        cancelarBotao.action = #selector(cancelarAcao)
+        botaoConcluir.target = self
+        botaoConcluir.style = .plain
+        botaoConcluir.action = #selector(acaoConcluir)
         
         //        botaoConcluir.action = #selector(shareAction)
         botaoConcluir.target = self
@@ -85,7 +89,10 @@ class TemplatesPageViewController: UIViewController {
         }))
         present(ac,animated: true)
     }
-    
+
+    @objc func acaoConcluir() {
+
+    }
     @objc func acaoModelo1(){
         if !primeiroModelo.isSelected{
             primeiroModelo.setImage(UIImage(named: "modelo1Selected.png"), for: .normal)
@@ -180,4 +187,65 @@ class TemplatesPageViewController: UIViewController {
 
 
 
+
+    @objc func shareAction() {
+
+      // 1
+//      guard
+//        let nome = dictionary["Nome"]!
+//        let nascimento = dictionary["Data"]!
+//        let tel = dictionary["Tel"]!
+//        let local = dictionary["Local"]!
+//        let email = dictionary["Email"]!
+//        let link = dictionary["Link"]!
+//        let objetivoProf = dictionary["Objetivo"]!
+//        let resumoProf = dictionary["Resumo"]!
+//        let nomeEmp = dictionary["NomeEmpresa"]!
+//        let cargoEmp = dictionary["NomeCargo"]!
+//        let dataIniEmp = dictionary["EmpregoDataIni"]!
+//        let dataFimEmp = dictionary["EmpregoDataFim"]!
+//        let detalhesEmp = dictionary["Detalhes"]!
+//        let nomeInst = dictionary["NomeInst"]!
+//        let cursoInst = dictionary["NomeCurso"]!
+//        let dataIniInst = dictionary["InstDataIni"]!
+//        let dataFimInst = dictionary["InstDataFim"]!
+//        let realizacao = dictionary["NomeConq"]!
+//        let descReal = dictionary["DescConq"]!
+//        let dataIniReal = dictionary["ConqDataIni"]!
+//        let dataFimReal = dictionary["ConqDataFim"]!
+//        let deficiencia = dictionary["NomeDef"]!
+//        let deficienciaObs = dictionary["ObsDef"]!
+//
+//        else {
+//          // 2
+//          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
+//          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//          present(alert, animated: true, completion: nil)
+//          return
+      }
+//
+//      // 3
+//      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
+//      let pdfData = pdfCreator.createFlyer()
+//      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+//      present(vc, animated: true, completion: nil)
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//      if segue.identifier == "previewSegue" {
+//        guard let vc = segue.destination as? PDFPreviewViewController else { return }
+//
+//        if let title = flyerTextEntry.text,
+//           let body = bodyTextView.text,
+//           let contact = contactTextView.text,
+//           let email = emailTextView.text,
+//           let local = localTextView.text,
+//           let links = linksTextView.text{
+//           let pdfCreator = PDFCreator(title: title, body: body,contact: contact,email: email, local: local,links: links)
+//          vc.documentData = pdfCreator.createFlyer()
+//        }
+//      }
+//    }
+//  }
+
+}
 
