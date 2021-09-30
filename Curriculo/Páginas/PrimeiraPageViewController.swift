@@ -11,7 +11,6 @@ import NotificationCenter
 class PrimeiraPageViewController: UIViewController {
     @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addLink: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBSegueAction func mudaPagina(_ coder: NSCoder) -> SegundaPageViewController? {
         dicionario1Pagina()
@@ -32,7 +31,6 @@ class PrimeiraPageViewController: UIViewController {
         self.tableView.delegate = self
         
         //Navegação
-        addLink.layer.cornerRadius = 10
         self.navigationItem.setHidesBackButton(true, animated: false)
         //self.navigationController?.navigationBar.topItem?.backBarButtonItem = cancelarBotao
         cancelarBotao.action = #selector(cancelarAcao)
@@ -42,8 +40,6 @@ class PrimeiraPageViewController: UIViewController {
         
         //Dicionário
         
-        //Função botão adicionar link
-        addLink.addTarget(self, action: #selector(AddLink), for: .touchUpInside)
         
         //Scroll
         NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -134,10 +130,7 @@ class PrimeiraPageViewController: UIViewController {
         }))
       present(ac,animated: true)
     }
-    //Função botão link
-    @objc func AddLink(){
-        
-    }
+
     //Funções Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
       guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue

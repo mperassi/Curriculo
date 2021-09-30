@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "high1lightmode1.png",
+      "filename" : "laranjalights.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "high1darkmode.png",
+      "filename" : "laranjadarks.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "high1lightmode2.png",
+      "filename" : "laranjalights-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -28,12 +28,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "high1darkmode2.png",
+      "filename" : "laranjadarks-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "high1lightmode3.png",
+      "filename" : "laranjalights-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -44,7 +44,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "high1darkmode3.png",
+      "filename" : "laranjadarks-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

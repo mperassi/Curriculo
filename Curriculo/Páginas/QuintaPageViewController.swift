@@ -22,9 +22,6 @@ class QuintaPageViewController: UIViewController {
         return TemplatesPageViewController(coder: coder)
     }
     
-    
-    //    var segundaDelegate: SegundaTableViewDelegate
-    
     //Dicionário
     let defaults = UserDefaults.standard
     var dictionary: [String : Any] = [:]  //Dictionary which you want to save
