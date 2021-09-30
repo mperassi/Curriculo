@@ -29,11 +29,13 @@ class PDFCreator: NSObject {
     let dataFimInst: String
     let realizacao: String
     let descReal: String
+    let dataIniReal: String
     let dataFimReal: String
     let deficiencia: String
     let deficienciaObs: String
+    let modelo: String
     
-    init(nome: String, nascimento: String, tel: String, local: String, email: String, link: String, objetivoProf: String, resumoProf: String, nomeEmp: String, cargoEmp: String, dataIniEmp: String, dataFimEmp: String, detalhesEmp: String, nomeInst: String, cursoInst: String, dataIniInst: String, dataFimInst: String, realizacao: String, descReal: String, dataFimReal: String, deficiencia: String, deficienciaObs: String) {
+    init(nome: String, nascimento: String, tel: String, local: String, email: String, link: String, objetivoProf: String, resumoProf: String, nomeEmp: String, cargoEmp: String, dataIniEmp: String, dataFimEmp: String, detalhesEmp: String, nomeInst: String, cursoInst: String, dataIniInst: String, dataFimInst: String, realizacao: String, descReal: String, dataIniReal: String, dataFimReal: String, deficiencia: String, deficienciaObs: String, modelo: String) {
         self.nome = nome
         self.nascimento = nascimento
         self.tel = tel
@@ -53,9 +55,11 @@ class PDFCreator: NSObject {
         self.dataFimInst = dataFimReal
         self.realizacao = realizacao
         self.descReal = descReal
+        self.dataIniReal = dataIniReal
         self.dataFimReal = dataFimReal
         self.deficiencia = deficiencia
         self.deficienciaObs = deficienciaObs
+        self.modelo = modelo
     }
     func criarCurriculo() -> Data {
         // 1
@@ -101,6 +105,13 @@ class PDFCreator: NSObject {
             addCursoInst(pageRect: paginaTamanho, textTop: titleBottom + 190)
             addDataIniInst(pageRect: paginaTamanho, textTop: titleBottom + 200)
             addDataFimInst(pageRect: paginaTamanho, textTop: titleBottom + 210)
+            
+            addReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
+            addDescReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
+            addDataIniReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
+            addDataFimReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
+
+            
             addDeficiencia(pageRect: paginaTamanho, textTop: titleBottom + 220)
             addDeficienciaObs(pageRect: paginaTamanho, textTop: titleBottom + 240)
         }
@@ -108,10 +119,10 @@ class PDFCreator: NSObject {
     }
     func addNome(pageRect: CGRect) -> CGFloat {
         let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
-        let paragraphStyle = CTLineBreakMode.byWordWrapping
-        //paragraphStyle.alignment = .center
-        //paragraphStyle.lineBreakMode = .byWordWrapping
-        //CTLineBreakMode.byWordWrapping
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineBreakMode = .byWordWrapping
+//        CTLineBreakMode.byWordWrapping
         let titleAttributes =
         [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
           NSAttributedString.Key.font: titleFont] as [NSAttributedString.Key : Any] as [NSAttributedString.Key : Any]
@@ -126,11 +137,12 @@ class PDFCreator: NSObject {
     func addNascimento(pageRect: CGRect, textTop: CGFloat) {
         let fonteNasc = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         let paragraphStyle = NSMutableParagraphStyle()
+        
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: fonteNasc
+            NSAttributedString.Key.font: fonteNasc,
         ]
         let attributedText = NSAttributedString(string: "Data de nascimento: \(nascimento)", attributes: textAttributes)
         let textRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
@@ -388,6 +400,20 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.font: textFont
         ]
         let attributedText = NSAttributedString(string: "texto: \(descReal)", attributes: textAttributes)
+        let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
+                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        attributedText.draw(in: textoRect)
+    }
+    func addDataIniReal(pageRect: CGRect, textTop: CGFloat) {
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont
+        ]
+        let attributedText = NSAttributedString(string: "texto: \(dataIniReal)", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)

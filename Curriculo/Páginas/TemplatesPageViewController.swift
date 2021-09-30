@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PDFKit
 
 class TemplatesPageViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
@@ -13,15 +14,26 @@ class TemplatesPageViewController: UIViewController {
     @IBOutlet var botaoConcluir: UIBarButtonItem!
     @IBOutlet var primeiroModelo: UIButton!
     @IBOutlet var segundoModelo: UIButton!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var corLaranja: UIButton!
+    @IBOutlet var corAzul: UIButton!
+    @IBOutlet var corVerde: UIButton!
+    @IBOutlet var corPreto: UIButton!
+    
+    
     //Dicionário
     let defaults = UserDefaults.standard
     var dictionary: [String : Any] = [:]  //Dictionary which you want to save
     //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
     
-    
     @IBOutlet var cancelarBotao: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Tableview
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         
         //Navegação
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -33,20 +45,44 @@ class TemplatesPageViewController: UIViewController {
         cancelarBotao.target = self
         cancelarBotao.style = .plain
         cancelarBotao.action = #selector(cancelarAcao)
-        botaoConcluir.target = self
-        botaoConcluir.style = .plain
-        botaoConcluir.action = #selector(acaoConcluir)
         
-        primeiroModelo.addTarget(self, action: #selector(acaoModelo1), for: .touchUpInside)
-        segundoModelo.addTarget(self, action: #selector(acaoModelo2), for: .touchUpInside)
+        primeiroModelo.addTarget(self, action: #selector(acaoModelo1), for: .touchDown)
+        segundoModelo.addTarget(self, action: #selector(acaoModelo2), for: .touchDown)
+        
+        corLaranja.addTarget(self, action: #selector(acaoLaranja), for: .touchDown)
+        corAzul.addTarget(self, action: #selector(acaoAzul), for: .touchDown)
+        corVerde.addTarget(self, action: #selector(acaoVerde), for: .touchDown)
+        corPreto.addTarget(self, action: #selector(acaoPreto), for: .touchDown)
+        
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
             dictionary = userDataDictionary
+            
+            //MARK: Acessibilidade - Descrição dos modelos de currículo
+            primeiroModelo.isAccessibilityElement = true
+            segundoModelo.isAccessibilityElement = true
+        
+            
+            primeiroModelo.accessibilityLabel = "Este currículo é um modelo simples no qual o seu nome está centralizado. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+         
+            segundoModelo.accessibilityLabel = "Este currículo é um modelo personalizado no qual possui semi formas geométricas pequenas no canto superior direito da página, no canto inferior direito, e na esquerda levemente abaixo do centro. Seu nome está centralizado como título da página. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+            
         }
         
         
     }
-
+    //Dicionário
+    @IBAction func dicionario6Pagina() {
+        tableView.dequeueReusableCell(withIdentifier: "textoCell")
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        let multiCell = tableView.cellForRow(at: indexPath as IndexPath) as? TextoTableViewCell
+        self.dictionary["NomeCurriculo"] = multiCell?.nomeField.text
+        
+        
+        defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+        print(dictionary)
+        
+    }
     //Navegação
     @objc func changeViewController(){
         
@@ -80,18 +116,16 @@ class TemplatesPageViewController: UIViewController {
         }))
         present(ac,animated: true)
     }
-
-    @objc func acaoConcluir() {
-
-    }
+    
+    //Modelos
     @objc func acaoModelo1(){
         if !primeiroModelo.isSelected{
             primeiroModelo.setImage(UIImage(named: "modelo1Selected.png"), for: .normal)
             segundoModelo.setImage(UIImage(named: "modelo2.png"), for: .normal)
             segundoModelo.isSelected = false
             self.dictionary["Modelo"] = "Modelo 1 escolhido"
-            print(dictionary)
-            
+            defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+            dicionario6Pagina()
             
         } else{
             primeiroModelo.setImage(UIImage(named: "modelo1.png"), for: .normal)
@@ -107,7 +141,8 @@ class TemplatesPageViewController: UIViewController {
             primeiroModelo.setImage(UIImage(named: "modelo1.png"), for: .normal)
             primeiroModelo.isSelected = false
             self.dictionary["Modelo"] = "Modelo 2 escolhido"
-            print(dictionary)
+            defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+            dicionario6Pagina()
         } else{
             segundoModelo.setImage(UIImage(named: "modelo2.png"), for: .normal)
             
@@ -115,65 +150,201 @@ class TemplatesPageViewController: UIViewController {
         segundoModelo.isSelected = !segundoModelo.isSelected
         
     }
+    //Cores
+    @objc func acaoLaranja(){
+        if !corLaranja.isSelected{
+            corLaranja.setImage(UIImage(named: "C-LaranjaSelected.png"), for: .normal)
+            corAzul.setImage(UIImage(named: "C-Azul.png"), for: .normal)
+            corVerde.setImage(UIImage(named: "C-Verde.png"), for: .normal)
+            corPreto.setImage(UIImage(named: "C-Preto.png"), for: .normal)
+            corAzul.isSelected = false
+            corVerde.isSelected = false
+            corPreto.isSelected = false
+            self.dictionary["Cor"] = "Laranja"
+            defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+            print(dictionary)
+        } else{
+            corLaranja.setImage(UIImage(named: "C-Laranja.png"), for: .normal)
+            
+        }
+        corLaranja.isSelected = !corLaranja.isSelected
+        
+    }
+    @objc func acaoAzul(){
+        if !corAzul.isSelected{
+            corAzul.setImage(UIImage(named: "C-AzulSelected.png"), for: .normal)
+            corLaranja.setImage(UIImage(named: "C-Laranja.png"), for: .normal)
+            corVerde.setImage(UIImage(named: "C-Verde.png"), for: .normal)
+            corPreto.setImage(UIImage(named: "C-Preto.png"), for: .normal)
+            corLaranja.isSelected = false
+            corVerde.isSelected = false
+            corPreto.isSelected = false
+            self.dictionary["Cor"] = "Azul"
+            defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+            print(dictionary)
+        } else{
+            corAzul.setImage(UIImage(named: "C-Azul.png"), for: .normal)
+            
+        }
+        corAzul.isSelected = !corAzul.isSelected
+        
+    }
+    @objc func acaoVerde(){
+        if !corVerde.isSelected{
+            corVerde.setImage(UIImage(named: "C-VerdeSelected.png"), for: .normal)
+            corAzul.setImage(UIImage(named: "C-Azul.png"), for: .normal)
+            corLaranja.setImage(UIImage(named: "C-Laranja.png"), for: .normal)
+            corPreto.setImage(UIImage(named: "C-Preto.png"), for: .normal)
+            corAzul.isSelected = false
+            corLaranja.isSelected = false
+            corPreto.isSelected = false
+            self.dictionary["Cor"] = "Verde"
+            defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+            print(dictionary)
+        } else{
+            corVerde.setImage(UIImage(named: "C-Verde.png"), for: .normal)
+            
+        }
+        corVerde.isSelected = !corVerde.isSelected
+        
+    }
+    @objc func acaoPreto(){
+        if !corPreto.isSelected{
+            corPreto.setImage(UIImage(named: "C-PretoSelected.png"), for: .normal)
+            corAzul.setImage(UIImage(named: "C-Azul.png"), for: .normal)
+            corVerde.setImage(UIImage(named: "C-Verde.png"), for: .normal)
+            corLaranja.setImage(UIImage(named: "C-Laranja.png"), for: .normal)
+            corAzul.isSelected = false
+            corVerde.isSelected = false
+            corLaranja.isSelected = false
+            self.dictionary["Cor"] = "Preto"
+            defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
+            print(dictionary)
+        } else{
+            corPreto.setImage(UIImage(named: "C-Preto.png"), for: .normal)
+            
+        }
+        corPreto.isSelected = !corPreto.isSelected
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "previewSegue" {
+//            if (self.dictionary["Modelo"] == nil){
+//                print("vazio")
+//                let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
+//                ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//                ac.view.tintColor = UIColor(named: "Ciano")
+//                present(ac, animated: true)
+//            } else{
+//                print("cheio")
+//            }
+            guard let vc = segue.destination as? ProntoPageViewController else { return }
+            
+            if let nome = dictionary["Nome"]! as! String?,
+               let nascimento = dictionary["Data"]! as! String?,
+               let tel = dictionary["Tel"]! as! String?,
+               let local = dictionary["Local"]! as! String?,
+               let email = dictionary["Email"]! as! String?,
+               let link = dictionary["Link"]! as! String?,
+               let objetivoProf = dictionary["Objetivo"]! as! String?,
+               let resumoProf = dictionary["Resumo"]! as! String?,
+               let nomeEmp = dictionary["NomeEmpresa"]! as! String?,
+               let cargoEmp = dictionary["NomeCargo"]! as! String?,
+               let dataIniEmp = dictionary["EmpregoDataIni"]! as! String?,
+               let dataFimEmp = dictionary["EmpregoDataFim"]! as! String?,
+               let detalhesEmp = dictionary["Detalhes"]! as! String?,
+               let nomeInst = dictionary["NomeInst"]! as! String?,
+               let cursoInst = dictionary["NomeCurso"]! as! String?,
+               let dataIniInst = dictionary["InstDataIni"]! as! String?,
+               let dataFimInst = dictionary["InstDataFim"]! as! String?,
+               let realizacao = dictionary["NomeConq"]! as! String?,
+               let descReal = dictionary["DescConq"]! as! String?,
+               let dataIniReal = dictionary["ConqDataIni"]! as! String?,
+               let dataFimReal = dictionary["ConqDataFim"]! as! String?,
+               let deficiencia = dictionary["NomeDef"]! as! String?,
+               let deficienciaObs = dictionary["ObsDef"]! as! String?,
+               let modelo = dictionary["Modelo"]! as! String?
+            {
+                
+                
+                let pdfCreator = PDFCreator(nome: nome,
+                                            nascimento: nascimento,
+                                            tel: tel,
+                                            local: local,
+                                            email: email,
+                                            link: link,
+                                            objetivoProf: objetivoProf,
+                                            resumoProf: resumoProf,
+                                            nomeEmp: nomeEmp,
+                                            cargoEmp: cargoEmp,
+                                            dataIniEmp: dataIniEmp,
+                                            dataFimEmp: dataFimEmp,
+                                            detalhesEmp: detalhesEmp,
+                                            nomeInst: nomeInst,
+                                            cursoInst: cursoInst,
+                                            dataIniInst: dataIniInst,
+                                            dataFimInst: dataFimInst,
+                                            realizacao: realizacao,
+                                            descReal: descReal,
+                                            dataIniReal: dataIniReal,
+                                            dataFimReal: dataFimReal,
+                                            deficiencia: deficiencia,
+                                            deficienciaObs: deficienciaObs,
+                                            modelo: modelo)
+                vc.documentData = pdfCreator.criarCurriculo()
+                
+            }
+        }
+    }
+}
+extension TemplatesPageViewController: UINavigationControllerDelegate {
+    // Not used, but necessary for compilation
+}
+//TableView
+extension TemplatesPageViewController: UITableViewDelegate{
+    
+}
 
-    @objc func shareAction() {
-
-      // 1
-//      guard
-//        let nome = dictionary["Nome"]!
-//        let nascimento = dictionary["Data"]!
-//        let tel = dictionary["Tel"]!
-//        let local = dictionary["Local"]!
-//        let email = dictionary["Email"]!
-//        let link = dictionary["Link"]!
-//        let objetivoProf = dictionary["Objetivo"]!
-//        let resumoProf = dictionary["Resumo"]!
-//        let nomeEmp = dictionary["NomeEmpresa"]!
-//        let cargoEmp = dictionary["NomeCargo"]!
-//        let dataIniEmp = dictionary["EmpregoDataIni"]!
-//        let dataFimEmp = dictionary["EmpregoDataFim"]!
-//        let detalhesEmp = dictionary["Detalhes"]!
-//        let nomeInst = dictionary["NomeInst"]!
-//        let cursoInst = dictionary["NomeCurso"]!
-//        let dataIniInst = dictionary["InstDataIni"]!
-//        let dataFimInst = dictionary["InstDataFim"]!
-//        let realizacao = dictionary["NomeConq"]!
-//        let descReal = dictionary["DescConq"]!
-//        let dataIniReal = dictionary["ConqDataIni"]!
-//        let dataFimReal = dictionary["ConqDataFim"]!
-//        let deficiencia = dictionary["NomeDef"]!
-//        let deficienciaObs = dictionary["ObsDef"]!
-//
-//        else {
-//          // 2
-//          let alert = UIAlertController(title: "All Information Not Provided", message: "You must supply all information to create a flyer.", preferredStyle: .alert)
-//          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//          present(alert, animated: true, completion: nil)
-//          return
-      }
-//
-//      // 3
-//      let pdfCreator = PDFCreator(title: title, body: body, contact: contact, email: email, local: local, links: links)
-//      let pdfData = pdfCreator.createFlyer()
-//      let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
-//      present(vc, animated: true, completion: nil)
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//      if segue.identifier == "previewSegue" {
-//        guard let vc = segue.destination as? PDFPreviewViewController else { return }
-//
-//        if let title = flyerTextEntry.text,
-//           let body = bodyTextView.text,
-//           let contact = contactTextView.text,
-//           let email = emailTextView.text,
-//           let local = localTextView.text,
-//           let links = linksTextView.text{
-//           let pdfCreator = PDFCreator(title: title, body: body,contact: contact,email: email, local: local,links: links)
-//          vc.documentData = pdfCreator.createFlyer()
-//        }
-//      }
-//    }
-//  }
-
+extension TemplatesPageViewController: UITableViewDataSource{
+    
+    func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
+        cell.nomeLabel.text = "Nome do Currículo"
+        cell.nomeField.keyboardType = .default
+        cell.nomeField.placeholder = "Digite o nome do currículo"
+        cell.nomeObs.text = "*Obrigatório"
+        //            print(dictValue)  // Printing the value
+        
+        //MARK: Acessibilidade - Nome do currículo
+        cell.nomeLabel.isAccessibilityElement = true
+        cell.nomeLabel.accessibilityLabel = "Nome do currículo"
+        
+        cell.nomeField.isAccessibilityElement = true
+        cell.nomeField.accessibilityLabel = "Digite o nome da currículo"
+        
+        cell.nomeObs.isAccessibilityElement = true
+        cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+        
+        cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+        
+        
+        if UIAccessibility.isVoiceOverRunning {
+            cell.nomeField.placeholder = ""
+        }
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 105
+    }
+    
+    
 }
 

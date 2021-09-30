@@ -28,6 +28,21 @@ class DuasDatasTableViewCell: UITableViewCell {
         dataFim.leadingAnchor.constraint(equalTo: fimLabel.leadingAnchor, constant: 5).isActive = true
         dataFim.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
+        
+        //MARK: Acessibilidade - Botões de início, fim e picker
+        self.isAccessibilityElement = false 
+        
+        
+        duasDatasLabel.isAccessibilityElement = true
+        duasDatasObs.isAccessibilityElement = true
+        inicioLabel.isAccessibilityElement = true
+        fimLabel.isAccessibilityElement = true
+        
+        inicioLabel.accessibilityLabel = "Início do período. Selecionar no picker"
+        fimLabel.accessibilityLabel = " Fim do período. Selecionar no picker"
+        
+    
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

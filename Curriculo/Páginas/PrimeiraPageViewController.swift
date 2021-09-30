@@ -11,7 +11,6 @@ import NotificationCenter
 class PrimeiraPageViewController: UIViewController {
     @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addLink: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBSegueAction func mudaPagina(_ coder: NSCoder) -> SegundaPageViewController? {
         dicionario1Pagina()
@@ -32,7 +31,6 @@ class PrimeiraPageViewController: UIViewController {
         self.tableView.delegate = self
         
         //Navegação
-        addLink.layer.cornerRadius = 10
         self.navigationItem.setHidesBackButton(true, animated: false)
         //self.navigationController?.navigationBar.topItem?.backBarButtonItem = cancelarBotao
         cancelarBotao.action = #selector(cancelarAcao)
@@ -42,8 +40,6 @@ class PrimeiraPageViewController: UIViewController {
         
         //Dicionário
         
-        //Função botão adicionar link
-        addLink.addTarget(self, action: #selector(AddLink), for: .touchUpInside)
         
         //Scroll
         NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -134,10 +130,7 @@ class PrimeiraPageViewController: UIViewController {
         }))
       present(ac,animated: true)
     }
-    //Função botão link
-    @objc func AddLink(){
-        
-    }
+
     //Funções Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
       guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -182,7 +175,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeObs.text = "*Obrigatório"
 //            print(dictValue)  // Printing the value
             
-            //MARK: Acessibilidade - Email
+            //MARK: Acessibilidade - Nome Completo
             cell.nomeLabel.isAccessibilityElement = true
             cell.nomeLabel.accessibilityLabel = "Nome"
             
@@ -192,7 +185,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Digite seu nome completo"
             
-            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -219,12 +212,12 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeLabel.accessibilityLabel = "Telefone"
             
             cell.nomeField.isAccessibilityElement = true
-            cell.nomeField.accessibilityLabel = "Exemplo: (ddd) 0 1234-5678"
+            cell.nomeField.accessibilityLabel = "Insira aqui seu telefone. Exemplo: DDD seguido de um número de nove dígitos"
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -244,12 +237,12 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeLabel.accessibilityLabel = "Localidade"
             
             cell.nomeField.isAccessibilityElement = true
-            cell.nomeField.accessibilityLabel = "Exemplo: São Paulo - SP"
+            cell.nomeField.accessibilityLabel = "Insira a sua cidade. Exemplo: São Paulo traço SP"
         
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            cell.tableView.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -260,7 +253,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
         } else if indexPath.row == 4 {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "E-mail"
-            cell.nomeField.keyboardType = .emailAddress
+            cell.nomeField.keyboardType = .twitter
             cell.nomeField.placeholder = "Exemplo: email@exemplo.com"
             cell.nomeObs.text = "*Obrigatório"
             
@@ -269,12 +262,12 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeLabel.accessibilityLabel = "E-mail"
             
             cell.nomeField.isAccessibilityElement = true
-            cell.nomeField.accessibilityLabel = "Exemplo: email@exemplo.com"
+            cell.nomeField.accessibilityLabel = "Insira o seu email. Exemplo: email@seuemail.com"
             
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
-            cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
@@ -286,7 +279,7 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             let cell  = tableView.dequeueReusableCell(withIdentifier: "textoCell", for: indexPath) as! TextoTableViewCell
             cell.nomeLabel.text = "Links adicionais"
             cell.nomeField.placeholder = "Exemplo: LinkedIn, Behance, Github"
-            cell.nomeField.keyboardType = .URL
+            cell.nomeField.keyboardType = .webSearch
             cell.nomeObs.text = " "
             
             //MARK: Acessibilidade - Links adicionais
@@ -294,9 +287,10 @@ extension PrimeiraPageViewController: UITableViewDataSource{
             cell.nomeLabel.accessibilityLabel = "Links adicionais"
             
             cell.nomeField.isAccessibilityElement = true
-            cell.nomeField.accessibilityLabel = "Exemplo: LinkedIn, Behance, Github"
+//            cell.nomeField.accessibilityHint = "Exemplo: LinkedIn, Behance, Github"
+            cell.nomeField.accessibilityLabel = "Insira um link adicional. Exemplo: LinkedIn, site pessoal, portfolio"
         
-            cell.accessibilityElements = [cell.nomeLabel, cell.nomeField]
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeField!]
 
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
