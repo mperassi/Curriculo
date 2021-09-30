@@ -28,7 +28,7 @@ class ObsTableViewCell: UITableViewCell {
         obsTextView.accessibilityLabel = "Fale brevemente sobre a sua deficiência e das possíveis adaptações necessárias ao ambiente de trabalho."
         
 
-        self.accessibilityElements = [obsLabel, obsLabelObs, obsTextView]
+        self.accessibilityElements = [obsLabel!, obsLabelObs!, obsTextView!]
 
     }
 

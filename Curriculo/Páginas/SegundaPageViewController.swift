@@ -169,10 +169,12 @@ extension SegundaPageViewController: UITableViewDataSource{
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Objetivo Profissional"
                 
-                cell.largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional. Limite máximo de 300 caracteres"
+                cell.largeTextView?.isAccessibilityElement = true
+                cell.largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional"
                 
             }
-            
+                
+
             
             return cell
             
@@ -186,10 +188,13 @@ extension SegundaPageViewController: UITableViewDataSource{
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Resumo Profissional"
                 
-                cell.largeTextView?.accessibilityLabel = "Digite aqui seu resumo profissional. Limite máximo de 300 caracteres"
+                cell.largeTextView?.isAccessibilityElement = true
+                cell.largeTextView?.accessibilityLabel = "Digite aqui seu resumo profissional"
                 
             }
             
+//            cell.accessibilityElements = [cell.largeTextLabel!]
+
             return cell
             
         }

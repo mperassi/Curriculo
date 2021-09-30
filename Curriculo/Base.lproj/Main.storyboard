@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J4P-GA-G7C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lto-xi-Zj4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="2"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -37,7 +38,7 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="largeTextCell" rowHeight="300" id="4nQ-6d-RJm" customClass="TextoMaiorTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="300"/>
+                                                        <rect key="frame" x="0.0" y="50" width="360" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nQ-6d-RJm" id="XL1-br-mK1">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="300"/>
@@ -194,7 +195,7 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="GzA-Dm-1WW" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="50" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GzA-Dm-1WW" id="jpS-MJ-KWB">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -241,7 +242,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" rowHeight="105" id="lXU-a9-wsy" customClass="DataTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="149.66666603088379" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="155" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lXU-a9-wsy" id="DI1-V3-G9P">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -368,7 +369,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -406,7 +407,7 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="duasDatasCell" rowHeight="200" id="1px-Kv-HNd" customClass="DuasDatasTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="200"/>
+                                                        <rect key="frame" x="0.0" y="50" width="360" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1px-Kv-HNd" id="qUD-8b-ayn">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
@@ -476,7 +477,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="Gx7-QR-Wjv" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="244.66666603088379" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="250" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gx7-QR-Wjv" id="YfC-oc-ozP">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -523,7 +524,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="novaTextCell" rowHeight="300" id="wwK-oi-wCf" customClass="NovaTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="349.66666603088379" width="360" height="300"/>
+                                                        <rect key="frame" x="0.0" y="355" width="360" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwK-oi-wCf" id="YLY-zz-r9Y">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="300"/>
@@ -578,7 +579,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="133-to-Z6l">
-                                                <rect key="frame" x="60" y="590" width="270" height="37"/>
+                                                <rect key="frame" x="60" y="587.66666666666663" width="270" height="39.333333333333371"/>
                                                 <color key="backgroundColor" name="Ciano"/>
                                                 <color key="tintColor" name="Fundo"/>
                                                 <state key="normal" title="Button"/>
@@ -690,7 +691,7 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="duasDatasCell" rowHeight="200" id="XQw-hq-HkA" customClass="DuasDatasTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="200"/>
+                                                        <rect key="frame" x="0.0" y="50" width="360" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQw-hq-HkA" id="LgL-kU-DCF">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
@@ -758,7 +759,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="Lm6-2P-I7t" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="244.66666603088379" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="250" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lm6-2P-I7t" id="bnU-5j-gRN">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -807,7 +808,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx1-i8-6hq">
-                                                <rect key="frame" x="30" y="433" width="330" height="37"/>
+                                                <rect key="frame" x="30" y="429.66666666666669" width="330" height="40.333333333333314"/>
                                                 <color key="backgroundColor" name="Ciano"/>
                                                 <color key="tintColor" name="Fundo"/>
                                                 <state key="normal" title="Button"/>
@@ -833,7 +834,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-3K-t78">
-                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <rect key="frame" x="0.0" y="480.66666666666669" width="390" height="44.000000000000057"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zzr-Vg-U9w"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="a3t-Yl-gbZ"/>
@@ -928,7 +929,7 @@
                                                 </label>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="szg-JN-mHj" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="88.666666030883789" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="94" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="szg-JN-mHj" id="ezu-sI-LvW">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -975,7 +976,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="duasDatasCell" rowHeight="200" id="OFw-iz-olb" customClass="DuasDatasTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="193.66666603088379" width="360" height="200"/>
+                                                        <rect key="frame" x="0.0" y="199" width="360" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OFw-iz-olb" id="sdm-bG-fdf">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
@@ -1043,7 +1044,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="descCell" rowHeight="160" id="XjU-uZ-WeA" customClass="DescTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="393.66666603088379" width="360" height="160"/>
+                                                        <rect key="frame" x="0.0" y="399" width="360" height="160"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XjU-uZ-WeA" id="ecS-Jy-W65">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="160"/>
@@ -1099,7 +1100,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHw-Bg-Yvc">
-                                                <rect key="frame" x="70" y="513" width="250" height="37"/>
+                                                <rect key="frame" x="70" y="509.66666666666669" width="250" height="40.333333333333314"/>
                                                 <color key="backgroundColor" name="Ciano"/>
                                                 <color key="tintColor" name="Fundo"/>
                                                 <state key="normal" title="Button"/>
@@ -1130,7 +1131,7 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="kiC-TU-R5e" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="50" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kiC-TU-R5e" id="Nny-VR-cNK">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -1177,7 +1178,7 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="obsCell" rowHeight="180" id="OBj-st-hLk" customClass="ObsTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="149.66666603088379" width="360" height="180"/>
+                                                        <rect key="frame" x="0.0" y="155" width="360" height="180"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OBj-st-hLk" id="xEv-Zf-VIt">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="180"/>
@@ -1262,7 +1263,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-px-WdG">
-                                        <rect key="frame" x="0.0" y="826.33333333333337" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="825.66666666666663" width="390" height="49"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zSB-kM-qYs"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
@@ -1394,6 +1395,7 @@
                     <connections>
                         <outlet property="botaoAdd" destination="pf5-LG-CNu" id="omh-Bl-mfv"/>
                         <outlet property="fraseSemCurriculo" destination="5ni-1h-jSg" id="Kyv-EL-wK1"/>
+                        <outlet property="imagemBoasVindas" destination="0VO-je-eKi" id="pUU-U3-A2V"/>
                         <outlet property="scrollView" destination="ezb-tA-gmF" id="1cH-f4-XJB"/>
                     </connections>
                 </viewController>

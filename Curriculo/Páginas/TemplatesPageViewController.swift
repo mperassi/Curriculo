@@ -57,6 +57,16 @@ class TemplatesPageViewController: UIViewController {
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
             dictionary = userDataDictionary
+            
+            //MARK: Acessibilidade - Descrição dos modelos de currículo
+            primeiroModelo.isAccessibilityElement = true
+            segundoModelo.isAccessibilityElement = true
+        
+            
+            primeiroModelo.accessibilityLabel = "Este currículo é um modelo simples no qual o seu nome está centralizado. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+         
+            segundoModelo.accessibilityLabel = "Este currículo é um modelo personalizado no qual possui semi formas geométricas pequenas no canto superior direito da página, no canto inferior direito, e na esquerda levemente abaixo do centro. Seu nome está centralizado como título da página. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+            
         }
         
         

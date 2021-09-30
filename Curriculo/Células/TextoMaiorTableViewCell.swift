@@ -15,7 +15,10 @@ class TextoMaiorTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
+        self.isAccessibilityElement = false
+        
+        self.accessibilityElements = [largeTextLabel!, largeTextObs!, largeTextView!]
         
     }
     
@@ -25,14 +28,14 @@ class TextoMaiorTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-
-
+    
+    
 }
 extension TextoMaiorTableViewCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-            let currentText = textView.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
-            return updatedText.count <= 300 // Change limit based on your requirement.
-        }
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+        return updatedText.count <= 300 // Change limit based on your requirement.
+    }
 }
