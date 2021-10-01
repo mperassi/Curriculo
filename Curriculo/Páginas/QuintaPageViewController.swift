@@ -111,6 +111,11 @@ class QuintaPageViewController: UIViewController {
         let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObsTableViewCell
         self.dictionary["ObsDef"] = multiCellObs?.obsTextView.text
         
+        //Ações próxima página
+        self.dictionary["Modelo"] = ""
+        self.dictionary["Cor"] = ""
+        self.dictionary["NomeCurriculo"] = ""
+        
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         

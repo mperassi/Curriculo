@@ -46,28 +46,33 @@ class TemplatesPageViewController: UIViewController {
         cancelarBotao.style = .plain
         cancelarBotao.action = #selector(cancelarAcao)
         
+        
         primeiroModelo.addTarget(self, action: #selector(acaoModelo1), for: .touchDown)
         segundoModelo.addTarget(self, action: #selector(acaoModelo2), for: .touchDown)
+        
         
         corLaranja.addTarget(self, action: #selector(acaoLaranja), for: .touchDown)
         corAzul.addTarget(self, action: #selector(acaoAzul), for: .touchDown)
         corVerde.addTarget(self, action: #selector(acaoVerde), for: .touchDown)
         corPreto.addTarget(self, action: #selector(acaoPreto), for: .touchDown)
         
+        
         //Dicionário
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
             dictionary = userDataDictionary
-            
-            //MARK: Acessibilidade - Descrição dos modelos de currículo
-            primeiroModelo.isAccessibilityElement = true
-            segundoModelo.isAccessibilityElement = true
-        
-            
-            primeiroModelo.accessibilityLabel = "Este currículo é um modelo simples no qual o seu nome está centralizado. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
-         
-            segundoModelo.accessibilityLabel = "Este currículo é um modelo personalizado no qual possui semi formas geométricas pequenas no canto superior direito da página, no canto inferior direito, e na esquerda levemente abaixo do centro. Seu nome está centralizado como título da página. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
-            
         }
+        
+        
+        
+        //MARK: Acessibilidade - Descrição dos modelos de currículo
+        primeiroModelo.isAccessibilityElement = true
+        segundoModelo.isAccessibilityElement = true
+        
+        
+        primeiroModelo.accessibilityLabel = "Este currículo é um modelo simples no qual o seu nome está centralizado. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+        
+        segundoModelo.accessibilityLabel = "Este currículo é um modelo personalizado no qual possui semi formas geométricas pequenas no canto superior direito da página, no canto inferior direito, e na esquerda levemente abaixo do centro. Seu nome está centralizado como título da página. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
+        
         
         
     }
@@ -230,15 +235,15 @@ class TemplatesPageViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
-//            if (self.dictionary["Modelo"] == nil){
-//                print("vazio")
-//                let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
-//                ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//                ac.view.tintColor = UIColor(named: "Ciano")
-//                present(ac, animated: true)
-//            } else{
-//                print("cheio")
-//            }
+            if (self.dictionary["Modelo"] as! String == "") || (self.dictionary["Cor"] as! String == "") || (self.dictionary["NomeCurriculo"] as! String == ""){
+                print("vazio")
+                let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                ac.view.tintColor = UIColor(named: "Ciano")
+                present(ac, animated: true)
+            } else{
+                print("cheio")
+            }
             guard let vc = segue.destination as? ProntoPageViewController else { return }
             
             if let nome = dictionary["Nome"]! as! String?,
@@ -330,8 +335,7 @@ extension TemplatesPageViewController: UITableViewDataSource{
         cell.nomeObs.isAccessibilityElement = true
         cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
         
-        cell.accessibilityElements = [cell.nomeLabel, cell.nomeObs, cell.nomeField]
-        
+        cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
         
         if UIAccessibility.isVoiceOverRunning {
             cell.nomeField.placeholder = ""

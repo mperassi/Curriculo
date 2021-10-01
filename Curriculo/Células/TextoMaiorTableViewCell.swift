@@ -17,7 +17,7 @@ class TextoMaiorTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         self.isAccessibilityElement = false
-        
+        largeTextView?.delegate = self
         self.accessibilityElements = [largeTextLabel!, largeTextObs!, largeTextView!]
         
     }

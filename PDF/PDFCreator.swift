@@ -126,6 +126,7 @@ class PDFCreator: NSObject {
         let titleAttributes =
         [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
           NSAttributedString.Key.font: titleFont] as [NSAttributedString.Key : Any] as [NSAttributedString.Key : Any]
+        
         let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes)
         let titleStringSize = attributedTitle.size()
         let titleStringRect = CGRect(x: (pageRect.width - titleStringSize.width) / 2.0,
@@ -142,7 +143,7 @@ class PDFCreator: NSObject {
         paragraphStyle.lineBreakMode = .byWordWrapping
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: fonteNasc,
+            NSAttributedString.Key.font: fonteNasc            
         ]
         let attributedText = NSAttributedString(string: "Data de nascimento: \(nascimento)", attributes: textAttributes)
         let textRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,

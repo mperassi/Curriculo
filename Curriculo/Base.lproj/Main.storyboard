@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lto-xi-Zj4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J4P-GA-G7C">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="2"/>
     <dependencies>
@@ -9,6 +9,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -310,7 +311,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="776.33333333333337" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="784" width="390" height="49"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
                                             <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
@@ -374,7 +375,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="z7U-Kc-2uj" kind="relationship" relationship="rootViewController" id="8W2-kj-DFj"/>
+                        <segue destination="T4e-pf-WVS" kind="relationship" relationship="rootViewController" id="qVg-Kr-UA9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-xu-Fxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1386,9 +1387,6 @@
                     <navigationItem key="navigationItem" title="Currículos" id="U8I-9f-cbm">
                         <barButtonItem key="rightBarButtonItem" title="Adicionar" id="pf5-LG-CNu">
                             <color key="tintColor" name="Ciano"/>
-                            <connections>
-                                <segue destination="6Ti-xJ-f2Z" kind="show" id="lYc-ZM-5az"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="390" height="700"/>
@@ -1401,7 +1399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="um0-0K-VeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-286"/>
+            <point key="canvasLocation" x="137" y="-1071"/>
         </scene>
         <!--Pronto!-->
         <scene sceneID="2OK-h4-Csh">
@@ -1441,7 +1439,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-6d-7Mu">
-                                        <rect key="frame" x="0.0" y="481.33333333333331" width="390" height="43.999999999999943"/>
+                                        <rect key="frame" x="0.0" y="480.66666666666669" width="390" height="44.000000000000057"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="2yJ-eZ-eFA"/>
                                             <barButtonItem title="Compartilhar" id="fIc-cX-2Qd"/>
@@ -1524,7 +1522,7 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="78Z-nc-9n9" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="50" width="360" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="78Z-nc-9n9" id="IMV-rz-ao7">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
@@ -1733,7 +1731,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBJ-vc-gcc">
-                                        <rect key="frame" x="0.0" y="581.33333333333337" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="580.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="VI7-u5-5cj"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="De5-kB-Rsy"/>
@@ -1798,6 +1796,123 @@
             </objects>
             <point key="canvasLocation" x="5527.6923076923076" y="-286.49289099526067"/>
         </scene>
+        <!--Currículos-->
+        <scene sceneID="Y84-0Z-mMr">
+            <objects>
+                <viewController id="T4e-pf-WVS" customClass="BemvindosViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rMb-O9-Jjw">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="AIb-TJ-Ssa">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHd-sP-vas">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uj3-ke-8bV">
+                                                <rect key="frame" x="25" y="15" width="340" height="649"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nxM-k7-nbe">
+                                                    <size key="itemSize" width="165" height="250"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCell" id="NEr-8F-I8f" customClass="InicioCollectionViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="250"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" insetsLayoutMarginsFromSafeArea="NO" id="RnS-rL-THR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="165" height="250"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InicioAzul" translatesAutoresizingMaskIntoConstraints="NO" id="5J6-Zs-LM1">
+                                                                    <rect key="frame" x="9" y="13" width="147" height="200"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="200" id="f5M-Ww-cRY"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do cu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLn-hi-Jzw">
+                                                                    <rect key="frame" x="20" y="223" width="125" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="ZLn-hi-Jzw" firstAttribute="leading" secondItem="RnS-rL-THR" secondAttribute="leading" constant="20" id="J86-zq-d2K"/>
+                                                                <constraint firstItem="5J6-Zs-LM1" firstAttribute="centerX" secondItem="ZLn-hi-Jzw" secondAttribute="centerX" id="JX0-rj-NWa"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ZLn-hi-Jzw" secondAttribute="bottom" constant="10" id="bGC-26-nwP"/>
+                                                                <constraint firstItem="ZLn-hi-Jzw" firstAttribute="top" secondItem="5J6-Zs-LM1" secondAttribute="bottom" constant="10" id="rPr-Pi-vHD"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZLn-hi-Jzw" secondAttribute="trailing" constant="20" id="yre-sA-sas"/>
+                                                                <constraint firstItem="5J6-Zs-LM1" firstAttribute="leading" secondItem="RnS-rL-THR" secondAttribute="leading" constant="9" id="zAk-Nr-pv3"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="apelido" destination="ZLn-hi-Jzw" id="gUI-lP-52l"/>
+                                                            <outlet property="imagemCurriculo" destination="5J6-Zs-LM1" id="LLI-XK-P2O"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Fundo"/>
+                                        <constraints>
+                                            <constraint firstItem="Uj3-ke-8bV" firstAttribute="leading" secondItem="BHd-sP-vas" secondAttribute="leading" constant="25" id="2oO-kI-Gzu"/>
+                                            <constraint firstAttribute="bottom" secondItem="Uj3-ke-8bV" secondAttribute="bottom" constant="-94" id="CAo-Nx-5kY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uj3-ke-8bV" secondAttribute="trailing" constant="25" id="YBR-Tn-vXL"/>
+                                            <constraint firstItem="Uj3-ke-8bV" firstAttribute="top" secondItem="BHd-sP-vas" secondAttribute="top" constant="15" id="h4l-0x-p0A"/>
+                                            <constraint firstAttribute="height" constant="570" id="ixd-wE-1N1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="Fundo"/>
+                                <constraints>
+                                    <constraint firstItem="BHd-sP-vas" firstAttribute="leading" secondItem="wRc-1X-hci" secondAttribute="leading" id="3Sd-wy-VID"/>
+                                    <constraint firstAttribute="height" constant="700" id="BPs-YL-3C4"/>
+                                    <constraint firstAttribute="width" constant="390" id="Jev-ZU-YYK"/>
+                                    <constraint firstItem="BHd-sP-vas" firstAttribute="top" secondItem="wRc-1X-hci" secondAttribute="top" id="T40-q6-I6M"/>
+                                    <constraint firstItem="BHd-sP-vas" firstAttribute="bottom" secondItem="wRc-1X-hci" secondAttribute="bottom" constant="-48" id="aCT-q1-98s"/>
+                                    <constraint firstItem="BHd-sP-vas" firstAttribute="trailing" secondItem="wRc-1X-hci" secondAttribute="trailing" id="e7u-RR-4eA"/>
+                                    <constraint firstItem="BHd-sP-vas" firstAttribute="width" secondItem="qA7-cT-wa0" secondAttribute="width" id="xei-Xx-iWu"/>
+                                    <constraint firstItem="BHd-sP-vas" firstAttribute="width" secondItem="AIb-TJ-Ssa" secondAttribute="width" id="y6m-fm-dyT"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wRc-1X-hci"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qA7-cT-wa0"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r9S-WJ-3pM"/>
+                        <color key="backgroundColor" name="Fundo"/>
+                        <color key="tintColor" name="Ciano"/>
+                        <constraints>
+                            <constraint firstItem="AIb-TJ-Ssa" firstAttribute="top" secondItem="rMb-O9-Jjw" secondAttribute="top" id="HzR-3T-bqu"/>
+                            <constraint firstItem="AIb-TJ-Ssa" firstAttribute="trailing" secondItem="r9S-WJ-3pM" secondAttribute="trailing" id="Kze-Lw-JfJ"/>
+                            <constraint firstAttribute="bottom" secondItem="AIb-TJ-Ssa" secondAttribute="bottom" id="O5v-ap-myz"/>
+                            <constraint firstItem="AIb-TJ-Ssa" firstAttribute="leading" secondItem="r9S-WJ-3pM" secondAttribute="leading" id="XfQ-r8-p1R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Currículos" id="Nlz-kz-0xb">
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="Meg-Ce-4kZ">
+                            <color key="tintColor" name="Ciano"/>
+                            <connections>
+                                <segue destination="6Ti-xJ-f2Z" kind="show" id="6J8-OR-8Qi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="390" height="700"/>
+                    <connections>
+                        <outlet property="botaoAdd" destination="Meg-Ce-4kZ" id="1lX-Dg-hOe"/>
+                        <outlet property="collectionView" destination="Uj3-ke-8bV" id="svD-pb-om5"/>
+                        <outlet property="scrollView" destination="AIb-TJ-Ssa" id="IV2-ce-Fbj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qb-VR-X9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.38461538461539" y="-286.49289099526067"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="Ciano"/>
     <resources>
@@ -1805,6 +1920,7 @@
         <image name="C-Laranja" width="45" height="45"/>
         <image name="C-Preto" width="45" height="45"/>
         <image name="C-Verde" width="45" height="45"/>
+        <image name="InicioAzul" width="172" height="210"/>
         <image name="fotoInicio" width="212" height="212"/>
         <image name="modelo1" width="163" height="218"/>
         <image name="modelo2" width="163" height="217.33332824707031"/>
@@ -1813,7 +1929,7 @@
             <color red="0.78799998760223389" green="0.20399999618530273" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Ciano">
-            <color red="0.1803921568627451" green="0.4392156862745098" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18000000715255737" green="0.43900001049041748" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Fundo">
             <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1823,6 +1939,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
