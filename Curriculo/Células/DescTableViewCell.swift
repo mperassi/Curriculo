@@ -24,11 +24,11 @@ class DescTableViewCell: UITableViewCell {
         descObsLabel.accessibilityLabel = "Este item é de preenchimento obrigatório"
         
         descTextView.isAccessibilityElement = true
-        descTextView.accessibilityLabel = "Fale brevemente sobre sua realização"
+        descTextView.accessibilityLabel = "Fale brevemente sobre sua realização profissional"
         
         
 
-        self.accessibilityElements = [descLabel, descObsLabel, descTextView]
+        self.accessibilityElements = [descLabel!, descObsLabel!, descTextView!]
 
     }
 
