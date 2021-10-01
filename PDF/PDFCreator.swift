@@ -75,7 +75,7 @@ class PDFCreator: NSObject {
         let paginaLargura = 8.25 * 72.0
         let paginaAltura = 11.75 * 72.0
         let paginaTamanho = CGRect(x: 0, y: 0, width: paginaLargura, height: paginaAltura)
-        
+     
         // 3
         let renderer = UIGraphicsPDFRenderer(bounds: paginaTamanho, format: format)
         // 4
@@ -90,39 +90,47 @@ class PDFCreator: NSObject {
             addTel(pageRect: paginaTamanho, textTop: titleBottom + 30)
             addEmail(pageRect: paginaTamanho, textTop: titleBottom + 45)
             addLocal(pageRect: paginaTamanho, textTop: titleBottom + 60)
-            addLinks(pageRect: paginaTamanho, textTop: titleBottom + 75)
-            //forms 2
-            addObjetivoProf(pageRect: paginaTamanho, textTop: titleBottom + 90)
-            addResumoProf(pageRect: paginaTamanho, textTop: titleBottom + 105)
-            //forms 3
-            addNomeEmp(pageRect: paginaTamanho, textTop: titleBottom + 125)
-            addCargoEmp(pageRect: paginaTamanho, textTop: titleBottom + 140)
-            addDataIniEmp(pageRect: paginaTamanho, textTop: titleBottom + 150)
-            addDataFimEmp(pageRect: paginaTamanho, textTop: titleBottom + 160)
-            addDetalhesEmp(pageRect: paginaTamanho, textTop: titleBottom + 170)
-            //forms 4
-            addNomeInst(pageRect: paginaTamanho, textTop: titleBottom + 180)
-            addCursoInst(pageRect: paginaTamanho, textTop: titleBottom + 190)
-            addDataIniInst(pageRect: paginaTamanho, textTop: titleBottom + 200)
-            addDataFimInst(pageRect: paginaTamanho, textTop: titleBottom + 210)
             
-            addReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
-            addDescReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
-            addDataIniReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
-            addDataFimReal(pageRect: paginaTamanho, textTop: titleBottom + 100)
-
-            
-            addDeficiencia(pageRect: paginaTamanho, textTop: titleBottom + 220)
-            addDeficienciaObs(pageRect: paginaTamanho, textTop: titleBottom + 240)
+            let linksBottom =
+            addLinks(pageRect: paginaTamanho)
+            addObjetivo(pageRect: paginaTamanho, textTop: linksBottom + 10)
+            let objBottom =
+            addObjetivoProf(pageRect: paginaTamanho)
+            addResumo(pageRect: paginaTamanho, textTop: objBottom + 10)
+            let resumoBottom =
+            addResumoProf(pageRect: paginaTamanho, textTop: objBottom + 30)
+            addExperiencia(pageRect: paginaTamanho, textTop: resumoBottom + 10)
+//            //forms 3
+            let nomeEmpBottom =
+            addNomeEmp(pageRect: paginaTamanho, textTop: resumoBottom + 30)
+            addCargoEmp(pageRect: paginaTamanho, textTop: nomeEmpBottom - 2)
+            addDataIniEmp(pageRect: paginaTamanho, textTop: nomeEmpBottom + 10)
+            addDataFimEmp(pageRect: paginaTamanho, textTop: nomeEmpBottom + 10)
+            let detalhesBottom =
+            addDetalhesEmp(pageRect: paginaTamanho, textTop: nomeEmpBottom + 25)
+            addIntituicao(pageRect: paginaTamanho, textTop: detalhesBottom + 10)
+            addNomeInst(pageRect: paginaTamanho, textTop: detalhesBottom + 30)
+            addCursoInst(pageRect: paginaTamanho, textTop: detalhesBottom + 60)
+            addDataIniInst(pageRect: paginaTamanho, textTop: detalhesBottom + 45)
+            addDataFimInst(pageRect: paginaTamanho, textTop: detalhesBottom + 45)
+            addRealizacao(pageRect: paginaTamanho, textTop: detalhesBottom + 85)
+            let realBottom =
+            addReal(pageRect: paginaTamanho, textTop: detalhesBottom + 105)
+            addDescReal(pageRect: paginaTamanho, textTop: realBottom)
+            addDataIniReal(pageRect: paginaTamanho, textTop: realBottom + 15)
+            addDataFimReal(pageRect: paginaTamanho, textTop: realBottom + 15)
+            addInfoAdd(pageRect: paginaTamanho, textTop: realBottom + 40)
+            addDeficiencia(pageRect: paginaTamanho, textTop: realBottom + 60)
+            addDeficienciaObs(pageRect: paginaTamanho, textTop: realBottom + 75)
         }
         return data
     }
     func addNome(pageRect: CGRect) -> CGFloat {
         let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
+        //let titlecolor = UIColor(named: "Ciano")
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         paragraphStyle.lineBreakMode = .byWordWrapping
-//        CTLineBreakMode.byWordWrapping
         let titleAttributes =
         [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
           NSAttributedString.Key.font: titleFont] as [NSAttributedString.Key : Any] as [NSAttributedString.Key : Any]
@@ -130,7 +138,7 @@ class PDFCreator: NSObject {
         let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes)
         let titleStringSize = attributedTitle.size()
         let titleStringRect = CGRect(x: (pageRect.width - titleStringSize.width) / 2.0,
-                                     y: 36, width: titleStringSize.width,
+                                     y: 35, width: titleStringSize.width,
                                      height: titleStringSize.height)
         attributedTitle.draw(in: titleStringRect)
         return titleStringRect.origin.y + titleStringRect.size.height
@@ -200,7 +208,7 @@ class PDFCreator: NSObject {
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: localRect)
     }
-    func addLinks(pageRect: CGRect, textTop: CGFloat) {
+    func addLinks(pageRect: CGRect) -> CGFloat {
         // 1
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         // 2
@@ -208,19 +216,19 @@ class PDFCreator: NSObject {
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
         // 3
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
+        let textAttributes =
+            [NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont]
+        
         let attributedText = NSAttributedString(string: "Links adicionais: \(link)", attributes: textAttributes)
-        // 4
-        let linksRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
-                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        let titleStringSize = attributedText.size()
+        let linksRect = CGRect(x: 30, y: 150, width: titleStringSize.width,height: titleStringSize.height)
         attributedText.draw(in: linksRect)
+        return linksRect.origin.y + linksRect.size.height
     }
-    func addObjetivoProf(pageRect: CGRect, textTop: CGFloat) {
+    func addObjetivo(pageRect: CGRect, textTop: CGFloat) {
         // 1
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
         // 2
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
@@ -230,14 +238,35 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "Objetivo: \(objetivoProf)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "OBJETIVO", attributes: textAttributes)
+        
         // 4
         let objRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                              height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: objRect)
     }
-    func addResumoProf(pageRect: CGRect, textTop: CGFloat) {
+    func addObjetivoProf(pageRect: CGRect) -> CGFloat {
+        // 1
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        // 2
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 3
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont,
+        ]
+        let attributedText = NSAttributedString(string: objetivoProf, attributes: textAttributes)
+        // 4
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let objRect = CGRect(x: 30, y: 195, width: paragraphRect.width, height: paragraphRect.height)
+        attributedText.draw(in: objRect)
+        return objRect.origin.y + objRect.size.height
+    }
+    func addResumo(pageRect: CGRect, textTop: CGFloat) {
+        let textFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -245,13 +274,33 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(resumoProf)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "RESUMO PROFISSIONAL", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
-    func addNomeEmp(pageRect: CGRect, textTop: CGFloat) {
+    func addResumoProf(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
+        // 1
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        // 2
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 3
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont
+        ]
+        let attributedText = NSAttributedString(string: resumoProf, attributes: textAttributes)
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        // 4
+        let resumoRect = CGRect(x:30, y: textTop , width: paragraphRect.width, height: paragraphRect.height)
+        attributedText.draw(in: resumoRect)
+        return resumoRect.origin.y + resumoRect.size.height
+    }
+    func addExperiencia(pageRect: CGRect, textTop: CGFloat) {
+        let textFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -259,13 +308,34 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(nomeEmp)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "EXPERIÊNCIA DE TRABALHO", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
+    }
+    func addNomeEmp(pageRect: CGRect,textTop: CGFloat) -> CGFloat {
+        // 1
+        let textFont = UIFont.systemFont(ofSize: 14.0, weight: .bold)
+        // 2
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 3
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont
+        ]
+        let attributedText = NSAttributedString(string: nomeEmp, attributes: textAttributes)
+        // 4
+        
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let resumoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,height: paragraphRect.height)
+        attributedText.draw(in: resumoRect)
+        return resumoRect.origin.y + resumoRect.size.height
     }
     func addCargoEmp(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -273,13 +343,15 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(cargoEmp)", attributes: textAttributes)
-        let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
-                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        let attributedText = NSAttributedString(string: cargoEmp, attributes: textAttributes)
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let textoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,
+                               height: paragraphRect.height)
         attributedText.draw(in: textoRect)
     }
     func addDataIniEmp(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -287,13 +359,13 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(dataIniEmp)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string:"Inicio\(dataIniEmp)", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
     func addDataFimEmp(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -301,13 +373,34 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(dataFimEmp)", attributes: textAttributes)
-        let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
+        let attributedText = NSAttributedString(string: "Fim:\(dataFimEmp)", attributes: textAttributes)
+        let textoRect = CGRect(x: 130, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
-    func addDetalhesEmp(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+    func addDetalhesEmp(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
+        // 1
+        let textFont = UIFont.systemFont(ofSize: 13.0, weight: .regular)
+        // 2
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 3
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont
+        ]
+        let attributedText = NSAttributedString(string: detalhesEmp, attributes: textAttributes)
+        // 4
+    
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let resumoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,height: paragraphRect.height)
+        attributedText.draw(in: resumoRect)
+        return resumoRect.origin.y + resumoRect.size.height
+    }
+    func addIntituicao(pageRect: CGRect, textTop: CGFloat) {
+        let textFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -315,13 +408,13 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(detalhesEmp)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "ESCOLARIDADE", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
     func addNomeInst(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 13.0, weight: .bold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -329,9 +422,11 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(nomeInst)", attributes: textAttributes)
-        let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
-                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        let attributedText = NSAttributedString(string: (nomeInst), attributes: textAttributes)
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let textoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,
+                               height: paragraphRect.height)
         attributedText.draw(in: textoRect)
     }
     func addCursoInst(pageRect: CGRect, textTop: CGFloat) {
@@ -343,14 +438,16 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(cursoInst)", attributes: textAttributes)
-        let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
-                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        let attributedText = NSAttributedString(string: (cursoInst), attributes: textAttributes)
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let textoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,
+                               height: paragraphRect.height)
         attributedText.draw(in: textoRect)
     }
     
     func addDataIniInst(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -358,13 +455,13 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(dataIniInst)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "Inicio: \(dataIniInst)", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
     func addDataFimInst(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -372,24 +469,45 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(dataFimInst)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "Fim: \(dataFimInst)", attributes: textAttributes)
+        let textoRect = CGRect(x: 130, y: textTop, width: pageRect.width - 20,
+                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        attributedText.draw(in: textoRect)
+    }
+    func addRealizacao(pageRect: CGRect, textTop: CGFloat) {
+        let textFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont
+        ]
+        let attributedText = NSAttributedString(string: "REALIZAÇÕES", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
-    func addReal(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+    func addReal(pageRect: CGRect,textTop: CGFloat) -> CGFloat {
+        // 1
+        let textFont = UIFont.systemFont(ofSize: 14.0, weight: .bold)
+        // 2
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
+        // 3
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(realizacao)", attributes: textAttributes)
-        let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
-                               height: pageRect.height - textTop - pageRect.height / 5.0)
-        attributedText.draw(in: textoRect)
+        let attributedText = NSAttributedString(string: realizacao, attributes: textAttributes)
+        // 4
+        
+        let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        let resumoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,height: paragraphRect.height)
+        attributedText.draw(in: resumoRect)
+        return resumoRect.origin.y + resumoRect.size.height
     }
     func addDescReal(pageRect: CGRect, textTop: CGFloat) {
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
@@ -400,13 +518,13 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(descReal)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string:(descReal), attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
     func addDataIniReal(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .bold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -414,13 +532,13 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(dataIniReal)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "Inicial: \(dataIniReal)", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
     }
     func addDataFimReal(pageRect: CGRect, textTop: CGFloat) {
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .bold)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
@@ -428,7 +546,21 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(dataFimReal)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "Final: \(dataFimReal)", attributes: textAttributes)
+        let textoRect = CGRect(x: 130, y: textTop, width: pageRect.width - 20,
+                               height: pageRect.height - textTop - pageRect.height / 5.0)
+        attributedText.draw(in: textoRect)
+    }
+    func addInfoAdd(pageRect: CGRect, textTop: CGFloat) {
+        let textFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .natural
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont
+        ]
+        let attributedText = NSAttributedString(string: "INFORMAÇÕES ADICIONAIS", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -442,7 +574,7 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(deficiencia)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string:(deficiencia), attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -457,7 +589,7 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "texto: \(deficienciaObs)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string:(deficienciaObs), attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
