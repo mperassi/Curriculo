@@ -80,7 +80,7 @@ class QuintaPageViewController: UIViewController {
         
         primeiraTableView.dequeueReusableCell(withIdentifier: "descCell")
         let indexPath1 = NSIndexPath(row: 1, section: 0)
-        let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescTableViewCell
+        let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescricaoTableViewCell
         self.dictionary["DescConq"] = multiCell1?.descTextView?.text
         
         let indexPathDatas = NSIndexPath(row: 2, section: 0)
@@ -108,7 +108,7 @@ class QuintaPageViewController: UIViewController {
         
         segundaTableView.dequeueReusableCell(withIdentifier: "obsCell")
         let indexPathObs = NSIndexPath(row: 1, section: 0)
-        let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObsTableViewCell
+        let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObservacaoTableViewCell
         self.dictionary["ObsDef"] = multiCellObs?.obsTextView.text
         
         //Ações próxima página
@@ -197,7 +197,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 return cell
                 
             } else if indexPath.row == 1{
-                let cell = primeiraTableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as? DescTableViewCell
+                let cell = primeiraTableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as? DescricaoTableViewCell
                 cell?.selectionStyle = .none
                 cell?.descObsLabel.text = " "
                 
@@ -237,7 +237,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 return cell
                 
             } else {
-                let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObsTableViewCell
+                let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObservacaoTableViewCell
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
                 

@@ -34,8 +34,9 @@ class PDFCreator: NSObject {
     let deficiencia: String
     let deficienciaObs: String
     let modelo: String
+    let cor: String
     
-    init(nome: String, nascimento: String, tel: String, local: String, email: String, link: String, objetivoProf: String, resumoProf: String, nomeEmp: String, cargoEmp: String, dataIniEmp: String, dataFimEmp: String, detalhesEmp: String, nomeInst: String, cursoInst: String, dataIniInst: String, dataFimInst: String, realizacao: String, descReal: String, dataIniReal: String, dataFimReal: String, deficiencia: String, deficienciaObs: String, modelo: String) {
+    init(nome: String, nascimento: String, tel: String, local: String, email: String, link: String, objetivoProf: String, resumoProf: String, nomeEmp: String, cargoEmp: String, dataIniEmp: String, dataFimEmp: String, detalhesEmp: String, nomeInst: String, cursoInst: String, dataIniInst: String, dataFimInst: String, realizacao: String, descReal: String, dataIniReal: String, dataFimReal: String, deficiencia: String, deficienciaObs: String, modelo: String, cor: String) {
         self.nome = nome
         self.nascimento = nascimento
         self.tel = tel
@@ -60,6 +61,7 @@ class PDFCreator: NSObject {
         self.deficiencia = deficiencia
         self.deficienciaObs = deficienciaObs
         self.modelo = modelo
+        self.cor = cor
     }
     func criarCurriculo() -> Data {
         // 1
@@ -125,15 +127,35 @@ class PDFCreator: NSObject {
         }
         return data
     }
+//    func addNome(pageRect: CGRect) -> CGFloat {
+//        let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
+//        //let titlecolor = UIColor(named: "Ciano")
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.alignment = .center
+//        paragraphStyle.lineBreakMode = .byWordWrapping
+//        let titleAttributes =
+//        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+//          NSAttributedString.Key.font: titleFont] as [NSAttributedString.Key : Any] as [NSAttributedString.Key : Any]
+//
+//        let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes)
+//        let titleStringSize = attributedTitle.size()
+//        let titleStringRect = CGRect(x: (pageRect.width - titleStringSize.width) / 2.0,
+//                                     y: 35, width: titleStringSize.width,
+//                                     height: titleStringSize.height)
+//        attributedTitle.draw(in: titleStringRect)
+//        return titleStringRect.origin.y + titleStringRect.size.height
+//    }
     func addNome(pageRect: CGRect) -> CGFloat {
         let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
         //let titlecolor = UIColor(named: "Ciano")
         let paragraphStyle = NSMutableParagraphStyle()
+        
         paragraphStyle.alignment = .center
         paragraphStyle.lineBreakMode = .byWordWrapping
         let titleAttributes =
         [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
-          NSAttributedString.Key.font: titleFont] as [NSAttributedString.Key : Any] as [NSAttributedString.Key : Any]
+          NSAttributedString.Key.font: titleFont,
+        ]
         
         let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes)
         let titleStringSize = attributedTitle.size()

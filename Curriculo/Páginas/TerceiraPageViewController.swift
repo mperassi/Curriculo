@@ -90,7 +90,7 @@ class TerceiraPageViewController: UIViewController {
         
         tableView.dequeueReusableCell(withIdentifier: "novaTextCell")
         let indexPath3 = NSIndexPath(row: 3, section: 0)
-        let multiCell3 = tableView.cellForRow(at: indexPath3 as IndexPath) as? NovaTableViewCell
+        let multiCell3 = tableView.cellForRow(at: indexPath3 as IndexPath) as? DetalhesTableViewCell
         self.dictionary["Detalhes"] = multiCell3?.novaTextView?.text
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
@@ -236,7 +236,7 @@ extension TerceiraPageViewController: UITableViewDataSource{
             //            print(dictValue)  // Printing the value
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "novaTextCell", for: indexPath) as! NovaTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "novaTextCell", for: indexPath) as! DetalhesTableViewCell
             cell.selectionStyle = .none
             return cell
             //            guard let safeCell = cell else {return UITableViewCell()}

@@ -1,5 +1,5 @@
 //
-//  NovaTableViewCell.swift
+//  DescTableViewCell.swift
 //  Curriculo
 //
 //  Created by Carolina Ortega on 24/09/21.
@@ -7,22 +7,28 @@
 
 import UIKit
 
-class NovaTableViewCell: UITableViewCell {
-    @IBOutlet var novaLabel: UILabel!
-    @IBOutlet var novaTextView: UITextView!
+class DescricaoTableViewCell: UITableViewCell {
+    @IBOutlet var descLabel: UILabel!
+    @IBOutlet var descObsLabel: UILabel!
+    @IBOutlet var descTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        descTextView.delegate = self
         //MARK: Acessibilidade
-        novaLabel.isAccessibilityElement = true
-        novaLabel.accessibilityLabel = "Detalhes"
-        novaTextView.delegate = self
-        novaTextView.isAccessibilityElement = true
-        novaTextView.accessibilityLabel = "Digite aqui detalhes da sua experiência profissional"
+        descLabel.isAccessibilityElement = true
+        descLabel.accessibilityLabel = "Descrição"
         
-        self.accessibilityElements = [novaLabel!, novaTextView!]
+        descObsLabel.isAccessibilityElement = true
+        descObsLabel.accessibilityLabel = "Este item é de preenchimento obrigatório"
+        
+        descTextView.isAccessibilityElement = true
+        descTextView.accessibilityLabel = "Fale brevemente sobre sua realização profissional"
+        
+        
+        
+        self.accessibilityElements = [descLabel!, descObsLabel!, descTextView!]
         
     }
     
@@ -33,7 +39,7 @@ class NovaTableViewCell: UITableViewCell {
     }
     
 }
-extension NovaTableViewCell: UITextViewDelegate {
+extension DescricaoTableViewCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
@@ -41,5 +47,4 @@ extension NovaTableViewCell: UITextViewDelegate {
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
 }
-
 
