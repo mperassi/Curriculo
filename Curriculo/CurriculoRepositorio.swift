@@ -9,8 +9,8 @@ import Foundation
 import CoreData
 
 class Repositorio {
-    static let shared = Repositorio()
-    private init(){}
+    static let shared: Repositorio = Repositorio()
+    private init() {}
     
     // MARK: - Core Data stack
     //Carrega as informações do nosso arquivo de coredata
@@ -68,6 +68,7 @@ class Repositorio {
             }
         }
         self.saveContext()
+        
     }
     
     func buscar(nome: String) -> [String: String]? {

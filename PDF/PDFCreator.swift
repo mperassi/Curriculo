@@ -127,24 +127,6 @@ class PDFCreator: NSObject {
         }
         return data
     }
-//    func addNome(pageRect: CGRect) -> CGFloat {
-//        let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
-//        //let titlecolor = UIColor(named: "Ciano")
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.alignment = .center
-//        paragraphStyle.lineBreakMode = .byWordWrapping
-//        let titleAttributes =
-//        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
-//          NSAttributedString.Key.font: titleFont] as [NSAttributedString.Key : Any] as [NSAttributedString.Key : Any]
-//
-//        let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes)
-//        let titleStringSize = attributedTitle.size()
-//        let titleStringRect = CGRect(x: (pageRect.width - titleStringSize.width) / 2.0,
-//                                     y: 35, width: titleStringSize.width,
-//                                     height: titleStringSize.height)
-//        attributedTitle.draw(in: titleStringRect)
-//        return titleStringRect.origin.y + titleStringRect.size.height
-//    }
     func addNome(pageRect: CGRect) -> CGFloat {
         let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
         //let titlecolor = UIColor(named: "Ciano")
