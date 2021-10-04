@@ -8,9 +8,12 @@
 import Foundation
 import CoreData
 
-class Repositorio {
-    static let shared: Repositorio = Repositorio()
-    private init() {}
+class CurriculoRepositorio {
+    static let shared: CurriculoRepositorio = CurriculoRepositorio()
+    
+    private init(){
+        
+    }
     
     // MARK: - Core Data stack
     //Carrega as informações do nosso arquivo de coredata
@@ -20,13 +23,13 @@ class Repositorio {
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
-        */
+         */
         let container = NSPersistentContainer(name: "Curriculo")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -40,10 +43,10 @@ class Repositorio {
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
     //Filas de conexão onde eu posso fazer ações como gravar e ler algum dado
-    private func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -56,7 +59,8 @@ class Repositorio {
             }
         }
     }
-
+    
+    
     func salvar(nome: String, dados: [String: String]) {
         let curriculo = Curriculo(context: self.persistentContainer.viewContext)
         let encoder = JSONEncoder()
@@ -87,13 +91,13 @@ class Repositorio {
     
     /**
      Creates a personalized greeting for a recipient.
-
+     
      - Parameter recipient: The person being greeted.
-
+     
      - Throws: `MyError.invalidRecipient`
-               if `recipient` is "Derek"
-               (he knows what he did).
-
+     if `recipient` is "Derek"
+     (he knows what he did).
+     
      - Returns: A new string saying hello to `recipient`.
      */
     func buscarTodos() -> [String] {
@@ -108,7 +112,7 @@ class Repositorio {
         }
         return []
     }
-
+    
     
     private func converter(curriculo: Curriculo) -> [String: String] {
         if let data = curriculo.dados!.data(using: .utf8) {
@@ -121,5 +125,5 @@ class Repositorio {
         }
         return [:]
     }
-
+    
 }

@@ -108,7 +108,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="580.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -606,7 +606,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="580.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -1322,85 +1322,6 @@
             </objects>
             <point key="canvasLocation" x="4527.6923076923076" y="-286.49289099526067"/>
         </scene>
-        <!--Currículos-->
-        <scene sceneID="fbz-8h-djP">
-            <objects>
-                <viewController id="z7U-Kc-2uj" customClass="BemvindosViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GPG-mu-acn">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-tA-gmF">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEd-Wv-Cya">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fotoInicio" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-je-eKi">
-                                                <rect key="frame" x="90" y="140" width="210" height="200"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique em ”Adicionar” para criar seu primeiro currículo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ni-1h-jSg" customClass="fraseSemCurriculo">
-                                                <rect key="frame" x="35" y="385" width="320" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.34509803919999998" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" name="Fundo"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="570" id="07q-kX-yXJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="5ni-1h-jSg" secondAttribute="trailing" constant="35" id="08m-f0-XCG"/>
-                                            <constraint firstItem="0VO-je-eKi" firstAttribute="leading" secondItem="uEd-Wv-Cya" secondAttribute="leading" constant="90" id="8rf-9U-l9N"/>
-                                            <constraint firstItem="5ni-1h-jSg" firstAttribute="leading" secondItem="uEd-Wv-Cya" secondAttribute="leading" constant="35" id="AW0-T4-Bvk"/>
-                                            <constraint firstItem="0VO-je-eKi" firstAttribute="top" secondItem="uEd-Wv-Cya" secondAttribute="top" constant="140" id="OUW-fG-EKa"/>
-                                            <constraint firstAttribute="bottom" secondItem="0VO-je-eKi" secondAttribute="bottom" constant="230" id="XzP-GL-gbh"/>
-                                            <constraint firstItem="5ni-1h-jSg" firstAttribute="top" secondItem="0VO-je-eKi" secondAttribute="bottom" constant="45" id="YZ5-hO-REK"/>
-                                            <constraint firstAttribute="trailing" secondItem="0VO-je-eKi" secondAttribute="trailing" constant="90" id="sFn-4B-VWW"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" name="Fundo"/>
-                                <constraints>
-                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="width" secondItem="ezb-tA-gmF" secondAttribute="width" id="85P-ev-VQM"/>
-                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="bottom" secondItem="j03-eo-cEt" secondAttribute="bottom" constant="-48" id="CJ5-57-fNk"/>
-                                    <constraint firstAttribute="width" constant="390" id="IU4-F3-kxY"/>
-                                    <constraint firstAttribute="height" constant="700" id="SNP-oS-uK1"/>
-                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="trailing" secondItem="j03-eo-cEt" secondAttribute="trailing" id="UJU-3o-Ee6"/>
-                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="top" secondItem="j03-eo-cEt" secondAttribute="top" id="W6P-e3-RYq"/>
-                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="leading" secondItem="j03-eo-cEt" secondAttribute="leading" id="ibS-JR-KfL"/>
-                                    <constraint firstItem="uEd-Wv-Cya" firstAttribute="width" secondItem="y6I-cX-L7L" secondAttribute="width" id="nGD-Hh-2mE"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="j03-eo-cEt"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="y6I-cX-L7L"/>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="wB3-mw-h5o"/>
-                        <color key="backgroundColor" name="Fundo"/>
-                        <color key="tintColor" name="Ciano"/>
-                        <constraints>
-                            <constraint firstItem="ezb-tA-gmF" firstAttribute="leading" secondItem="wB3-mw-h5o" secondAttribute="leading" id="8lh-l9-7Q6"/>
-                            <constraint firstItem="ezb-tA-gmF" firstAttribute="top" secondItem="GPG-mu-acn" secondAttribute="top" id="IB1-PP-DN9"/>
-                            <constraint firstAttribute="bottom" secondItem="ezb-tA-gmF" secondAttribute="bottom" id="ZSZ-E7-6CK"/>
-                            <constraint firstItem="ezb-tA-gmF" firstAttribute="trailing" secondItem="wB3-mw-h5o" secondAttribute="trailing" id="z6h-zm-i7K"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Currículos" id="U8I-9f-cbm">
-                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="pf5-LG-CNu">
-                            <color key="tintColor" name="Ciano"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <size key="freeformSize" width="390" height="700"/>
-                    <connections>
-                        <outlet property="botaoAdd" destination="pf5-LG-CNu" id="omh-Bl-mfv"/>
-                        <outlet property="fraseSemCurriculo" destination="5ni-1h-jSg" id="Kyv-EL-wK1"/>
-                        <outlet property="imagemBoasVindas" destination="0VO-je-eKi" id="pUU-U3-A2V"/>
-                        <outlet property="scrollView" destination="ezb-tA-gmF" id="1cH-f4-XJB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="um0-0K-VeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="-1071"/>
-        </scene>
         <!--Pronto!-->
         <scene sceneID="2OK-h4-Csh">
             <objects>
@@ -1921,7 +1842,6 @@
         <image name="C-Preto" width="45" height="45"/>
         <image name="C-Verde" width="45" height="45"/>
         <image name="InicioAzul" width="172" height="210"/>
-        <image name="fotoInicio" width="212" height="212"/>
         <image name="modelo1" width="163" height="218"/>
         <image name="modelo2" width="163" height="217.33332824707031"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
