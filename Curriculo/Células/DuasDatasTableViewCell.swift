@@ -41,6 +41,9 @@ class DuasDatasTableViewCell: UITableViewCell {
         inicioLabel.accessibilityLabel = "Início do período. Selecionar no picker"
         fimLabel.accessibilityLabel = " Fim do período. Selecionar no picker"
         
+        
+        accessibilityElements = [duasDatasLabel!, duasDatasObs!, inicioLabel!, dataInicio!, fimLabel!, dataFim!]
+        
     
         
     }

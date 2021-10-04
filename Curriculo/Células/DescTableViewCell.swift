@@ -28,7 +28,7 @@ class DescTableViewCell: UITableViewCell {
         
         
         
-        self.accessibilityElements = [descLabel!, descObsLabel!, descTextView!]
+//        self.accessibilityElements = [descLabel!, descTextView!]
         
     }
     

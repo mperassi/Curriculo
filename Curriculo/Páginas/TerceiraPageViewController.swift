@@ -222,6 +222,8 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeObs.isAccessibilityElement = true
             cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
             
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+            
             
             if UIAccessibility.isVoiceOverRunning {
                 cell.nomeField.placeholder = ""
