@@ -77,7 +77,7 @@ class PDFCreator: NSObject {
         let paginaLargura = 8.25 * 72.0
         let paginaAltura = 11.75 * 72.0
         let paginaTamanho = CGRect(x: 0, y: 0, width: paginaLargura, height: paginaAltura)
-     
+        
         // 3
         let renderer = UIGraphicsPDFRenderer(bounds: paginaTamanho, format: format)
         // 4
@@ -102,7 +102,7 @@ class PDFCreator: NSObject {
             let resumoBottom =
             addResumoProf(pageRect: paginaTamanho, textTop: objBottom + 30)
             addExperiencia(pageRect: paginaTamanho, textTop: resumoBottom + 10)
-//            //forms 3
+            //            //forms 3
             let nomeEmpBottom =
             addNomeEmp(pageRect: paginaTamanho, textTop: resumoBottom + 30)
             addCargoEmp(pageRect: paginaTamanho, textTop: nomeEmpBottom - 2)
@@ -124,28 +124,58 @@ class PDFCreator: NSObject {
             addInfoAdd(pageRect: paginaTamanho, textTop: realBottom + 40)
             addDeficiencia(pageRect: paginaTamanho, textTop: realBottom + 60)
             addDeficienciaObs(pageRect: paginaTamanho, textTop: realBottom + 75)
+            
+            if modelo == "Modelo 2 escolhido" && cor == "Verde" {
+                addModelo2Verde(pageRect: paginaTamanho)
+            }
+            else if modelo == "Modelo 2 escolhido" && cor == "Azul"{
+                addModelo2Azul(pageRect: paginaTamanho)
+            }
+            else if modelo == "Modelo 2 escolhido" && cor == "Preto"{
+                addModelo2Preto(pageRect: paginaTamanho)
+            }
+            else if modelo == "Modelo 2 escolhido" && cor == "Laranja"{
+                addModelo2Laranja(pageRect: paginaTamanho)
+            }
         }
         return data
     }
     func addNome(pageRect: CGRect) -> CGFloat {
         let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
-        //let titlecolor = UIColor(named: "Ciano")
         let paragraphStyle = NSMutableParagraphStyle()
         
         paragraphStyle.alignment = .center
         paragraphStyle.lineBreakMode = .byWordWrapping
-        let titleAttributes =
+        var titleAttributes =
         [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
           NSAttributedString.Key.font: titleFont,
-        ]
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            titleAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: titleFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            titleAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: titleFont,
+            NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            titleAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: titleFont,
+            NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
         
-        let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes)
+        let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes as [NSAttributedString.Key : Any])
         let titleStringSize = attributedTitle.size()
         let titleStringRect = CGRect(x: (pageRect.width - titleStringSize.width) / 2.0,
                                      y: 35, width: titleStringSize.width,
                                      height: titleStringSize.height)
-        attributedTitle.draw(in: titleStringRect)
-        return titleStringRect.origin.y + titleStringRect.size.height
+          attributedTitle.draw(in: titleStringRect)
+          return titleStringRect.origin.y + titleStringRect.size.height
     }
     func addNascimento(pageRect: CGRect, textTop: CGFloat) {
         let fonteNasc = UIFont.systemFont(ofSize: 12.0, weight: .regular)
@@ -155,7 +185,7 @@ class PDFCreator: NSObject {
         paragraphStyle.lineBreakMode = .byWordWrapping
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: fonteNasc            
+            NSAttributedString.Key.font: fonteNasc
         ]
         let attributedText = NSAttributedString(string: "Data de nascimento: \(nascimento)", attributes: textAttributes)
         let textRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
@@ -221,8 +251,8 @@ class PDFCreator: NSObject {
         paragraphStyle.lineBreakMode = .byWordWrapping
         // 3
         let textAttributes =
-            [NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont]
+        [NSAttributedString.Key.paragraphStyle: paragraphStyle,
+         NSAttributedString.Key.font: textFont]
         
         let attributedText = NSAttributedString(string: "Links adicionais: \(link)", attributes: textAttributes)
         let titleStringSize = attributedText.size()
@@ -396,7 +426,7 @@ class PDFCreator: NSObject {
         ]
         let attributedText = NSAttributedString(string: detalhesEmp, attributes: textAttributes)
         // 4
-    
+        
         let paragraphSize = CGSize(width: pageRect.width - 50, height: pageRect.height)
         let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
         let resumoRect = CGRect(x: 30, y: textTop, width: paragraphRect.width,height: paragraphRect.height)
@@ -597,5 +627,25 @@ class PDFCreator: NSObject {
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
+    }
+    func addModelo2Verde(pageRect: CGRect) {
+        let myImage = UIImage(named: "modelo2-fundoCiano.png")
+        let imageRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
+        myImage?.draw(in: imageRect)
+    }
+    func addModelo2Preto(pageRect: CGRect) {
+        let myImage = UIImage(named: "Modelo2-fundoPreto.png")
+        let imageRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
+        myImage?.draw(in: imageRect)
+    }
+    func addModelo2Laranja(pageRect: CGRect) {
+        let myImage = UIImage(named: "Modelo2-fundoLaranja.png")
+        let imageRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
+        myImage?.draw(in: imageRect)
+    }
+    func addModelo2Azul(pageRect: CGRect) {
+        let myImage = UIImage(named: "Modelo2-fundoAzul.png")
+        let imageRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
+        myImage?.draw(in: imageRect)
     }
 }
