@@ -103,7 +103,6 @@ class SegundaPageViewController: UIViewController {
         scrollView.scrollIndicatorInsets = scrollView.contentInset
         
         
-        
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {

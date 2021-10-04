@@ -9,6 +9,7 @@ import UIKit
 
 class DetalhesTableViewCell: UITableViewCell {
     @IBOutlet var novaLabel: UILabel!
+    @IBOutlet weak var detalhesObs: UILabel!
     @IBOutlet var novaTextView: UITextView!
     
     override func awakeFromNib() {
@@ -18,11 +19,16 @@ class DetalhesTableViewCell: UITableViewCell {
         //MARK: Acessibilidade
         novaLabel.isAccessibilityElement = true
         novaLabel.accessibilityLabel = "Detalhes"
+        
+        detalhesObs.isAccessibilityElement = true
+        detalhesObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+        
+        
         novaTextView.delegate = self
         novaTextView.isAccessibilityElement = true
         novaTextView.accessibilityLabel = "Digite aqui detalhes da sua experiência profissional"
         
-        self.accessibilityElements = [novaLabel!, novaTextView!]
+        accessibilityElements = [novaLabel!, detalhesObs, novaTextView!]
         
     }
     

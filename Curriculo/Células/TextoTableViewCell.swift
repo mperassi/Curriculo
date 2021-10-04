@@ -18,11 +18,29 @@ class TextoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-    
+    func setTag(tag: Int){
+        inputTxt.tag = 100+tag
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
+
     
+}
+class YourCustomCell: UITableViewCell {
+    //MARK: Private Properties
+    @IBOutlet fileprivate weak var inputTxt: UITextField!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+}
+extension YourCustomCell: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nextTextField?(textField.tag)
+        return textField.resignFirstResponder()
+    }
 }

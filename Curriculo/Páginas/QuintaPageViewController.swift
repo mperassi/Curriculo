@@ -30,6 +30,11 @@ class QuintaPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Scroll
+        NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         //Switch
         self.switch.isOn = false
         segundaTableView.isHidden = true
@@ -121,6 +126,28 @@ class QuintaPageViewController: UIViewController {
         
       
 }
+    //Scroll
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        
+        
+        // reset back the content inset to zero after keyboard is gone
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+    }
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -187,7 +214,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.isAccessibilityElement = true
                 cell.nomeField.accessibilityLabel = "Digite uma realização profissional"
                 
-                cell.accessibilityElements = [cell.nomeLabel!, cell.nomeField!, cell.nomeObs!]
+                cell.accessibilityElements = [cell.nomeLabel!, cell.nomeField!]
 
                 
                 if UIAccessibility.isVoiceOverRunning {
@@ -219,6 +246,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeObs.text = "*Obrigatório"
                 
                 //MARK: Acessibilidade - Deficiência
+                addConq.isAccessibilityElement = true
                 cell.nomeLabel.isAccessibilityElement = true
                 cell.nomeLabel.accessibilityLabel = "Deficiência"
                 
@@ -228,7 +256,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeObs.isAccessibilityElement = true
                 cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
                 
-                cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+                cell.accessibilityElements = [`switch`!, cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
                 
                 if UIAccessibility.isVoiceOverRunning {
                     cell.nomeField.placeholder = ""
@@ -241,8 +269,17 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
                 
+                //MARK: Acessibilidade - TextView do campo de observações
+                cell.obsLabel.isAccessibilityElement = true
+                cell.obsLabel.accessibilityLabel = "Observações"
+                
                 cell.obsLabelObs.isAccessibilityElement = true
-                cell.obsLabelObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+                cell.obsLabelObs.accessibilityLabel = "Este campo é de preenchimento obrigatório"
+                
+                cell.obsTextView.isAccessibilityElement = true
+                cell.obsTextView.accessibilityLabel = "Fale brevemente sobre a sua deficiência e das possíveis adaptações necessárias ao ambiente de trabalho."
+                
+                cell.accessibilityElements = [cell.obsLabel!, cell.obsTextView!]
                 
                 return cell
             }

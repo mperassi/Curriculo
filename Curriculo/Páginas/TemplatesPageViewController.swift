@@ -5,6 +5,8 @@
 //  Created by Carolina Ortega on 27/09/21.
 //
 
+
+
 import UIKit
 import PDFKit
 
@@ -19,6 +21,11 @@ class TemplatesPageViewController: UIViewController {
     @IBOutlet var corAzul: UIButton!
     @IBOutlet var corVerde: UIButton!
     @IBOutlet var corPreto: UIButton!
+    @IBOutlet weak var modelosTitulo: UILabel!
+    @IBOutlet weak var labelObs: UILabel!
+    @IBOutlet weak var coresLabel: UILabel!
+    @IBOutlet weak var passos: UILabel!
+    @IBOutlet weak var coresLabelObs: UILabel!
     
     
     //Dicionário
@@ -33,7 +40,6 @@ class TemplatesPageViewController: UIViewController {
         //Tableview
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         //Navegação
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -61,9 +67,7 @@ class TemplatesPageViewController: UIViewController {
         if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
             dictionary = userDataDictionary
         }
-        
-        
-        
+
         //MARK: Acessibilidade - Descrição dos modelos de currículo
         primeiroModelo.isAccessibilityElement = true
         segundoModelo.isAccessibilityElement = true
@@ -73,9 +77,35 @@ class TemplatesPageViewController: UIViewController {
         
         segundoModelo.accessibilityLabel = "Este currículo é um modelo personalizado no qual possui semi formas geométricas pequenas no canto superior direito da página, no canto inferior direito, e na esquerda levemente abaixo do centro. Seu nome está centralizado como título da página. As informações encontram-se à esquerda. Os subtítulos estão em destaque com letras maiores, e em negrito. Logo abaixo de cada subtítulo estão as informações inseridas previamente nos campos do formulário."
         
+            //MARK: Acessibilidade - Descrição dos botões de cores, obrigatório e Modelo
+        corLaranja.isAccessibilityElement = true
+        corAzul.isAccessibilityElement = true
+        corVerde.isAccessibilityElement = true
+        corPreto.isAccessibilityElement = true
+        labelObs.isAccessibilityElement = true
+        modelosTitulo.isAccessibilityElement = true
+        botaoAnterior.isAccessibilityElement = true
+        botaoConcluir.isAccessibilityElement = true
         
+        corLaranja.accessibilityLabel = "Botão de selecionar cor do currículo. Cor: laranja"
+        corAzul.accessibilityLabel = "Botão de selecionar cor do currículo. Cor: azul escuro"
+        corVerde.accessibilityLabel = "Botão de selecionar cor do currículo. Cor: verde esmeralda"
+        corPreto.accessibilityLabel = "Botão de selecionar cor do currículo. Cor: preto"
+        
+        labelObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+        modelosTitulo.accessibilityLabel = "Modelos de currículo"
+        
+        botaoAnterior.accessibilityLabel = "Anterior"
+        botaoConcluir.accessibilityLabel = "Concluir"
+            
+        
+        accessibilityElements = [passos!, modelosTitulo!, labelObs!, primeiroModelo!, segundoModelo!, coresLabel!, coresLabelObs!, corLaranja!, corAzul!, corVerde!, corPreto!, botaoAnterior!, botaoConcluir!]
+
+        //MARK: Iniciar a leitura pelo título (não está funcionando)
+        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: self.navigationItem.titleView)
         
     }
+
     //Dicionário
     @IBAction func dicionario6Pagina() {
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
@@ -243,6 +273,7 @@ class TemplatesPageViewController: UIViewController {
                 present(ac, animated: true)
             } else{
                 print("cheio")
+                //  Repositorio.shared.salvar(nome: variavelComONomeDoCurriculo, dados: dicionario) (salvar o curriculo)
             }
             guard let vc = segue.destination as? ProntoPageViewController else { return }
             
@@ -325,19 +356,21 @@ extension TemplatesPageViewController: UITableViewDataSource{
         cell.nomeField.keyboardType = .default
         cell.nomeField.placeholder = "Digite o nome do currículo"
         cell.nomeObs.text = "*Obrigatório"
-        //            print(dictValue)  // Printing the value
         
         //MARK: Acessibilidade - Nome do currículo
+        
         cell.nomeLabel.isAccessibilityElement = true
         cell.nomeLabel.accessibilityLabel = "Nome do currículo"
         
         cell.nomeField.isAccessibilityElement = true
-        cell.nomeField.accessibilityLabel = "Digite o nome da currículo"
+        cell.nomeField.accessibilityLabel = "Digite o nome do currículo"
         
         cell.nomeObs.isAccessibilityElement = true
         cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
         
-        cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+//
+        
+        accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
         
         if UIAccessibility.isVoiceOverRunning {
             cell.nomeField.placeholder = ""
