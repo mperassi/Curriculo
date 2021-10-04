@@ -577,6 +577,7 @@ class PDFCreator: NSObject {
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
+
         ]
         let attributedText = NSAttributedString(string:(deficiencia), attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
