@@ -16,7 +16,13 @@ class InicioCollectionViewCell: UICollectionViewCell {
        super.awakeFromNib()
         imagemCurriculo.image = cores[Int.random(in: 0..<cores.count)]
 
-       //custom logic goes here
+//        imagemCurriculo.isAccessibilityElement = true
+//        apelido.isAccessibilityElement = true
+//
+//        imagemCurriculo.accessibilityLabel = ""
+//        apelido.accessibilityLabel = "Modelos de currículo"
+//
+//        accessibilityElements = [apelido!, imagemCurriculo!]
     }
     
     

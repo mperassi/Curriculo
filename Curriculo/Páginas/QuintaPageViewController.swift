@@ -214,7 +214,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeField.isAccessibilityElement = true
                 cell.nomeField.accessibilityLabel = "Digite uma realização profissional"
                 
-                cell.accessibilityElements = [cell.nomeLabel!, cell.nomeField!, cell.nomeObs!]
+                cell.accessibilityElements = [cell.nomeLabel!, cell.nomeField!]
 
                 
                 if UIAccessibility.isVoiceOverRunning {
@@ -246,6 +246,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeObs.text = "*Obrigatório"
                 
                 //MARK: Acessibilidade - Deficiência
+                addConq.isAccessibilityElement = true
                 cell.nomeLabel.isAccessibilityElement = true
                 cell.nomeLabel.accessibilityLabel = "Deficiência"
                 
@@ -255,7 +256,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.nomeObs.isAccessibilityElement = true
                 cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
                 
-                cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+                cell.accessibilityElements = [`switch`!, cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
                 
                 if UIAccessibility.isVoiceOverRunning {
                     cell.nomeField.placeholder = ""
@@ -268,8 +269,17 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
                 
+                //MARK: Acessibilidade - TextView do campo de observações
+                cell.obsLabel.isAccessibilityElement = true
+                cell.obsLabel.accessibilityLabel = "Observações"
+                
                 cell.obsLabelObs.isAccessibilityElement = true
-                cell.obsLabelObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
+                cell.obsLabelObs.accessibilityLabel = "Este campo é de preenchimento obrigatório"
+                
+                cell.obsTextView.isAccessibilityElement = true
+                cell.obsTextView.accessibilityLabel = "Fale brevemente sobre a sua deficiência e das possíveis adaptações necessárias ao ambiente de trabalho."
+                
+                cell.accessibilityElements = [cell.obsLabel!, cell.obsTextView!]
                 
                 return cell
             }

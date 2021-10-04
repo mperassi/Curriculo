@@ -25,7 +25,7 @@ class PrimeiraPageViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+                
         //TableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
