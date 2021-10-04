@@ -35,7 +35,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
 }
-
-//  Repositorio.shared.salvar(nome: variavelComONomeDoCurriculo, dados: dicionario) (salvar o curriculo)
-// let nomes = Repositorio.shared.buscarTodos() (lista dos curriculos collection)
-// let curriculo = Repositorio.shared.buscar(nome: nomeEscolhido) (pegar 1 curriculo)

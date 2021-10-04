@@ -11,6 +11,7 @@
 		996FE1612703B8D7008F4D8F /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE1602703B8D7008F4D8F /* PDFCreator.swift */; };
 		A00DD92A27064F16006E0719 /* InicioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DD92927064F16006E0719 /* InicioCollectionViewCell.swift */; };
 		A00DD92C2707810B006E0719 /* CurriculoRepositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DD92B2707810B006E0719 /* CurriculoRepositorio.swift */; };
+		A00DD932270B8CB0006E0719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00DD930270B8CB0006E0719 /* Main.storyboard */; };
 		A01913C926FB9C6C003BC29E /* TextoMaiorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913C826FB9C6C003BC29E /* TextoMaiorTableViewCell.swift */; };
 		A01913CD26FBCE41003BC29E /* TerceiraPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913CC26FBCE41003BC29E /* TerceiraPageViewController.swift */; };
 		A01913CF26FBD211003BC29E /* DuasDatasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */; };
@@ -27,7 +28,6 @@
 		FA4B8E7526F8F3A80006C064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B8E7426F8F3A80006C064 /* AppDelegate.swift */; };
 		FA4B8E7726F8F3A80006C064 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B8E7626F8F3A80006C064 /* SceneDelegate.swift */; };
 		FA4B8E7926F8F3A80006C064 /* PrimeiraPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B8E7826F8F3A80006C064 /* PrimeiraPageViewController.swift */; };
-		FA4B8E7C26F8F3A80006C064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4B8E7A26F8F3A80006C064 /* Main.storyboard */; };
 		FA4B8E7F26F8F3A80006C064 /* Curriculo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA4B8E7D26F8F3A80006C064 /* Curriculo.xcdatamodeld */; };
 		FA4B8E8126F8F3AB0006C064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4B8E8026F8F3AB0006C064 /* Assets.xcassets */; };
 		FA4B8E8426F8F3AB0006C064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4B8E8226F8F3AB0006C064 /* LaunchScreen.storyboard */; };
@@ -38,6 +38,7 @@
 		996FE1602703B8D7008F4D8F /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		A00DD92927064F16006E0719 /* InicioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioCollectionViewCell.swift; sourceTree = "<group>"; };
 		A00DD92B2707810B006E0719 /* CurriculoRepositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculoRepositorio.swift; sourceTree = "<group>"; };
+		A00DD931270B8CB0006E0719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A01913C826FB9C6C003BC29E /* TextoMaiorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoMaiorTableViewCell.swift; sourceTree = "<group>"; };
 		A01913CC26FBCE41003BC29E /* TerceiraPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiraPageViewController.swift; sourceTree = "<group>"; };
 		A01913CE26FBD211003BC29E /* DuasDatasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuasDatasTableViewCell.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		FA4B8E7426F8F3A80006C064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA4B8E7626F8F3A80006C064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA4B8E7826F8F3A80006C064 /* PrimeiraPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiraPageViewController.swift; sourceTree = "<group>"; };
-		FA4B8E7B26F8F3A80006C064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA4B8E7E26F8F3A80006C064 /* Curriculo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Curriculo.xcdatamodel; sourceTree = "<group>"; };
 		FA4B8E8026F8F3AB0006C064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4B8E8326F8F3AB0006C064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,10 +133,10 @@
 		FA4B8E7326F8F3A80006C064 /* Curriculo */ = {
 			isa = PBXGroup;
 			children = (
+				A00DD930270B8CB0006E0719 /* Main.storyboard */,
 				FA4B8E7426F8F3A80006C064 /* AppDelegate.swift */,
 				FA4B8E7626F8F3A80006C064 /* SceneDelegate.swift */,
 				FA4B8E8026F8F3AB0006C064 /* Assets.xcassets */,
-				FA4B8E7A26F8F3A80006C064 /* Main.storyboard */,
 				FA4B8E8226F8F3AB0006C064 /* LaunchScreen.storyboard */,
 				FA4B8E8526F8F3AB0006C064 /* Info.plist */,
 				A00DD92B2707810B006E0719 /* CurriculoRepositorio.swift */,
@@ -204,9 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00DD932270B8CB0006E0719 /* Main.storyboard in Resources */,
 				FA4B8E8426F8F3AB0006C064 /* LaunchScreen.storyboard in Resources */,
 				FA4B8E8126F8F3AB0006C064 /* Assets.xcassets in Resources */,
-				FA4B8E7C26F8F3A80006C064 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,10 +244,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA4B8E7A26F8F3A80006C064 /* Main.storyboard */ = {
+		A00DD930270B8CB0006E0719 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA4B8E7B26F8F3A80006C064 /* Base */,
+				A00DD931270B8CB0006E0719 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

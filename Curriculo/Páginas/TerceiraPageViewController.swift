@@ -96,7 +96,7 @@ class TerceiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
-        if (multiCell?.nomeField.text == "") || (multiCell1?.nomeField.text == "") || (multiCell3?.novaTextView?.text == "") {
+        if (multiCell3?.novaTextView?.text == "") {
             print("vazio")
             let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -145,7 +145,6 @@ class TerceiraPageViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         
-        
         // reset back the content inset to zero after keyboard is gone
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
@@ -182,7 +181,7 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeLabel.text = "Nome da Empresa"
             cell.nomeField.keyboardType = .default
             cell.nomeField.placeholder = "Digite o nome da empresa"
-            cell.nomeObs.text = "*Obrigatório"
+            cell.nomeObs.text = " "
             //            print(dictValue)  // Printing the value
             
             //MARK: Acessibilidade - Nome da Empresa
@@ -192,10 +191,8 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Digite o nome da empresa"
             
-            cell.nomeObs.isAccessibilityElement = true
-            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
            
-            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeField!]
             
             
             if UIAccessibility.isVoiceOverRunning {
@@ -209,7 +206,7 @@ extension TerceiraPageViewController: UITableViewDataSource{
             cell.nomeLabel.text = "Cargo"
             cell.nomeField.keyboardType = .default
             cell.nomeField.placeholder = "Digite o cargo na empresa"
-            cell.nomeObs.text = "*Obrigatório"
+            cell.nomeObs.text = " "
             //            print(dictValue)  // Printing the value
             
             //MARK: Acessibilidade - Detalhes da empresa
@@ -218,11 +215,6 @@ extension TerceiraPageViewController: UITableViewDataSource{
             
             cell.nomeField.isAccessibilityElement = true
             cell.nomeField.accessibilityLabel = "Digite o cargo que você ocupa ou ocupava na sua experiência profissional ou acadêmica"
-            
-            cell.nomeObs.isAccessibilityElement = true
-            cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
-            
-            cell.accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
             
             
             if UIAccessibility.isVoiceOverRunning {

@@ -5,6 +5,8 @@
 //  Created by Carolina Ortega on 27/09/21.
 //
 
+
+
 import UIKit
 import PDFKit
 
@@ -271,6 +273,7 @@ class TemplatesPageViewController: UIViewController {
                 present(ac, animated: true)
             } else{
                 print("cheio")
+                //  Repositorio.shared.salvar(nome: variavelComONomeDoCurriculo, dados: dicionario) (salvar o curriculo)
             }
             guard let vc = segue.destination as? ProntoPageViewController else { return }
             

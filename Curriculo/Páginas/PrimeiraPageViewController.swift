@@ -54,6 +54,7 @@ class PrimeiraPageViewController: UIViewController {
     
     //Dicionário
     @IBAction func dicionario1Pagina(){
+        
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
         let indexPath = NSIndexPath(row: 0, section: 0)
         let multiCell = tableView.cellForRow(at: indexPath as IndexPath) as? TextoTableViewCell
@@ -91,10 +92,9 @@ class PrimeiraPageViewController: UIViewController {
         let indexPathLink = NSIndexPath(row: 5, section: 0)
         let multiCell5 = tableView.cellForRow(at: indexPathLink as IndexPath) as? TextoTableViewCell
         self.dictionary["Link"] = multiCell5?.nomeField.text
+
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
-        
-        
         
         if (multiCell?.nomeField.text == "") || (multiCell2?.nomeField.text == "") || (multiCell3?.nomeField.text == "") || (multiCell4?.nomeField.text == ""){
             print("vazio")
@@ -130,6 +130,7 @@ class PrimeiraPageViewController: UIViewController {
         }))
       present(ac,animated: true)
     }
+
 
     //Funções Scroll
     @objc func keyboardWillShow(notification: NSNotification) {
