@@ -30,6 +30,11 @@ class QuintaPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Scroll
+        NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(PrimeiraPageViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         //Switch
         self.switch.isOn = false
         segundaTableView.isHidden = true
@@ -80,7 +85,7 @@ class QuintaPageViewController: UIViewController {
         
         primeiraTableView.dequeueReusableCell(withIdentifier: "descCell")
         let indexPath1 = NSIndexPath(row: 1, section: 0)
-        let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescTableViewCell
+        let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescricaoTableViewCell
         self.dictionary["DescConq"] = multiCell1?.descTextView?.text
         
         let indexPathDatas = NSIndexPath(row: 2, section: 0)
@@ -108,14 +113,41 @@ class QuintaPageViewController: UIViewController {
         
         segundaTableView.dequeueReusableCell(withIdentifier: "obsCell")
         let indexPathObs = NSIndexPath(row: 1, section: 0)
-        let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObsTableViewCell
+        let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObservacaoTableViewCell
         self.dictionary["ObsDef"] = multiCellObs?.obsTextView.text
+        
+        //Ações próxima página
+        self.dictionary["Modelo"] = ""
+        self.dictionary["Cor"] = ""
+        self.dictionary["NomeCurriculo"] = ""
         
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
       
 }
+    //Scroll
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else {
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        
+        
+        // reset back the content inset to zero after keyboard is gone
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+    }
     @objc func backViewController(){
         let viewcontrollers = self.navigationController?.viewControllers
         
@@ -192,7 +224,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 return cell
                 
             } else if indexPath.row == 1{
-                let cell = primeiraTableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as? DescTableViewCell
+                let cell = primeiraTableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as? DescricaoTableViewCell
                 cell?.selectionStyle = .none
                 cell?.descObsLabel.text = " "
                 
@@ -232,7 +264,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 return cell
                 
             } else {
-                let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObsTableViewCell
+                let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObservacaoTableViewCell
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
                 
