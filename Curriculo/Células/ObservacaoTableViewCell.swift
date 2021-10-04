@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ObsTableViewCell: UITableViewCell {
+class ObservacaoTableViewCell: UITableViewCell {
     @IBOutlet var obsLabel: UILabel!
     @IBOutlet var obsLabelObs: UILabel!
     @IBOutlet var obsTextView: UITextView!
@@ -26,7 +26,7 @@ class ObsTableViewCell: UITableViewCell {
     }
     
 }
-extension ObsTableViewCell: UITextViewDelegate {
+extension ObservacaoTableViewCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }

@@ -297,7 +297,8 @@ class TemplatesPageViewController: UIViewController {
                let dataFimReal = dictionary["ConqDataFim"]! as! String?,
                let deficiencia = dictionary["NomeDef"]! as! String?,
                let deficienciaObs = dictionary["ObsDef"]! as! String?,
-               let modelo = dictionary["Modelo"]! as! String?
+               let modelo = dictionary["Modelo"]! as! String?,
+               let cor = dictionary["Cor"]! as! String?
             {
                 
                 
@@ -324,7 +325,8 @@ class TemplatesPageViewController: UIViewController {
                                             dataFimReal: dataFimReal,
                                             deficiencia: deficiencia,
                                             deficienciaObs: deficienciaObs,
-                                            modelo: modelo)
+                                            modelo: modelo,
+                                            cor: cor)
                 vc.documentData = pdfCreator.criarCurriculo()
                 
             }

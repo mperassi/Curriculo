@@ -95,7 +95,8 @@ class ProntoPageViewController: UIViewController {
                 let dataFimReal = dictionary["ConqDataFim"]! as! String?,
                 let deficiencia = dictionary["NomeDef"]! as! String?,
                 let deficienciaObs = dictionary["ObsDef"]! as! String?,
-                let modelo = dictionary["Modelo"]! as! String?
+                let modelo = dictionary["Modelo"]! as! String?,
+                let cor = dictionary["Cor"]! as! String?
     
             else {
                 // 2
@@ -128,7 +129,8 @@ class ProntoPageViewController: UIViewController {
                                         dataFimReal: dataFimReal,
                                         deficiencia: deficiencia,
                                         deficienciaObs: deficienciaObs,
-                                        modelo: modelo)
+                                        modelo: modelo,
+                                        cor: cor)
             let pdfData = pdfCreator.criarCurriculo()
             let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
             present(vc, animated: true, completion: nil)

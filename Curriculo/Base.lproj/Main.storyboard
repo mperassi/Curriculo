@@ -524,7 +524,7 @@
                                                             <outlet property="nomeObs" destination="YRA-TF-JGC" id="Doz-6M-uUk"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="novaTextCell" rowHeight="300" id="wwK-oi-wCf" customClass="NovaTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="novaTextCell" rowHeight="300" id="wwK-oi-wCf" customClass="DetalhesTableViewCell" customModule="Curriculo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="355" width="360" height="300"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwK-oi-wCf" id="YLY-zz-r9Y">
@@ -1045,7 +1045,7 @@
                                                             <outlet property="inicioLabel" destination="yhG-8O-We9" id="MPb-qZ-e4B"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="descCell" rowHeight="160" id="XjU-uZ-WeA" customClass="DescTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="descCell" rowHeight="160" id="XjU-uZ-WeA" customClass="DescricaoTableViewCell" customModule="Curriculo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="399" width="360" height="160"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XjU-uZ-WeA" id="ecS-Jy-W65">
@@ -1179,7 +1179,7 @@
                                                             <outlet property="nomeObs" destination="xib-yw-OsW" id="M6Q-Y5-Z88"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="obsCell" rowHeight="180" id="OBj-st-hLk" customClass="ObsTableViewCell" customModule="Curriculo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="obsCell" rowHeight="180" id="OBj-st-hLk" customClass="ObservacaoTableViewCell" customModule="Curriculo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="155" width="360" height="180"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OBj-st-hLk" id="xEv-Zf-VIt">
@@ -1816,7 +1816,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHd-sP-vas">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="570"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uj3-ke-8bV">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uj3-ke-8bV">
                                                 <rect key="frame" x="25" y="15" width="340" height="649"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nxM-k7-nbe">

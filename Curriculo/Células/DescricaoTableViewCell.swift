@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DescTableViewCell: UITableViewCell {
+class DescricaoTableViewCell: UITableViewCell {
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var descObsLabel: UILabel!
     @IBOutlet var descTextView: UITextView!
@@ -39,7 +39,7 @@ class DescTableViewCell: UITableViewCell {
     }
     
 }
-extension DescTableViewCell: UITextViewDelegate {
+extension DescricaoTableViewCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }

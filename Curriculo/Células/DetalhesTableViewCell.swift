@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NovaTableViewCell: UITableViewCell {
+class DetalhesTableViewCell: UITableViewCell {
     @IBOutlet var novaLabel: UILabel!
     @IBOutlet weak var detalhesObs: UILabel!
     @IBOutlet var novaTextView: UITextView!
@@ -39,7 +39,7 @@ class NovaTableViewCell: UITableViewCell {
     }
     
 }
-extension NovaTableViewCell: UITextViewDelegate {
+extension DetalhesTableViewCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
