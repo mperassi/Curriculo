@@ -19,6 +19,7 @@
 		A033746E26F9315600BE2CBA /* TextoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033746D26F9315600BE2CBA /* TextoTableViewCell.swift */; };
 		A0827D3B26FCFCCD00829E54 /* QuartaPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0827D3A26FCFCCD00829E54 /* QuartaPageViewController.swift */; };
 		A0827D4126FD2D9200829E54 /* QuintaPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0827D4026FD2D9200829E54 /* QuintaPageViewController.swift */; };
+		A0842553270CE12300E861B5 /* ProntoPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0842552270CE12300E861B5 /* ProntoPageViewController2.swift */; };
 		A09719EE26FE417000CBA0C5 /* SegundaPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09719ED26FE417000CBA0C5 /* SegundaPageViewController.swift */; };
 		A09719F026FE488400CBA0C5 /* DetalhesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09719EF26FE488400CBA0C5 /* DetalhesTableViewCell.swift */; };
 		A09719F426FE50A300CBA0C5 /* ObservacaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09719F326FE50A300CBA0C5 /* ObservacaoTableViewCell.swift */; };
@@ -46,6 +47,7 @@
 		A033746D26F9315600BE2CBA /* TextoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoTableViewCell.swift; sourceTree = "<group>"; };
 		A0827D3A26FCFCCD00829E54 /* QuartaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuartaPageViewController.swift; sourceTree = "<group>"; };
 		A0827D4026FD2D9200829E54 /* QuintaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuintaPageViewController.swift; sourceTree = "<group>"; };
+		A0842552270CE12300E861B5 /* ProntoPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoPageViewController2.swift; sourceTree = "<group>"; };
 		A09719ED26FE417000CBA0C5 /* SegundaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaPageViewController.swift; sourceTree = "<group>"; };
 		A09719EF26FE488400CBA0C5 /* DetalhesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTableViewCell.swift; sourceTree = "<group>"; };
 		A09719F326FE50A300CBA0C5 /* ObservacaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservacaoTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A0827D4026FD2D9200829E54 /* QuintaPageViewController.swift */,
 				A01C1E4827023351000C3B48 /* TemplatesPageViewController.swift */,
 				A0C2FE8E2704D12100840DEB /* ProntoPageViewController.swift */,
+				A0842552270CE12300E861B5 /* ProntoPageViewController2.swift */,
 			);
 			name = "Páginas";
 			path = "Páginas";
@@ -233,6 +236,7 @@
 				A01913CF26FBD211003BC29E /* DuasDatasTableViewCell.swift in Sources */,
 				A0EF1DDD26F9398000479F6E /* DataTableViewCell.swift in Sources */,
 				A0C2FE8F2704D12100840DEB /* ProntoPageViewController.swift in Sources */,
+				A0842553270CE12300E861B5 /* ProntoPageViewController2.swift in Sources */,
 				A09719F026FE488400CBA0C5 /* DetalhesTableViewCell.swift in Sources */,
 				FA4B8E7726F8F3A80006C064 /* SceneDelegate.swift in Sources */,
 				99321EFF27025B820057C83B /* BemVindosViewController.swift in Sources */,

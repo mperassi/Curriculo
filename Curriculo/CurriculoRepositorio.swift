@@ -79,7 +79,7 @@ class CurriculoRepositorio {
         let fetch = NSFetchRequest<Curriculo>(entityName: "Curriculo")
         fetch.predicate = NSPredicate(format: "nome == %@", nome)
         do {
-            let result = try fetch.execute()
+            let result = try self.persistentContainer.viewContext.fetch(fetch)
             if result.count > 0 {
                 return self.converter(curriculo: result[0])
             }
@@ -103,7 +103,7 @@ class CurriculoRepositorio {
     func buscarTodos() -> [String] {
         let fetch = NSFetchRequest<Curriculo>(entityName: "Curriculo")
         do {
-            let r = try fetch.execute()
+            let r = try self.persistentContainer.viewContext.fetch(fetch)
             return r.map { c in
                 return c.nome!
             }
@@ -114,16 +114,17 @@ class CurriculoRepositorio {
     }
     
     
-    private func converter(curriculo: Curriculo) -> [String: String] {
+    private func converter(curriculo: Curriculo) -> [String: String]? {
         if let data = curriculo.dados!.data(using: .utf8) {
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:String]
-                return json!
+                let dict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:String]
+                return dict!
             } catch {
                 print("Something went wrong")
             }
         }
-        return [:]
+        return nil
     }
     
+
 }
