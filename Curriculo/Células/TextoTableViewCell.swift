@@ -33,18 +33,3 @@ class TextoTableViewCell: UITableViewCell {
 
     
 }
-//class YourCustomCell: UITableViewCell {
-//    //MARK: Private Properties
-//    @IBOutlet fileprivate weak var inputTxt: UITextField!
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//}
-//extension YourCustomCell: UITextFieldDelegate{
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        nextTextField?(textField.tag)
-//        return textField.resignFirstResponder()
-//    }
-//}
