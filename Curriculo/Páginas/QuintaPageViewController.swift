@@ -160,7 +160,7 @@ class QuintaPageViewController: UIViewController {
     @objc func cancelarAcao(){
         
         let ac = UIAlertController(title: "Tem certeza?", message: "Cancelando você perderá todas as informações inseridas", preferredStyle: .alert)
-        ac.view.tintColor = UIColor(named: "Ciano")
+        ac.view.tintColor = UIColor(named: "Ciano2")
         ac.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
             self.backViewController()
         }))
