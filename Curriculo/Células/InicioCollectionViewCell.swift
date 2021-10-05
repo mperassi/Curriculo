@@ -25,6 +25,10 @@ class InicioCollectionViewCell: UICollectionViewCell {
 //        accessibilityElements = [apelido!, imagemCurriculo!]
     }
     
+    func cor(_ cor:String) {
+        imagemCurriculo.image = UIImage(named: "Inicio\(cor)") ?? imagemCurriculo.image
+    }
+    
     
 }
 

@@ -12,25 +12,16 @@ import CoreData
 
 class BemvindosViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout {
     
-    private var curriculos: [Curriculo] = []
+    private var curriculos: [String] = []
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var botaoAdd: UIBarButtonItem!
     @IBOutlet var collectionView: UICollectionView!
     let fraseSemCurriculo = UILabel()
     let imagemBoasVindas = UIImageView()
+    var curriculoSelecionado: String?
     
-    //    private lazy var frc: NSFetchedResultsController<Curriculo> = {
-    //        let fetchRequest: NSFetchRequest<Curriculo> = Curriculo.fetchRequest()
-    ////        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Trip.name, ascending: true)]
-    //
-    //        let frc = NSFetchedResultsController<Curriculo>(fetchRequest: fetchRequest,
-    //                                                        managedObjectContext: CurriculoRepositorio.shared.,
-    //                                                   sectionNameKeyPath: nil,
-    //                                                   cacheName: nil)
-    //        frc.delegate = self
-    //        return frc
-    //    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(fraseSemCurriculo)
@@ -88,12 +79,12 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //        self.curriculos = CurriculoRepositorio.shared.buscarTodos()
+        self.curriculos = CurriculoRepositorio.shared.buscarTodos()
         //(lista dos curriculos collection)
         self.collectionView.reloadData()
         numeroDeCelulas()
     }
-    //    //MARK: Label de nenhuma viagem
+    //    //MARK: Label de nenhum curriculo
     func numeroDeCelulas(){
         if Int(self.curriculos.count) != 0 {
             fraseSemCurriculo.isHidden = true
@@ -115,14 +106,87 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
     //        vc.modalPresentationStyle = .automatic
     //        present(vc, animated: true, completion: {[weak self] in self?.numeroDeCelulas()})
     //    }
-}
-extension BemvindosViewController: UICollectionViewDelegate{
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCurriculo" {
+            guard let vc = segue.destination as? ProntoPageViewController2,
+                  let curriculo = self.curriculoSelecionado,
+                  let dictionary = CurriculoRepositorio.shared.buscar(nome: curriculo)
+            else { return }
+            
+            if let nome = dictionary["Nome"],
+               let nascimento = dictionary["Data"],
+               let tel = dictionary["Tel"],
+               let local = dictionary["Local"],
+               let email = dictionary["Email"],
+               let link = dictionary["Link"],
+               let objetivoProf = dictionary["Objetivo"],
+               let resumoProf = dictionary["Resumo"],
+               let nomeEmp = dictionary["NomeEmpresa"],
+               let cargoEmp = dictionary["NomeCargo"],
+               let dataIniEmp = dictionary["EmpregoDataIni"],
+               let dataFimEmp = dictionary["EmpregoDataFim"],
+               let detalhesEmp = dictionary["Detalhes"],
+               let nomeInst = dictionary["NomeInst"],
+               let cursoInst = dictionary["NomeCurso"],
+               let dataIniInst = dictionary["InstDataIni"],
+               let dataFimInst = dictionary["InstDataFim"],
+               let realizacao = dictionary["NomeConq"],
+               let descReal = dictionary["DescConq"],
+               let dataIniReal = dictionary["ConqDataIni"],
+               let dataFimReal = dictionary["ConqDataFim"],
+               let deficiencia = dictionary["NomeDef"],
+               let deficienciaObs = dictionary["ObsDef"],
+               let modelo = dictionary["Modelo"],
+               let cor = dictionary["Cor"]
+            {
+                
+                
+                let pdfCreator = PDFCreator(nome: nome,
+                                            nascimento: nascimento,
+                                            tel: tel,
+                                            local: local,
+                                            email: email,
+                                            link: link,
+                                            objetivoProf: objetivoProf,
+                                            resumoProf: resumoProf,
+                                            nomeEmp: nomeEmp,
+                                            cargoEmp: cargoEmp,
+                                            dataIniEmp: dataIniEmp,
+                                            dataFimEmp: dataFimEmp,
+                                            detalhesEmp: detalhesEmp,
+                                            nomeInst: nomeInst,
+                                            cursoInst: cursoInst,
+                                            dataIniInst: dataIniInst,
+                                            dataFimInst: dataFimInst,
+                                            realizacao: realizacao,
+                                            descReal: descReal,
+                                            dataIniReal: dataIniReal,
+                                            dataFimReal: dataFimReal,
+                                            deficiencia: deficiencia,
+                                            deficienciaObs: deficienciaObs,
+                                            modelo: modelo,
+                                            cor: cor)
+                vc.documentData = pdfCreator.criarCurriculo()
+                
+            }
+        }
+    }
+}
+
+extension BemvindosViewController: UICollectionViewDelegate{
+    func didRegister(){
+        collectionView?.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.curriculoSelecionado = self.curriculos[indexPath.row]
+        performSegue(withIdentifier: "ShowCurriculo", sender: self)
+    }
 }
 
 extension BemvindosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("numero de celssss: ", self.curriculos.count)
         return self.curriculos.count
         
     }
@@ -130,6 +194,11 @@ extension BemvindosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! InicioCollectionViewCell
+        cell.apelido.text = curriculos[indexPath.row]
+        if let dict = CurriculoRepositorio.shared.buscar(nome: curriculos[indexPath.row]), let cor = dict["Cor"] {
+            cell.cor(cor)
+        }
+        
         return cell
     }
     //        let curriculo = CurriculoRepositorio.shared.buscar(nome: "oi")
@@ -138,50 +207,10 @@ extension BemvindosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 165, height: 240)
     }
+
+
+    
+
+
     
 }
-//
-//
-//
-//    //MARK: CollectionView Delegate
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        let numberOfCollections = frc.fetchedObjects?.count ?? 0
-//        return numberOfCollections
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? TripCollectionViewCell else {preconditionFailure()}
-//
-//        let object = frc.object(at: indexPath)
-//        cell.img.image = UIImage(data: object.coverImage ?? Data()) ?? imgFundo
-//        cell.name.text = object.name
-//        return cell
-//    }
-//
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        switch type {
-//        case .insert:
-//            if let newIndexPath = newIndexPath {
-//                collectionView?.insertItems(at: [newIndexPath])
-//            }
-//        case .delete:
-//            if let indexPath = indexPath {
-//                collectionView?.deleteItems(at: [indexPath])
-//            }
-//        default:
-//            break
-//        }
-//        collectionView?.reloadData()
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let object = frc.object(at: indexPath)
-//        let vc = TripViewController(tripInfos: object)
-//        navigationController?.pushViewController(vc, animated: true)
-// let curriculo = Repositorio.shared.buscar(nome: nomeEscolhido) (pegar 1 curriculo)
-
-//    }
-//
-//}
-

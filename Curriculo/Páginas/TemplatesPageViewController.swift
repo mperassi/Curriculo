@@ -30,7 +30,7 @@ class TemplatesPageViewController: UIViewController {
     
     //Dicionário
     let defaults = UserDefaults.standard
-    var dictionary: [String : Any] = [:]  //Dictionary which you want to save
+    var dictionary: [String : String] = [:]  //Dictionary which you want to save
     //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
     
     @IBOutlet var cancelarBotao: UIBarButtonItem!
@@ -64,7 +64,7 @@ class TemplatesPageViewController: UIViewController {
         
         
         //Dicionário
-        if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
+        if let userDataDictionary = defaults.dictionary(forKey: "DictValue") as? [String:String] {
             dictionary = userDataDictionary
         }
 
@@ -265,7 +265,7 @@ class TemplatesPageViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
-            if (self.dictionary["Modelo"] as! String == "") || (self.dictionary["Cor"] as! String == "") || (self.dictionary["NomeCurriculo"] as! String == ""){
+            if (self.dictionary["Modelo"] == "") || (self.dictionary["Cor"] == "") || (self.dictionary["NomeCurriculo"] == ""){
                 print("vazio")
                 let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -277,31 +277,31 @@ class TemplatesPageViewController: UIViewController {
             }
             guard let vc = segue.destination as? ProntoPageViewController else { return }
             
-            if let nome = dictionary["Nome"]! as! String?,
-               let nascimento = dictionary["Data"]! as! String?,
-               let tel = dictionary["Tel"]! as! String?,
-               let local = dictionary["Local"]! as! String?,
-               let email = dictionary["Email"]! as! String?,
-               let link = dictionary["Link"]! as! String?,
-               let objetivoProf = dictionary["Objetivo"]! as! String?,
-               let resumoProf = dictionary["Resumo"]! as! String?,
-               let nomeEmp = dictionary["NomeEmpresa"]! as! String?,
-               let cargoEmp = dictionary["NomeCargo"]! as! String?,
-               let dataIniEmp = dictionary["EmpregoDataIni"]! as! String?,
-               let dataFimEmp = dictionary["EmpregoDataFim"]! as! String?,
-               let detalhesEmp = dictionary["Detalhes"]! as! String?,
-               let nomeInst = dictionary["NomeInst"]! as! String?,
-               let cursoInst = dictionary["NomeCurso"]! as! String?,
-               let dataIniInst = dictionary["InstDataIni"]! as! String?,
-               let dataFimInst = dictionary["InstDataFim"]! as! String?,
-               let realizacao = dictionary["NomeConq"]! as! String?,
-               let descReal = dictionary["DescConq"]! as! String?,
-               let dataIniReal = dictionary["ConqDataIni"]! as! String?,
-               let dataFimReal = dictionary["ConqDataFim"]! as! String?,
-               let deficiencia = dictionary["NomeDef"]! as! String?,
-               let deficienciaObs = dictionary["ObsDef"]! as! String?,
-               let modelo = dictionary["Modelo"]! as! String?,
-               let cor = dictionary["Cor"]! as! String?
+            if let nome = dictionary["Nome"],
+               let nascimento = dictionary["Data"],
+               let tel = dictionary["Tel"],
+               let local = dictionary["Local"],
+               let email = dictionary["Email"],
+               let link = dictionary["Link"],
+               let objetivoProf = dictionary["Objetivo"],
+               let resumoProf = dictionary["Resumo"],
+               let nomeEmp = dictionary["NomeEmpresa"],
+               let cargoEmp = dictionary["NomeCargo"],
+               let dataIniEmp = dictionary["EmpregoDataIni"],
+               let dataFimEmp = dictionary["EmpregoDataFim"],
+               let detalhesEmp = dictionary["Detalhes"],
+               let nomeInst = dictionary["NomeInst"],
+               let cursoInst = dictionary["NomeCurso"],
+               let dataIniInst = dictionary["InstDataIni"],
+               let dataFimInst = dictionary["InstDataFim"],
+               let realizacao = dictionary["NomeConq"],
+               let descReal = dictionary["DescConq"],
+               let dataIniReal = dictionary["ConqDataIni"],
+               let dataFimReal = dictionary["ConqDataFim"],
+               let deficiencia = dictionary["NomeDef"],
+               let deficienciaObs = dictionary["ObsDef"],
+               let modelo = dictionary["Modelo"],
+               let cor = dictionary["Cor"]
             {
                 
                 

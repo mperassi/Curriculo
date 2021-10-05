@@ -21,7 +21,7 @@ class TerceiraPageViewController: UIViewController {
     //Dicionário
     
     let defaults = UserDefaults.standard
-    var dictionary: [String : Any] = [:]  //Dictionary which you want to save
+    var dictionary: [String : String] = [:]  //Dictionary which you want to save
     //    let dictValue = UserDefaults.standard.value(forKey: "DictValue") //Retrieving the value from user default
     
     
@@ -43,7 +43,7 @@ class TerceiraPageViewController: UIViewController {
         cancelarBotao.style = .plain
         
         //Dicionário
-        if let userDataDictionary = defaults.dictionary(forKey: "DictValue"){
+        if let userDataDictionary = defaults.dictionary(forKey: "DictValue") as? [String: String] {
             dictionary = userDataDictionary
         }
         
