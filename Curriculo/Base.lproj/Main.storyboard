@@ -171,23 +171,23 @@
             <objects>
                 <viewController id="6Ti-xJ-f2Z" customClass="PrimeiraPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pvJ-FA-nn9">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="pmG-b5-kVR">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="391" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Smq-oc-0Gz">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="391" height="800"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 1 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-Wm-t66">
-                                                <rect key="frame" x="17" y="10" width="348" height="18"/>
+                                                <rect key="frame" x="17" y="10" width="349" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ifl-3y-TH0">
-                                                <rect key="frame" x="15" y="43" width="360" height="630"/>
+                                                <rect key="frame" x="15" y="43" width="361" height="630"/>
                                                 <color key="backgroundColor" name="Fundo"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="630" id="Dw8-lX-8Kf"/>
@@ -195,26 +195,26 @@
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textoCell" rowHeight="105" id="GzA-Dm-1WW" customClass="TextoTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="50" width="361" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GzA-Dm-1WW" id="jpS-MJ-KWB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="105"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt7-It-zx2">
-                                                                    <rect key="frame" x="25" y="11" width="230" height="24"/>
+                                                                    <rect key="frame" x="25" y="11" width="231" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" name="Ciano"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="24J-ZT-4ki">
-                                                                    <rect key="frame" x="30" y="45" width="300" height="34"/>
+                                                                    <rect key="frame" x="30" y="45" width="301" height="34"/>
                                                                     <color key="backgroundColor" name="TextField"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xF-LN-h7K">
-                                                                    <rect key="frame" x="260" y="15.666666666666664" width="70" height="14.333333333333336"/>
+                                                                    <rect key="frame" x="261" y="15.666666666666664" width="70" height="14.333333333333336"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="lD0-FD-LlZ"/>
                                                                     </constraints>
@@ -242,20 +242,20 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" rowHeight="105" id="lXU-a9-wsy" customClass="DataTableViewCell" customModule="Curriculo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="155" width="360" height="105"/>
+                                                        <rect key="frame" x="0.0" y="155" width="361" height="105"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lXU-a9-wsy" id="DI1-V3-G9P">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="105"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="105"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de nascimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-h2-WHW">
-                                                                    <rect key="frame" x="25" y="11" width="227" height="24"/>
+                                                                    <rect key="frame" x="25" y="11" width="228" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" name="Ciano"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Obrigatório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3L-f9-p8e">
-                                                                    <rect key="frame" x="260" y="15.666666666666664" width="70" height="14.333333333333336"/>
+                                                                    <rect key="frame" x="261" y="15.666666666666664" width="70" height="14.333333333333336"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="9hM-D6-el7"/>
                                                                     </constraints>
@@ -264,7 +264,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <datePicker clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="fDS-VS-D4s">
-                                                                    <rect key="frame" x="25" y="40" width="315" height="55"/>
+                                                                    <rect key="frame" x="25" y="40" width="316" height="55"/>
                                                                     <color key="tintColor" name="Ciano"/>
                                                                     <locale key="locale" localeIdentifier="pt_BR"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -352,7 +352,7 @@
                             <color key="tintColor" name="Ciano"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="390" height="1000"/>
+                    <size key="freeformSize" width="391" height="1000"/>
                     <connections>
                         <outlet property="cancelarBotao" destination="JJQ-ov-wgp" id="POr-XP-lZd"/>
                         <outlet property="scrollView" destination="pmG-b5-kVR" id="yKM-ra-kqH"/>
@@ -361,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHS-Cp-XIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961.53846153846155" y="-286.49289099526067"/>
+            <point key="canvasLocation" x="960.76923076923072" y="-286.49289099526067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eWC-Dd-VEk">
@@ -571,6 +571,7 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="detalhesObs" destination="t1k-cM-DW9" id="fwd-we-yVt"/>
                                                             <outlet property="novaLabel" destination="UvP-qZ-qFD" id="XPg-sN-D9p"/>
                                                             <outlet property="novaTextView" destination="obf-Ad-TED" id="fgB-BN-yiK"/>
                                                         </connections>
@@ -1662,6 +1663,11 @@
                         <outlet property="corLaranja" destination="gW7-xe-dfG" id="4Qr-Gr-yak"/>
                         <outlet property="corPreto" destination="2Uo-7I-rya" id="kiK-Ae-Qez"/>
                         <outlet property="corVerde" destination="NSR-ty-XgW" id="lzh-lo-CVA"/>
+                        <outlet property="coresLabel" destination="7FW-8P-QuY" id="qBx-ac-jZR"/>
+                        <outlet property="coresLabelObs" destination="urW-XL-GgL" id="xui-49-dsb"/>
+                        <outlet property="labelObs" destination="5Gb-wt-tMm" id="Aaz-wb-7ld"/>
+                        <outlet property="modelosTitulo" destination="j8k-Ob-0bV" id="4td-Se-BuP"/>
+                        <outlet property="passos" destination="ZC0-6n-h2V" id="CGh-uv-Pxk"/>
                         <outlet property="primeiroModelo" destination="YnJ-M6-y3Q" id="xtI-FZ-0HM"/>
                         <outlet property="scrollView" destination="ehZ-K7-uPc" id="Btn-KT-qLU"/>
                         <outlet property="segundoModelo" destination="zyU-ZA-SeX" id="1cX-LL-73G"/>
