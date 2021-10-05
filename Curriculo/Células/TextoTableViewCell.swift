@@ -19,7 +19,7 @@ class TextoTableViewCell: UITableViewCell {
         
     }
     func setTag(tag: Int){
-        inputTxt.tag = 100+tag
+     //   inputTxt.tag = 100+tag
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -40,7 +40,7 @@ class YourCustomCell: UITableViewCell {
 }
 extension YourCustomCell: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nextTextField?(textField.tag)
+    //    nextTextField?(textField.tag)
         return textField.resignFirstResponder()
     }
 }
