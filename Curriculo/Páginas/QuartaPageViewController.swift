@@ -12,7 +12,6 @@ class QuartaPageViewController: UIViewController {
     @IBOutlet weak var cancelarBotao: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addForm: UIButton!
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
     @IBSegueAction func mudaQuartaPagina(_ coder: NSCoder) -> QuintaPageViewController? {
         dicionario4Pagina()
@@ -40,11 +39,11 @@ class QuartaPageViewController: UIViewController {
         botaoAnterior.style = .plain
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
-        addForm.layer.cornerRadius = 10
-        
-         //MARK: Acessibilidade
-         addForm.isAccessibilityElement = true
-         addForm.accessibilityLabel = "Adicionar nova formação acadêmica"
+//        addForm.layer.cornerRadius = 10
+//
+//         //MARK: Acessibilidade
+//         addForm.isAccessibilityElement = true
+//         addForm.accessibilityLabel = "Adicionar nova formação acadêmica"
         cancelarBotao.action = #selector(cancelarAcao)
         cancelarBotao.target = self
         cancelarBotao.style = .plain

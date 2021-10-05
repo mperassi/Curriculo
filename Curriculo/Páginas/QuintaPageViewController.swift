@@ -13,7 +13,6 @@ class QuintaPageViewController: UIViewController {
     @IBOutlet var primeiraTableView: UITableView!
     @IBOutlet var botaoAnterior: UIBarButtonItem!
     @IBOutlet weak var cancelarBotao: UIBarButtonItem!
-    @IBOutlet var addConq: UIButton!
     @IBOutlet var segundaTableView: UITableView!
     @IBOutlet var `switch`: UISwitch!
     
@@ -58,7 +57,7 @@ class QuintaPageViewController: UIViewController {
         botaoAnterior.style = .plain
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
-        addConq.layer.cornerRadius = 10
+//        addConq.layer.cornerRadius = 10
 
         
         //Dicionário

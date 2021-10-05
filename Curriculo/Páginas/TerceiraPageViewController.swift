@@ -13,7 +13,6 @@ class TerceiraPageViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var botaoAnterior: UIBarButtonItem!
-    @IBOutlet weak var addExp: UIButton!
     @IBSegueAction func mudaTerceiraPagina(_ coder: NSCoder) -> QuartaPageViewController? {
         dicionario3Pagina()
         return QuartaPageViewController(coder: coder)
@@ -38,7 +37,6 @@ class TerceiraPageViewController: UIViewController {
         botaoAnterior.style = .plain
         botaoAnterior.target = self
         botaoAnterior.action = #selector(changeViewController)
-        addExp.layer.cornerRadius = 10
         
         cancelarBotao.action = #selector(cancelarAcao)
         cancelarBotao.target = self
