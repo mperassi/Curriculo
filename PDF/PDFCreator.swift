@@ -121,7 +121,11 @@ class PDFCreator: NSObject {
             addDescReal(pageRect: paginaTamanho, textTop: realBottom)
             addDataIniReal(pageRect: paginaTamanho, textTop: realBottom + 15)
             addDataFimReal(pageRect: paginaTamanho, textTop: realBottom + 15)
-            addInfoAdd(pageRect: paginaTamanho, textTop: realBottom + 40)
+            if deficiencia == ""{
+                
+            }else{
+                addInfoAdd(pageRect: paginaTamanho, textTop: realBottom + 40)
+            }
             addDeficiencia(pageRect: paginaTamanho, textTop: realBottom + 60)
             addDeficienciaObs(pageRect: paginaTamanho, textTop: realBottom + 75)
             
@@ -143,7 +147,6 @@ class PDFCreator: NSObject {
     func addNome(pageRect: CGRect) -> CGFloat {
         let titleFont = UIFont.systemFont(ofSize: 32.0, weight: .heavy)
         let paragraphStyle = NSMutableParagraphStyle()
-        
         paragraphStyle.alignment = .center
         paragraphStyle.lineBreakMode = .byWordWrapping
         var titleAttributes =
@@ -152,21 +155,21 @@ class PDFCreator: NSObject {
           NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
         if cor == "Verde"{
             titleAttributes =
-        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
-          NSAttributedString.Key.font: titleFont,
-          NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: titleFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
         }
         else if cor == "Laranja"{
             titleAttributes =
-        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
-          NSAttributedString.Key.font: titleFont,
-            NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: titleFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
         }
         else if cor == "Azul"{
             titleAttributes =
-        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
-          NSAttributedString.Key.font: titleFont,
-            NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: titleFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
         }
         
         let attributedTitle = NSAttributedString(string: nome, attributes: titleAttributes as [NSAttributedString.Key : Any])
@@ -174,8 +177,8 @@ class PDFCreator: NSObject {
         let titleStringRect = CGRect(x: (pageRect.width - titleStringSize.width) / 2.0,
                                      y: 35, width: titleStringSize.width,
                                      height: titleStringSize.height)
-          attributedTitle.draw(in: titleStringRect)
-          return titleStringRect.origin.y + titleStringRect.size.height
+        attributedTitle.draw(in: titleStringRect)
+        return titleStringRect.origin.y + titleStringRect.size.height
     }
     func addNascimento(pageRect: CGRect, textTop: CGFloat) {
         let fonteNasc = UIFont.systemFont(ofSize: 12.0, weight: .regular)
@@ -268,13 +271,29 @@ class PDFCreator: NSObject {
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
         // 3
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
-        let attributedText = NSAttributedString(string: "OBJETIVO", attributes: textAttributes)
-        
-        // 4
+        var textAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: textFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
+        let attributedText = NSAttributedString(string: "OBJETIVO", attributes: textAttributes as [NSAttributedString.Key : Any])
         let objRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                              height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: objRect)
@@ -304,11 +323,29 @@ class PDFCreator: NSObject {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
-        let attributedText = NSAttributedString(string: "RESUMO PROFISSIONAL", attributes: textAttributes)
+        var textAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: textFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
+        let attributedText = NSAttributedString(string: "RESUMO PROFISSIONAL", attributes: textAttributes as [NSAttributedString.Key : Any])
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -338,11 +375,29 @@ class PDFCreator: NSObject {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
-        let attributedText = NSAttributedString(string: "EXPERIÊNCIA DE TRABALHO", attributes: textAttributes)
+        var textAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: textFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
+        let attributedText = NSAttributedString(string: "EXPERIÊNCIA DE TRABALHO", attributes: textAttributes as [NSAttributedString.Key : Any])
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -393,7 +448,7 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string:"Inicio\(dataIniEmp)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string:"Inicio: \(dataIniEmp)", attributes: textAttributes)
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -407,7 +462,7 @@ class PDFCreator: NSObject {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont
         ]
-        let attributedText = NSAttributedString(string: "Fim:\(dataFimEmp)", attributes: textAttributes)
+        let attributedText = NSAttributedString(string: "Fim: \(dataFimEmp)", attributes: textAttributes)
         let textoRect = CGRect(x: 130, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -438,11 +493,29 @@ class PDFCreator: NSObject {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
-        let attributedText = NSAttributedString(string: "ESCOLARIDADE", attributes: textAttributes)
+        var textAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: textFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
+        let attributedText = NSAttributedString(string: "ESCOLARIDADE", attributes: textAttributes as [NSAttributedString.Key : Any])
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -513,11 +586,29 @@ class PDFCreator: NSObject {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
-        let attributedText = NSAttributedString(string: "REALIZAÇÕES", attributes: textAttributes)
+        var textAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: textFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
+        let attributedText = NSAttributedString(string: "REALIZAÇÕES", attributes: textAttributes as [NSAttributedString.Key : Any])
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
@@ -590,11 +681,29 @@ class PDFCreator: NSObject {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .natural
         paragraphStyle.lineBreakMode = .byWordWrapping
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont
-        ]
-        let attributedText = NSAttributedString(string: "INFORMAÇÕES ADICIONAIS", attributes: textAttributes)
+        var textAttributes =
+        [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+          NSAttributedString.Key.font: textFont,
+          NSAttributedString.Key.foregroundColor: UIColor(named: "Preto")]
+        if cor == "Verde"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Verde")]
+        }
+        else if cor == "Laranja"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Laranja")]
+        }
+        else if cor == "Azul"{
+            textAttributes =
+            [ NSAttributedString.Key.paragraphStyle: paragraphStyle,
+              NSAttributedString.Key.font: textFont,
+              NSAttributedString.Key.foregroundColor: UIColor(named: "Azul")]
+        }
+        let attributedText = NSAttributedString(string: "INFORMAÇÕES ADICIONAIS", attributes: textAttributes as [NSAttributedString.Key : Any])
         let textoRect = CGRect(x: 30, y: textTop, width: pageRect.width - 20,
                                height: pageRect.height - textTop - pageRect.height / 5.0)
         attributedText.draw(in: textoRect)
