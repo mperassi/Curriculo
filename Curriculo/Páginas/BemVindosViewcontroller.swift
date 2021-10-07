@@ -89,12 +89,15 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
         fraseSemCurriculo.textColor = .darkGray
         fraseSemCurriculo.isAccessibilityElement = true
         fraseSemCurriculo.accessibilityLabel = "Clique no botão Adicionar no canto superior direito para criar seu primeiro currículo."
+        
+        fraseSemCurriculo.isAccessibilityElement = true
         fraseSemCurriculo.translatesAutoresizingMaskIntoConstraints = false
         fraseSemCurriculo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35).isActive = true
         fraseSemCurriculo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35).isActive = true
         fraseSemCurriculo.topAnchor.constraint(equalTo: imagemBoasVindas.bottomAnchor, constant: 35).isActive = true
         
-        accessibilityElements = [imagemBoasVindas,fraseSemCurriculo, botaoAdd!]
+        
+        accessibilityElements = [imagemBoasVindas,fraseSemCurriculo, botaoAdd!, botaoDelete!]
         
         if UIAccessibility.isVoiceOverRunning {
             fraseSemCurriculo.text = ""
@@ -112,12 +115,16 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
             cell.isInEditingMode = editing
         }
         if (self.isEditing) {
-            self.editButtonItem.title = "OK"
+            self.editButtonItem.title = "Cancelar"
             toolBar.isHidden = false
+            editButtonItem.isAccessibilityElement = true
+            self.editButtonItem.accessibilityLabel = "Clique no currículo para selecionar."
             }
             else {
                 self.editButtonItem.title = "Editar"
                 toolBar.isHidden = true
+                
+                
                 
             }
     }
@@ -222,6 +229,9 @@ extension BemvindosViewController: UICollectionViewDelegate{
         if !isEditing {
             botaoDelete.isEnabled = false
             performSegue(withIdentifier: "ShowCurriculo", sender: self)
+            botaoDelete.isAccessibilityElement = true
+            self.botaoDelete.accessibilityLabel = "Apagar currículo"
+
         } else {
             botaoDelete.isEnabled = true
 
