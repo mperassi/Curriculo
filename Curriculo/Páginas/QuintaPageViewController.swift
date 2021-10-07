@@ -85,7 +85,11 @@ class QuintaPageViewController: UIViewController {
         primeiraTableView.dequeueReusableCell(withIdentifier: "descCell")
         let indexPath1 = NSIndexPath(row: 1, section: 0)
         let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescricaoTableViewCell
-        self.dictionary["DescConq"] = multiCell1?.descTextView?.text
+        if multiCell1?.descTextView?.text == "gabi"{
+            self.dictionary["DescConq"] = ""
+        } else{
+            self.dictionary["DescConq"] = multiCell1?.descTextView?.text
+        }
         
         let indexPathDatas = NSIndexPath(row: 2, section: 0)
         let multiCell2 = primeiraTableView.cellForRow(at: indexPathDatas as IndexPath) as? DuasDatasTableViewCell
@@ -113,7 +117,11 @@ class QuintaPageViewController: UIViewController {
         segundaTableView.dequeueReusableCell(withIdentifier: "obsCell")
         let indexPathObs = NSIndexPath(row: 1, section: 0)
         let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObservacaoTableViewCell
-        self.dictionary["ObsDef"] = multiCellObs?.obsTextView.text
+        if multiCellObs?.obsTextView?.text == "gabi"{
+            self.dictionary["ObsDef"] = ""
+        } else{
+            self.dictionary["ObsDef"] = multiCellObs?.obsTextView.text
+        }
         
         //Ações próxima página
         self.dictionary["Modelo"] = ""
