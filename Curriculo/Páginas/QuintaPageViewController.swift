@@ -159,7 +159,7 @@ class QuintaPageViewController: UIViewController {
     @objc func cancelarAcao(){
         
         let ac = UIAlertController(title: "Tem certeza?", message: "Cancelando você perderá todas as informações inseridas", preferredStyle: .alert)
-        ac.view.tintColor = UIColor(named: "Ciano2")
+        ac.view.tintColor = UIColor(named: "Ciano")
         ac.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
             self.backViewController()
         }))
@@ -226,6 +226,8 @@ extension QuintaPageViewController: UITableViewDataSource{
                 let cell = primeiraTableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as? DescricaoTableViewCell
                 cell?.selectionStyle = .none
                 cell?.descObsLabel.text = " "
+                cell?.descTextView?.text = "gabi"
+                cell?.descTextView?.textColor = UIColor.lightGray
                 
                 guard let safeCell = cell else {return UITableViewCell()}
                 return safeCell
@@ -266,6 +268,8 @@ extension QuintaPageViewController: UITableViewDataSource{
                 let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObservacaoTableViewCell
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
+                cell.obsTextView?.text = "gabi"
+                cell.obsTextView?.textColor = UIColor.lightGray
                 
                 //MARK: Acessibilidade - TextView do campo de observações
                 cell.obsLabel.isAccessibilityElement = true

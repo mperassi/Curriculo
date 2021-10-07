@@ -1,0 +1,282 @@
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "0Z2-4D-AcI"; */
+"0Z2-4D-AcI.title" = "Cancelar";
+
+/* Class = "UILabel"; text = "Nome da Empresa"; ObjectID = "1CA-S4-IFy"; */
+"1CA-S4-IFy.text" = "Nome da Empresa";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "2Uo-7I-rya"; */
+"2Uo-7I-rya.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2Uo-7I-rya"; */
+"2Uo-7I-rya.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Início"; ObjectID = "2Zx-d9-TJq"; */
+"2Zx-d9-TJq.text" = "Início";
+
+/* Class = "UILabel"; text = "Seu currículo está concluído!"; ObjectID = "3Kr-A0-UF5"; */
+"3Kr-A0-UF5.text" = "Seu currículo está concluído!";
+
+/* Class = "UIBarButtonItem"; title = "Próximo"; ObjectID = "4rL-yn-9GH"; */
+"4rL-yn-9GH.title" = "Próximo";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "5Gb-wt-tMm"; */
+"5Gb-wt-tMm.text" = "*Obrigatório";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "73I-3i-04c"; */
+"73I-3i-04c.title" = "Cancelar";
+
+/* Class = "UILabel"; text = "Cores"; ObjectID = "7FW-8P-QuY"; */
+"7FW-8P-QuY.text" = "Cores";
+
+/* Class = "UILabel"; text = "  Outras informações"; ObjectID = "7pD-zC-Y9R"; */
+"7pD-zC-Y9R.text" = "  Outras informações";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "7xF-LN-h7K"; */
+"7xF-LN-h7K.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "Título"; ObjectID = "8Jl-GZ-Wbc"; */
+"8Jl-GZ-Wbc.text" = "Título";
+
+/* Class = "UIBarButtonItem"; title = "Compartilhar"; ObjectID = "8Ot-05-yti"; */
+"8Ot-05-yti.title" = "Compartilhar";
+
+/* Class = "UIBarButtonItem"; title = "Anterior"; ObjectID = "AO2-EL-SaK"; */
+"AO2-EL-SaK.title" = "Anterior";
+
+/* Class = "UIBarButtonItem"; title = "Próximo"; ObjectID = "Bkw-LS-DW7"; */
+"Bkw-LS-DW7.title" = "Próximo";
+
+/* Class = "UILabel"; text = "Passo 1 de 6"; ObjectID = "EMb-Wm-t66"; */
+"EMb-Wm-t66.text" = "Passo 1 de 6";
+
+/* Class = "UINavigationItem"; title = "Dados profissionais"; ObjectID = "FbD-Vn-iLe"; */
+"FbD-Vn-iLe.title" = "Dados profissionais";
+
+/* Class = "UIBarButtonItem"; title = "Próximo"; ObjectID = "GA5-2d-e4E"; */
+"GA5-2d-e4E.title" = "Próximo";
+
+/* Class = "UILabel"; text = "      "; ObjectID = "HHK-vI-izK"; */
+"HHK-vI-izK.text" = "      ";
+
+/* Class = "UILabel"; text = "Aqui está seu currículo!"; ObjectID = "HqE-cC-pNg"; */
+"HqE-cC-pNg.text" = "Aqui está seu currículo!";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "JJQ-ov-wgp"; */
+"JJQ-ov-wgp.title" = "Cancelar";
+
+/* Class = "UINavigationItem"; title = "Dados pessoais"; ObjectID = "Ked-QZ-2pc"; */
+"Ked-QZ-2pc.title" = "Dados pessoais";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "MWP-lX-Rld"; */
+"MWP-lX-Rld.title" = "Cancelar";
+
+/* Class = "UIBarButtonItem"; title = "Adicionar"; ObjectID = "Meg-Ce-4kZ"; */
+"Meg-Ce-4kZ.title" = "Adicionar";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "NSR-ty-XgW"; */
+"NSR-ty-XgW.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NSR-ty-XgW"; */
+"NSR-ty-XgW.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Currículos"; ObjectID = "Nlz-kz-0xb"; */
+"Nlz-kz-0xb.title" = "Currículos";
+
+/* Class = "UINavigationItem"; title = "Educação"; ObjectID = "OC1-cW-875"; */
+"OC1-cW-875.title" = "Educação";
+
+/* Class = "UILabel"; text = "Possui alguma deficiência?"; ObjectID = "OlY-4k-FCi"; */
+"OlY-4k-FCi.text" = "Possui alguma deficiência?";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "P3L-f9-p8e"; */
+"P3L-f9-p8e.text" = "*Obrigatório";
+
+/* Class = "UIBarButtonItem"; title = "Concluir"; ObjectID = "PLm-ZH-T7r"; */
+"PLm-ZH-T7r.title" = "Concluir";
+
+/* Class = "UILabel"; text = "Período"; ObjectID = "Q0H-N3-gXY"; */
+"Q0H-N3-gXY.text" = "Período";
+
+/* Class = "UINavigationItem"; title = "Dados adicionais"; ObjectID = "QEn-yV-FnC"; */
+"QEn-yV-FnC.title" = "Dados adicionais";
+
+/* Class = "UIBarButtonItem"; title = "Próximo"; ObjectID = "QR9-CZ-iGa"; */
+"QR9-CZ-iGa.title" = "Próximo";
+
+/* Class = "UILabel"; text = "Passo 5 de 6"; ObjectID = "QZ7-RT-XD1"; */
+"QZ7-RT-XD1.text" = "Passo 5 de 6";
+
+/* Class = "UINavigationItem"; title = "Currículo"; ObjectID = "Qz4-8a-hiB"; */
+"Qz4-8a-hiB.title" = "Currículo";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "RCT-sc-12K"; */
+"RCT-sc-12K.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RCT-sc-12K"; */
+"RCT-sc-12K.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Próximo"; ObjectID = "RCq-9V-VEW"; */
+"RCq-9V-VEW.title" = "Próximo";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "RcV-5Q-Cug"; */
+"RcV-5Q-Cug.title" = "Cancelar";
+
+/* Class = "UILabel"; text = "Deficiência"; ObjectID = "TuV-7C-a9D"; */
+"TuV-7C-a9D.text" = "Deficiência";
+
+/* Class = "UILabel"; text = "Detalhes"; ObjectID = "UvP-qZ-qFD"; */
+"UvP-qZ-qFD.text" = "Detalhes";
+
+/* Class = "UILabel"; text = "Realizações"; ObjectID = "V5Y-PS-uEW"; */
+"V5Y-PS-uEW.text" = "Realizações";
+
+/* Class = "UIBarButtonItem"; title = "Anterior"; ObjectID = "VI7-u5-5cj"; */
+"VI7-u5-5cj.title" = "Anterior";
+
+/* Class = "UIBarButtonItem"; title = "Anterior"; ObjectID = "WLR-3l-fXa"; */
+"WLR-3l-fXa.title" = "Anterior";
+
+/* Class = "UILabel"; text = "Objetivo"; ObjectID = "WLu-JR-Ijr"; */
+"WLu-JR-Ijr.text" = "Objetivo";
+
+/* Class = "UILabel"; text = "Período"; ObjectID = "XUr-zg-Gzv"; */
+"XUr-zg-Gzv.text" = "Período";
+
+/* Class = "UILabel"; text = "Fim"; ObjectID = "Xme-La-hM2"; */
+"Xme-La-hM2.text" = "Fim";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "YRA-TF-JGC"; */
+"YRA-TF-JGC.text" = "*Obrigatório";
+
+/* Class = "UIButton"; configuration.title = "Simples"; ObjectID = "YnJ-M6-y3Q"; */
+"YnJ-M6-y3Q.configuration.title" = "Simples";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YnJ-M6-y3Q"; */
+"YnJ-M6-y3Q.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Passo 4 de 6"; ObjectID = "Z0B-no-c8C"; */
+"Z0B-no-c8C.text" = "Passo 4 de 6";
+
+/* Class = "UILabel"; text = "Passo 6 de 6"; ObjectID = "ZC0-6n-h2V"; */
+"ZC0-6n-h2V.text" = "Passo 6 de 6";
+
+/* Class = "UILabel"; text = "Nome"; ObjectID = "ZLn-hi-Jzw"; */
+"ZLn-hi-Jzw.text" = "Nome";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "aHs-FY-nVL"; */
+"aHs-FY-nVL.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "Fim"; ObjectID = "ap2-hS-RZN"; */
+"ap2-hS-RZN.text" = "Fim";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "axY-Vj-6tp"; */
+"axY-Vj-6tp.text" = "*Obrigatório";
+
+/* Class = "UIBarButtonItem"; title = "Editar"; ObjectID = "byo-Ex-EQ3"; */
+"byo-Ex-EQ3.title" = "Editar";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "c9A-7Q-JpD"; */
+"c9A-7Q-JpD.text" = "*Obrigatório";
+
+/* Class = "UINavigationItem"; title = "Pronto!"; ObjectID = "cMn-Ib-dDp"; */
+"cMn-Ib-dDp.title" = "Pronto!";
+
+/* Class = "UILabel"; text = "Descrição"; ObjectID = "cxJ-Zw-FoZ"; */
+"cxJ-Zw-FoZ.text" = "Descrição";
+
+/* Class = "UINavigationItem"; title = "Templates"; ObjectID = "d99-Qu-6gZ"; */
+"d99-Qu-6gZ.title" = "Templates";
+
+/* Class = "UIBarButtonItem"; title = "Finalizar"; ObjectID = "dHz-na-YdO"; */
+"dHz-na-YdO.title" = "Finalizar";
+
+/* Class = "UIBarButtonItem"; title = "Compartilhar"; ObjectID = "fIc-cX-2Qd"; */
+"fIc-cX-2Qd.title" = "Compartilhar";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "gVa-aD-3wF"; */
+"gVa-aD-3wF.text" = "*Obrigatório";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "gW7-xe-dfG"; */
+"gW7-xe-dfG.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gW7-xe-dfG"; */
+"gW7-xe-dfG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Fim"; ObjectID = "ggn-Oj-cFH"; */
+"ggn-Oj-cFH.text" = "Fim";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "hwM-Iz-veu"; */
+"hwM-Iz-veu.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "Nome do currículo"; ObjectID = "iJe-re-4rA"; */
+"iJe-re-4rA.text" = "Nome do currículo";
+
+/* Class = "UILabel"; text = "Modelos"; ObjectID = "j8k-Ob-0bV"; */
+"j8k-Ob-0bV.text" = "Modelos";
+
+/* Class = "UILabel"; text = "Passo 2 de 6"; ObjectID = "lGQ-bM-UII"; */
+"lGQ-bM-UII.text" = "Passo 2 de 6";
+
+/* Class = "UILabel"; text = "Início"; ObjectID = "lUq-bB-eXe"; */
+"lUq-bB-eXe.text" = "Início";
+
+/* Class = "UILabel"; text = "Data de nascimento"; ObjectID = "mMb-h2-WHW"; */
+"mMb-h2-WHW.text" = "Data de nascimento";
+
+/* Class = "UILabel"; text = "Período"; ObjectID = "mOa-q8-DWo"; */
+"mOa-q8-DWo.text" = "Período";
+
+/* Class = "UILabel"; text = "Nome"; ObjectID = "nt7-It-zx2"; */
+"nt7-It-zx2.text" = "Nome";
+
+/* Class = "UILabel"; text = "Nome da Empresa"; ObjectID = "oXH-UD-p2Z"; */
+"oXH-UD-p2Z.text" = "Nome da Empresa";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "ovN-C2-AmI"; */
+"ovN-C2-AmI.title" = "Cancelar";
+
+/* Class = "UINavigationItem"; title = "Experiências"; ObjectID = "pWn-Ad-f8f"; */
+"pWn-Ad-f8f.title" = "Experiências";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "poU-zp-f8h"; */
+"poU-zp-f8h.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "t1k-cM-DW9"; */
+"t1k-cM-DW9.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "urW-XL-GgL"; */
+"urW-XL-GgL.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "v9h-1a-bM7"; */
+"v9h-1a-bM7.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "wo8-Fp-TtF"; */
+"wo8-Fp-TtF.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "xAe-Dg-erM"; */
+"xAe-Dg-erM.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "*Obrigatório"; ObjectID = "xib-yw-OsW"; */
+"xib-yw-OsW.text" = "*Obrigatório";
+
+/* Class = "UILabel"; text = "Início"; ObjectID = "yhG-8O-We9"; */
+"yhG-8O-We9.text" = "Início";
+
+/* Class = "UILabel"; text = "Passo 3 de 6"; ObjectID = "yzK-3C-oBl"; */
+"yzK-3C-oBl.text" = "Passo 3 de 6";
+
+/* Class = "UILabel"; text = "Observações"; ObjectID = "z2d-TQ-BUa"; */
+"z2d-TQ-BUa.text" = "Observações";
+
+/* Class = "UIBarButtonItem"; title = "Anterior"; ObjectID = "zSB-kM-qYs"; */
+"zSB-kM-qYs.title" = "Anterior";
+
+/* Class = "UIButton"; configuration.title = "Formas"; ObjectID = "zyU-ZA-SeX"; */
+"zyU-ZA-SeX.configuration.title" = "Formas";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zyU-ZA-SeX"; */
+"zyU-ZA-SeX.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Anterior"; ObjectID = "zzr-Vg-U9w"; */
+"zzr-Vg-U9w.title" = "Anterior";

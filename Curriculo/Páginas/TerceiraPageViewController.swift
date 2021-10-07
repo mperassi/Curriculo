@@ -230,6 +230,8 @@ extension TerceiraPageViewController: UITableViewDataSource{
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "novaTextCell", for: indexPath) as! DetalhesTableViewCell
             cell.selectionStyle = .none
+            cell.novaTextView?.text = "gabi"
+            cell.novaTextView?.textColor = UIColor.lightGray
             return cell
             //            guard let safeCell = cell else {return UITableViewCell()}
             //            return safeCell
@@ -238,7 +240,7 @@ extension TerceiraPageViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 3 {
-            return 300
+            return 250
             
         } else if indexPath.row == 2{
             return 140

@@ -12,8 +12,34 @@ import CoreData
 
 class BemvindosViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout {
     
+    weak var delegate: BemvindosViewController?
     private var curriculos: [String] = []
     
+    @IBAction func deleteItem(_ sender: Any) {
+//        Alerta
+        let ac = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Apagar Currículo", style: .destructive, handler: {(action:UIAlertAction!) in
+            if let selectedCells = self.collectionView.indexPathsForSelectedItems {
+                // 1 The selected cells will be reversed and sorted so the items with the highest index will be removed first.
+                let items = selectedCells.map { $0.item }.sorted().reversed()
+                // 2 The items will be removed from the modelData array
+                for item in items {
+                    let _ = try? CurriculoRepositorio.shared.delete(nome: self.curriculoSelecionado)
+                    self.curriculos.remove(at: item)
+                }
+                // 3 The selected cells will be reversed and sorted so the items with the highest index will be removed first.
+                self.collectionView.deleteItems(at: selectedCells)
+                self.botaoDelete.isEnabled = false
+              }
+        }))
+        ac.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        present(ac, animated: true)
+
+    }
+    
+    
+    @IBOutlet var toolBar: UIToolbar!
+    @IBOutlet var botaoDelete: UIBarButtonItem!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var botaoAdd: UIBarButtonItem!
     @IBOutlet var collectionView: UICollectionView!
@@ -21,20 +47,20 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
     let imagemBoasVindas = UIImageView()
     var curriculoSelecionado: String?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(fraseSemCurriculo)
         view.addSubview(imagemBoasVindas)
-        //
-        //        do {
-        //            try frc.performFetch()
-        //        } catch {
-        //            print("Não foi")
-        //        }
+
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        self.navigationItem.leftBarButtonItem?.title = "Editar"
+        
+        toolBar.isHidden = true
         
         //CollectionView
         guard let collectionView = collectionView else {
@@ -47,7 +73,6 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
         
         botaoAdd.isAccessibilityElement = true
         botaoAdd.accessibilityLabel = "Adicionar novo currículo"
-        //        botaoAdd = UIBarButtonItem(image: UIImage(systemName: "plus"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(actNewTrip))//
         
         
         imagemBoasVindas.isAccessibilityElement = true
@@ -77,6 +102,25 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
         }
         
     }
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        collectionView.allowsMultipleSelection = editing
+        let indexPaths = collectionView.indexPathsForVisibleItems
+        for indexPath in indexPaths {
+            let cell = collectionView.cellForItem(at: indexPath) as! InicioCollectionViewCell
+            cell.isInEditingMode = editing
+        }
+        if (self.isEditing) {
+            self.editButtonItem.title = "OK"
+            toolBar.isHidden = false
+            }
+            else {
+                self.editButtonItem.title = "Editar"
+                toolBar.isHidden = true
+                
+            }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.curriculos = CurriculoRepositorio.shared.buscarTodos()
@@ -99,17 +143,10 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
             
         }
     }
-    //MARK: Função de chamar a controller de Novo Curriculo
-    //    @objc func actNewTrip() -> Void{
-    //        let root = NewTripViewController(type: .firstView)
-    //        let vc = UINavigationController(rootViewController: root)
-    //        vc.modalPresentationStyle = .automatic
-    //        present(vc, animated: true, completion: {[weak self] in self?.numeroDeCelulas()})
-    //    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowCurriculo" {
-            guard let vc = segue.destination as? ProntoPageViewController2,
+            guard let vc = segue.destination as? VisualizarPageViewController,
                   let curriculo = self.curriculoSelecionado,
                   let dictionary = CurriculoRepositorio.shared.buscar(nome: curriculo)
             else { return }
@@ -181,8 +218,23 @@ extension BemvindosViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.curriculoSelecionado = self.curriculos[indexPath.row]
-        performSegue(withIdentifier: "ShowCurriculo", sender: self)
+
+        if !isEditing {
+            botaoDelete.isEnabled = false
+            performSegue(withIdentifier: "ShowCurriculo", sender: self)
+        } else {
+            botaoDelete.isEnabled = true
+
+        }
+
+
     }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let selectedItems = collectionView.indexPathsForSelectedItems, selectedItems.count == 0 {
+                botaoDelete.isEnabled = false
+            }
+    }
+    
 }
 
 extension BemvindosViewController: UICollectionViewDataSource {
@@ -201,16 +253,10 @@ extension BemvindosViewController: UICollectionViewDataSource {
         
         return cell
     }
-    //        let curriculo = CurriculoRepositorio.shared.buscar(nome: "oi")
-    // (pegar 1 curriculo)
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 165, height: 240)
     }
-
-
-    
-
-
     
 }
+

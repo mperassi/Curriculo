@@ -46,6 +46,18 @@ extension DetalhesTableViewCell: UITextViewDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if novaTextView?.textColor == UIColor.lightGray {
+            novaTextView?.text = nil
+            novaTextView?.textColor = UIColor(named: "TextView")
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if ((novaTextView?.text == "")) {
+                novaTextView?.text = "carol"
+                novaTextView?.textColor = UIColor.lightGray
+        }
+    }
 }
 
 

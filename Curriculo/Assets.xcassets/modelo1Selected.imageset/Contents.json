@@ -1,49 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "high1lightmode1.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
       "filename" : "high1darkmode.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "high1lightmode2.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
       "filename" : "high1darkmode2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "high1lightmode3.png",
-      "idiom" : "universal",
-      "scale" : "3x"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
       "filename" : "high1darkmode3.png",
       "idiom" : "universal",
       "scale" : "3x"

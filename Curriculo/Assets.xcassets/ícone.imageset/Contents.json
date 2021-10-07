@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "azuldarks.png",
+      "filename" : "icone3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "azuldarks-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "azuldarks-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

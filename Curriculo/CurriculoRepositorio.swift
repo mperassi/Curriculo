@@ -60,7 +60,7 @@ class CurriculoRepositorio {
         }
     }
     
-    
+    //Salvar o dicionário no coredata
     func salvar(nome: String, dados: [String: String]) {
         let curriculo = Curriculo(context: self.persistentContainer.viewContext)
         let encoder = JSONEncoder()
@@ -74,7 +74,7 @@ class CurriculoRepositorio {
         self.saveContext()
         
     }
-    
+    //Buscar somente um dicionário, quando eu clico em uma cell de uma collectionview ele executa essa função
     func buscar(nome: String) -> [String: String]? {
         let fetch = NSFetchRequest<Curriculo>(entityName: "Curriculo")
         fetch.predicate = NSPredicate(format: "nome == %@", nome)
@@ -84,6 +84,19 @@ class CurriculoRepositorio {
                 return self.converter(curriculo: result[0])
             }
         }catch {
+            print(error)
+        }
+        return nil
+    }
+    func buscarDelete(nome: String) -> Curriculo? {
+        let fetch = NSFetchRequest<Curriculo>(entityName: "Curriculo")
+        fetch.predicate = NSPredicate(format: "nome == %@", nome)
+        do {
+            let result = try self.persistentContainer.viewContext.fetch(fetch)
+            if result.count > 0 {
+                return result[0]
+            }
+        } catch {
             print(error)
         }
         return nil
@@ -100,6 +113,8 @@ class CurriculoRepositorio {
      
      - Returns: A new string saying hello to `recipient`.
      */
+    
+    //Retorna todos os currículos com o nome de cada um deles, lista de currículos na collectionview
     func buscarTodos() -> [String] {
         let fetch = NSFetchRequest<Curriculo>(entityName: "Curriculo")
         do {
@@ -113,7 +128,7 @@ class CurriculoRepositorio {
         return []
     }
     
-    
+    //Converter uma string para data, depois para json e depois para dicionario
     private func converter(curriculo: Curriculo) -> [String: String]? {
         if let data = curriculo.dados!.data(using: .utf8) {
             do {
@@ -125,6 +140,22 @@ class CurriculoRepositorio {
         }
         return nil
     }
+  
+    
+    func delete(nome: String?) throws {
+        guard let nomeUn = nome else {
+            print("bugou no nomeUn")
+            return}
+        guard let curriculo = buscarDelete(nome: nomeUn) else {
+            print("bugou no curriculo")
+            return}
+        persistentContainer.viewContext.delete(curriculo)
+        saveContext()
+    }
     
 
+}
+enum CoreDataStackError: Error {
+    case failedToSave
+    case contextHasNoChanges
 }
