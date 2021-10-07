@@ -85,7 +85,7 @@ class QuintaPageViewController: UIViewController {
         primeiraTableView.dequeueReusableCell(withIdentifier: "descCell")
         let indexPath1 = NSIndexPath(row: 1, section: 0)
         let multiCell1 = primeiraTableView.cellForRow(at: indexPath1 as IndexPath) as? DescricaoTableViewCell
-        if multiCell1?.descTextView?.text == "gabi"{
+        if multiCell1?.descTextView?.text == "Descreva brevemente sua realização profissional.\nExemplo: Nota máxima na tese de conclusão de curso."{
             self.dictionary["DescConq"] = ""
         } else{
             self.dictionary["DescConq"] = multiCell1?.descTextView?.text
@@ -113,11 +113,22 @@ class QuintaPageViewController: UIViewController {
         let indexPathDef = NSIndexPath(row: 0, section: 0)
         let multiCellDef = segundaTableView.cellForRow(at: indexPathDef as IndexPath) as? TextoTableViewCell
         self.dictionary["NomeDef"] = multiCellDef?.nomeField.text
+        if self.switch.isOn{
+            if (multiCellDef?.nomeField.text == ""){
+                print("vazio")
+                let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                ac.view.tintColor = UIColor(named: "Ciano")
+                present(ac, animated: true)
+            } else{
+                print("cheio")
+            }
+        }
         
         segundaTableView.dequeueReusableCell(withIdentifier: "obsCell")
         let indexPathObs = NSIndexPath(row: 1, section: 0)
         let multiCellObs = segundaTableView.cellForRow(at: indexPathObs as IndexPath) as? ObservacaoTableViewCell
-        if multiCellObs?.obsTextView?.text == "gabi"{
+        if multiCellObs?.obsTextView?.text == "Descreva brevemente sua deficiência e as possíveis adaptações necessárias ao ambiente de trabalho. Se julgar necessário, informe seu CID neste campo."{
             self.dictionary["ObsDef"] = ""
         } else{
             self.dictionary["ObsDef"] = multiCellObs?.obsTextView.text
@@ -232,10 +243,11 @@ extension QuintaPageViewController: UITableViewDataSource{
                 
             } else if indexPath.row == 1{
                 let cell = primeiraTableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as? DescricaoTableViewCell
+                
                 cell?.selectionStyle = .none
-                cell?.descObsLabel.text = " "
-                cell?.descTextView?.text = "gabi"
-                cell?.descTextView?.textColor = UIColor.lightGray
+                cell?.descObsLabel.text = ""
+                cell?.descTextView?.text = "Descreva brevemente sua realização profissional.\nExemplo: Nota máxima na tese de conclusão de curso."
+                cell?.descTextView?.textColor = UIColor(named: "Placeholder")
                 
                 guard let safeCell = cell else {return UITableViewCell()}
                 return safeCell
@@ -276,8 +288,8 @@ extension QuintaPageViewController: UITableViewDataSource{
                 let cell  = segundaTableView.dequeueReusableCell(withIdentifier: "obsCell", for: indexPath) as! ObservacaoTableViewCell
                 cell.obsLabelObs.text = " "
                 cell.selectionStyle = .none
-                cell.obsTextView?.text = "gabi"
-                cell.obsTextView?.textColor = UIColor.lightGray
+                cell.obsTextView?.text = "Descreva brevemente sua deficiência e as possíveis adaptações necessárias ao ambiente de trabalho. Se julgar necessário, informe seu CID neste campo."
+                cell.obsTextView?.textColor = UIColor(named: "Placeholder")
                 
                 //MARK: Acessibilidade - TextView do campo de observações
                 cell.obsLabel.isAccessibilityElement = true
@@ -287,7 +299,7 @@ extension QuintaPageViewController: UITableViewDataSource{
                 cell.obsLabelObs.accessibilityLabel = "Este campo é de preenchimento obrigatório"
                 
                 cell.obsTextView.isAccessibilityElement = true
-                cell.obsTextView.accessibilityLabel = "Fale brevemente sobre a sua deficiência e das possíveis adaptações necessárias ao ambiente de trabalho."
+                cell.obsTextView.accessibilityLabel = "Descreva brevemente sua deficiência e as possíveis adaptações necessárias ao ambiente de trabalho. Se julgar necessário, informe seu CID neste campo."
                 
                 cell.accessibilityElements = [cell.obsLabel!, cell.obsTextView!]
                 
@@ -308,7 +320,7 @@ extension QuintaPageViewController: UITableViewDataSource{
             }
         } else {
             if indexPath.row == 1{
-                return 180
+                return 220
             } else {
                 return 105
             }

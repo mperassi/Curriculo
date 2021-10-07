@@ -34,15 +34,15 @@ extension ObservacaoTableViewCell: UITextViewDelegate {
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if obsTextView?.textColor == UIColor.lightGray {
+        if obsTextView?.textColor == UIColor(named: "Placeholder") {
             obsTextView?.text = nil
             obsTextView?.textColor = UIColor(named: "TextView")
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if ((obsTextView?.text == "")) {
-                obsTextView?.text = "carol"
-                obsTextView?.textColor = UIColor.lightGray
+                obsTextView?.text = "Descreva brevemente sua deficiência e as possíveis adaptações necessárias ao ambiente de trabalho. Se julgar necessário, informe seu CID neste campo."
+                obsTextView?.textColor = UIColor(named: "Placeholder")
         }
     }
 }

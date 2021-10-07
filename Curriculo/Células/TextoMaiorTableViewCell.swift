@@ -40,7 +40,7 @@ extension TextoMaiorTableViewCell: UITextViewDelegate {
         return updatedText.count <= 300 // Change limit based on your requirement.
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if largeTextView?.textColor == UIColor.lightGray {
+        if largeTextView?.textColor == UIColor(named: "Placeholder") {
             largeTextView?.text = nil
             largeTextView?.textColor = UIColor(named: "TextView")
         }
@@ -48,11 +48,11 @@ extension TextoMaiorTableViewCell: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if ((largeTextView?.text == "")) {
             if largeTextLabel.text == "Objetivo profissional"{
-                largeTextView?.text = "carol"
-                largeTextView?.textColor = UIColor.lightGray
+                largeTextView?.text = "Digite aqui seu objetivo profissional\nExemplo: Desenvolvimento de projetos voltados à tecnologia."
+                largeTextView?.textColor = UIColor(named: "Placeholder")
             } else{
-                largeTextView?.text = "gabi"
-                largeTextView?.textColor = UIColor.lightGray
+                largeTextView?.text = "Digite aqui seu resumo profissional\nExemplo: Trabalho com gestão de projetos de TI."
+                largeTextView?.textColor = UIColor(named: "Placeholder")
             }
             
         }

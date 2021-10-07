@@ -24,7 +24,7 @@ class DescricaoTableViewCell: UITableViewCell {
         descObsLabel.accessibilityLabel = "Este item é de preenchimento obrigatório"
         
         descTextView.isAccessibilityElement = true
-        descTextView.accessibilityLabel = "Fale brevemente sobre sua realização profissional"
+        descTextView.accessibilityLabel = "Descreva brevemente sua realização profissional"
         
         
         
@@ -47,15 +47,15 @@ extension DescricaoTableViewCell: UITextViewDelegate {
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if descTextView?.textColor == UIColor.lightGray {
+        if descTextView?.textColor == UIColor(named: "Placeholder") {
             descTextView?.text = nil
             descTextView?.textColor = UIColor(named: "TextView")
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if ((descTextView?.text == "")) {
-                descTextView?.text = "carol"
-                descTextView?.textColor = UIColor.lightGray
+                descTextView?.text = "Descreva brevemente sua realização profissional.\nExemplo: Nota máxima na tese de conclusão de curso."
+                descTextView?.textColor = UIColor(named: "Placeholder")
         }
     }
 }

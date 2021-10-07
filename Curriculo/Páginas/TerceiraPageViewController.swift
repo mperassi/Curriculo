@@ -94,7 +94,7 @@ class TerceiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
-        if (multiCell3?.novaTextView?.text == "gabi") {
+        if (multiCell3?.novaTextView?.text == "Digite aqui detalhes da sua experiência profissional") {
             print("vazio")
             let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -223,18 +223,15 @@ extension TerceiraPageViewController: UITableViewDataSource{
             
         } else if indexPath.row == 2 {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "duasDatasCell", for: indexPath) as! DuasDatasTableViewCell
-            //            cell.duasDatasLabel.text = "Período"
-            //            cell.duasDatasObs.text = "*Obrigatório"
-            //            print(dictValue)  // Printing the value
+         
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "novaTextCell", for: indexPath) as! DetalhesTableViewCell
             cell.selectionStyle = .none
-            cell.novaTextView?.text = "gabi"
-            cell.novaTextView?.textColor = UIColor.lightGray
+            cell.novaTextView?.text = "Digite aqui detalhes da sua experiência profissional"
+            cell.novaTextView?.textColor = UIColor(named: "Placeholder")
             return cell
-            //            guard let safeCell = cell else {return UITableViewCell()}
-            //            return safeCell
+
         }
         
     }
