@@ -112,7 +112,7 @@ class BemvindosViewController: UIViewController, NSFetchedResultsControllerDeleg
             cell.isInEditingMode = editing
         }
         if (self.isEditing) {
-            self.editButtonItem.title = "OK"
+            self.editButtonItem.title = "Cancelar"
             toolBar.isHidden = false
             }
             else {

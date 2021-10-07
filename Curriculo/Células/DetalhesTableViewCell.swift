@@ -47,15 +47,18 @@ extension DetalhesTableViewCell: UITextViewDelegate {
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if novaTextView?.textColor == UIColor.lightGray {
-            novaTextView?.text = nil
-            novaTextView?.textColor = UIColor(named: "TextView")
+        if self.novaTextView?.textColor == UIColor(named: "Placeholder") {
+            self.novaTextView?.text = nil
+            self.novaTextView?.textColor = UIColor(named: "TextView")
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if ((novaTextView?.text == "")) {
-                novaTextView?.text = "carol"
-                novaTextView?.textColor = UIColor.lightGray
+            if novaLabel.text == "Detalhes"{
+                novaTextView?.text = "Digite aqui detalhes da sua experiência profissional"
+                novaTextView?.textColor = UIColor(named: "Placeholder")
+            }
+            
         }
     }
 }

@@ -134,7 +134,7 @@ class SegundaPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
-        if (multiCell?.largeTextView?.text == "carol") || (multiCell1?.largeTextView?.text == "gabi"){
+        if (multiCell?.largeTextView?.text == "Digite aqui seu objetivo profissional\nExemplo: Desenvolvimento de projetos voltados à tecnologia.") || (multiCell1?.largeTextView?.text == "Digite aqui seu resumo profissional\nExemplo: Trabalho com gestão de projetos de TI."){
             print("vazio")
             let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -168,8 +168,8 @@ extension SegundaPageViewController: UITableViewDataSource{
             if cell.largeTextLabel.text == "Objetivo profissional" {
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Objetivo Profissional"
-                cell.largeTextView?.text = "carol"
-                cell.largeTextView?.textColor = UIColor.lightGray
+                cell.largeTextView?.text = "Digite aqui seu objetivo profissional\nExemplo: Desenvolvimento de projetos voltados à tecnologia."
+                cell.largeTextView?.textColor = UIColor(named: "Placeholder")
                 
                 cell.largeTextView?.isAccessibilityElement = true
                 cell.largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional"
@@ -188,8 +188,8 @@ extension SegundaPageViewController: UITableViewDataSource{
             if cell.largeTextLabel.text == "Resumo profissional" {
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Resumo Profissional"
-                cell.largeTextView?.text = "gabi"
-                cell.largeTextView?.textColor = UIColor.lightGray
+                cell.largeTextView?.text = "Digite aqui seu resumo profissional\nExemplo: Trabalho com gestão de projetos de TI."
+                cell.largeTextView?.textColor = UIColor(named: "Placeholder")
                 
                 cell.largeTextView?.isAccessibilityElement = true
                 cell.largeTextView?.accessibilityLabel = "Digite aqui seu resumo profissional"
