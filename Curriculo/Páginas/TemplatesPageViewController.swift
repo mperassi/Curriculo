@@ -98,14 +98,18 @@ class TemplatesPageViewController: UIViewController {
         botaoAnterior.accessibilityLabel = "Anterior"
         botaoConcluir.accessibilityLabel = "Concluir"
             
-        
-        accessibilityElements = [passos!, modelosTitulo!, labelObs!, primeiroModelo!, segundoModelo!, coresLabel!, coresLabelObs!, corLaranja!, corAzul!, corVerde!, corPreto!, botaoAnterior!, botaoConcluir!]
+            
 
-        //MARK: Iniciar a leitura pelo título (não está funcionando)
-        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: self.navigationItem.titleView)
+        //MARK: Iniciar a leitura pelo título
+//        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: self.navigationItem.titleView)
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+      //MARK: Acessibilidade dos elementos da tableView
+        accessibilityElements = [passos!, tableView!, modelosTitulo!, labelObs!, primeiroModelo!, segundoModelo!, coresLabel!, coresLabelObs!, corLaranja!, corAzul!, corVerde!, corPreto!, botaoAnterior!, botaoConcluir!]
+    }
+    
     //Dicionário
     @IBAction func dicionario6Pagina() {
         tableView.dequeueReusableCell(withIdentifier: "textoCell")
@@ -358,7 +362,6 @@ extension TemplatesPageViewController: UITableViewDataSource{
         cell.nomeObs.text = "*Obrigatório"
         
         //MARK: Acessibilidade - Nome do currículo
-        
         cell.nomeLabel.isAccessibilityElement = true
         cell.nomeLabel.accessibilityLabel = "Nome do currículo"
         
@@ -368,9 +371,9 @@ extension TemplatesPageViewController: UITableViewDataSource{
         cell.nomeObs.isAccessibilityElement = true
         cell.nomeObs.accessibilityLabel = "Este item é de preenchimento obrigatório"
         
-//
-        
+        //MARK: Acessibilidade das células da tableView
         accessibilityElements = [cell.nomeLabel!, cell.nomeObs!, cell.nomeField!]
+        
         
         if UIAccessibility.isVoiceOverRunning {
             cell.nomeField.placeholder = ""
