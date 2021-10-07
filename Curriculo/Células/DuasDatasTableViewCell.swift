@@ -19,6 +19,8 @@ class DuasDatasTableViewCell: UITableViewCell {
         super.awakeFromNib()
         dataInicio.translatesAutoresizingMaskIntoConstraints = false
         dataFim.translatesAutoresizingMaskIntoConstraints = false
+        inicioLabel.translatesAutoresizingMaskIntoConstraints = false
+        fimLabel.translatesAutoresizingMaskIntoConstraints = false
         
         dataInicio.topAnchor.constraint(equalTo: inicioLabel.bottomAnchor, constant: 10).isActive = true
         dataInicio.leadingAnchor.constraint(equalTo: inicioLabel.leadingAnchor, constant: 5).isActive = true
@@ -28,6 +30,7 @@ class DuasDatasTableViewCell: UITableViewCell {
         dataFim.leadingAnchor.constraint(equalTo: fimLabel.leadingAnchor, constant: 5).isActive = true
         dataFim.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
+        fimLabel.numberOfLines = 0
         
         //MARK: Acessibilidade - Botões de início, fim e picker
         self.isAccessibilityElement = false 

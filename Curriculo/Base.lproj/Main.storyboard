@@ -17,14 +17,14 @@
             <objects>
                 <viewController id="tmn-bu-Mua" customClass="SegundaPageViewController" customModule="Curriculo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="80o-Ic-Zbo">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-tU-U4j">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-s4-QZk">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="652"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="852"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 2 de 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGQ-bM-UII">
                                                 <rect key="frame" x="17" y="10" width="348" height="18"/>
@@ -33,7 +33,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Lh-R1N">
-                                                <rect key="frame" x="15" y="43" width="360" height="574"/>
+                                                <rect key="frame" x="15" y="43" width="360" height="739.66666666666663"/>
                                                 <color key="backgroundColor" name="Fundo"/>
                                                 <color key="separatorColor" name="Fundo"/>
                                                 <prototypes>
@@ -97,17 +97,17 @@
                                         <color key="backgroundColor" name="Fundo"/>
                                         <constraints>
                                             <constraint firstItem="ObT-Lh-R1N" firstAttribute="leading" secondItem="WMU-s4-QZk" secondAttribute="leading" constant="15" id="AT7-oz-BF2"/>
-                                            <constraint firstAttribute="bottom" secondItem="ObT-Lh-R1N" secondAttribute="bottom" constant="35" id="KLp-sD-Sll"/>
+                                            <constraint firstAttribute="bottom" secondItem="ObT-Lh-R1N" secondAttribute="baseline" constant="69.333333333333371" id="KLp-sD-Sll"/>
                                             <constraint firstAttribute="trailing" secondItem="lGQ-bM-UII" secondAttribute="trailing" constant="25" id="NwS-Cb-hwm"/>
                                             <constraint firstItem="lGQ-bM-UII" firstAttribute="top" secondItem="WMU-s4-QZk" secondAttribute="top" constant="10" id="Zw0-u4-j7a"/>
                                             <constraint firstItem="lGQ-bM-UII" firstAttribute="leading" secondItem="WMU-s4-QZk" secondAttribute="leading" constant="17" id="fIm-rA-zKI"/>
                                             <constraint firstItem="ObT-Lh-R1N" firstAttribute="centerX" secondItem="WMU-s4-QZk" secondAttribute="centerX" id="fOt-AY-G1h"/>
                                             <constraint firstItem="ObT-Lh-R1N" firstAttribute="top" secondItem="lGQ-bM-UII" secondAttribute="bottom" constant="15" id="pwV-Yp-CYU"/>
-                                            <constraint firstAttribute="height" constant="652" id="zHB-Qk-ghn"/>
+                                            <constraint firstAttribute="height" constant="852" id="yiN-nd-8Gq"/>
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="589" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="789" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -126,11 +126,11 @@
                                     <constraint firstAttribute="width" constant="390" id="BLN-OX-hXI"/>
                                     <constraint firstItem="WMU-s4-QZk" firstAttribute="width" secondItem="lMM-kh-82c" secondAttribute="width" id="Eov-EJ-K1s"/>
                                     <constraint firstItem="WMU-s4-QZk" firstAttribute="top" secondItem="Sbk-N9-lnW" secondAttribute="top" id="Obv-CK-NoC"/>
-                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="height" secondItem="dD4-tU-U4j" secondAttribute="height" multiplier="0.815" id="SVk-KC-yfF"/>
-                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="bottom" secondItem="Sbk-N9-lnW" secondAttribute="bottom" constant="-48" id="SxW-AO-auZ"/>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="height" relation="greaterThanOrEqual" secondItem="dD4-tU-U4j" secondAttribute="height" multiplier="0.815" constant="37" id="SVk-KC-yfF"/>
+                                    <constraint firstItem="WMU-s4-QZk" firstAttribute="bottom" secondItem="Sbk-N9-lnW" secondAttribute="bottom" constant="111.33333333333337" id="SxW-AO-auZ"/>
                                     <constraint firstItem="lMM-kh-82c" firstAttribute="bottom" secondItem="GGP-G4-A57" secondAttribute="bottom" constant="27" id="YcY-fg-K05"/>
                                     <constraint firstItem="WMU-s4-QZk" firstAttribute="width" secondItem="dD4-tU-U4j" secondAttribute="width" id="bbm-Yz-0fC"/>
-                                    <constraint firstAttribute="height" constant="800" id="f42-Ll-3G4"/>
+                                    <constraint firstAttribute="height" constant="1000" id="f42-Ll-3G4"/>
                                     <constraint firstItem="WMU-s4-QZk" firstAttribute="trailing" secondItem="Sbk-N9-lnW" secondAttribute="trailing" id="k1u-9f-oRH"/>
                                     <constraint firstItem="GGP-G4-A57" firstAttribute="trailing" secondItem="WMU-s4-QZk" secondAttribute="trailing" id="o5g-AF-wlG"/>
                                     <constraint firstItem="WMU-s4-QZk" firstAttribute="leading" secondItem="Sbk-N9-lnW" secondAttribute="leading" id="uaZ-iN-fjk"/>
@@ -154,7 +154,7 @@
                             <color key="tintColor" name="Ciano"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="390" height="800"/>
+                    <size key="freeformSize" width="390" height="1000"/>
                     <connections>
                         <outlet property="botaoAnterior" destination="AO2-EL-SaK" id="Iyr-vY-anK"/>
                         <outlet property="cancelarBotao" destination="73I-3i-04c" id="HmG-Gw-ubs"/>
@@ -428,14 +428,14 @@
                                                                     <color key="textColor" name="Campos"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Início" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zx-d9-TJq">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Início" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zx-d9-TJq">
                                                                     <rect key="frame" x="25" y="45" width="40" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xme-La-hM2">
-                                                                    <rect key="frame" x="187" y="45" width="27" height="21"/>
+                                                                    <rect key="frame" x="185" y="45" width="29" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -454,10 +454,10 @@
                                                             </subviews>
                                                             <color key="backgroundColor" name="Fundo"/>
                                                             <constraints>
-                                                                <constraint firstItem="Xme-La-hM2" firstAttribute="leading" secondItem="2Zx-d9-TJq" secondAttribute="trailing" constant="122" id="2JV-nX-POc"/>
+                                                                <constraint firstItem="Xme-La-hM2" firstAttribute="leading" secondItem="2Zx-d9-TJq" secondAttribute="trailing" constant="120" id="2JV-nX-POc"/>
                                                                 <constraint firstItem="2Zx-d9-TJq" firstAttribute="top" secondItem="XUr-zg-Gzv" secondAttribute="bottom" constant="10" id="KGB-hU-MH1"/>
                                                                 <constraint firstItem="2Zx-d9-TJq" firstAttribute="leading" secondItem="qUD-8b-ayn" secondAttribute="leadingMargin" constant="5" id="RRG-hK-yU7"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="Xme-La-hM2" secondAttribute="trailing" constant="126" id="Sua-cB-22O"/>
+                                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Xme-La-hM2" secondAttribute="trailing" constant="126" id="Sua-cB-22O"/>
                                                                 <constraint firstItem="XUr-zg-Gzv" firstAttribute="top" secondItem="qUD-8b-ayn" secondAttribute="topMargin" id="Sz5-mF-hrs"/>
                                                                 <constraint firstItem="aHs-FY-nVL" firstAttribute="top" secondItem="qUD-8b-ayn" secondAttribute="topMargin" constant="5" id="r2d-OQ-Ut9"/>
                                                                 <constraint firstItem="XUr-zg-Gzv" firstAttribute="leading" secondItem="qUD-8b-ayn" secondAttribute="leadingMargin" constant="5" id="uAG-vq-hfm"/>
@@ -592,7 +592,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="532" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="480.66666666666669" width="390" height="44.000000000000057"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -724,7 +724,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="Q0H-N3-gXY" firstAttribute="leading" secondItem="LgL-kU-DCF" secondAttribute="leadingMargin" constant="5" id="8VB-QR-Sp7"/>
                                                                 <constraint firstItem="lUq-bB-eXe" firstAttribute="top" secondItem="Q0H-N3-gXY" secondAttribute="bottom" constant="10" id="C2z-HL-xUm"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="ap2-hS-RZN" secondAttribute="trailing" constant="126" id="Co8-WL-GQp"/>
+                                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="ap2-hS-RZN" secondAttribute="trailing" constant="126" id="Co8-WL-GQp"/>
                                                                 <constraint firstItem="lUq-bB-eXe" firstAttribute="leading" secondItem="LgL-kU-DCF" secondAttribute="leadingMargin" constant="5" id="Pbc-X1-NUN"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="wo8-Fp-TtF" secondAttribute="trailing" constant="10" id="U7E-si-Kgb"/>
                                                                 <constraint firstItem="Q0H-N3-gXY" firstAttribute="top" secondItem="LgL-kU-DCF" secondAttribute="topMargin" id="YKE-08-bXj"/>
@@ -806,7 +806,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-3K-t78">
-                                        <rect key="frame" x="0.0" y="480.66666666666669" width="390" height="44.000000000000057"/>
+                                        <rect key="frame" x="0.0" y="484.66666666666669" width="390" height="44.000000000000057"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zzr-Vg-U9w"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="a3t-Yl-gbZ"/>
@@ -999,7 +999,7 @@
                                                                 <constraint firstItem="ggn-Oj-cFH" firstAttribute="leading" secondItem="yhG-8O-We9" secondAttribute="trailing" constant="122" id="MDe-2X-vsa"/>
                                                                 <constraint firstItem="mOa-q8-DWo" firstAttribute="top" secondItem="sdm-bG-fdf" secondAttribute="topMargin" id="PtP-ym-6nh"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="xAe-Dg-erM" secondAttribute="trailing" constant="10" id="azj-zv-g6K"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="ggn-Oj-cFH" secondAttribute="trailing" constant="126" id="cfa-cZ-QOs"/>
+                                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="ggn-Oj-cFH" secondAttribute="trailing" constant="126" id="cfa-cZ-QOs"/>
                                                                 <constraint firstItem="xAe-Dg-erM" firstAttribute="leading" secondItem="mOa-q8-DWo" secondAttribute="trailing" constant="5" id="fmk-ZT-1Yx"/>
                                                                 <constraint firstItem="mOa-q8-DWo" firstAttribute="leading" secondItem="sdm-bG-fdf" secondAttribute="leadingMargin" constant="5" id="iqH-EG-yCx"/>
                                                                 <constraint firstItem="xAe-Dg-erM" firstAttribute="top" secondItem="sdm-bG-fdf" secondAttribute="topMargin" constant="5" id="xnr-hm-bOR"/>
@@ -1214,6 +1214,7 @@
                                             <constraint firstItem="QZ7-RT-XD1" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="17" id="dF0-Z4-V1N"/>
                                             <constraint firstItem="VGn-4j-bld" firstAttribute="top" secondItem="7pD-zC-Y9R" secondAttribute="bottom" constant="17" id="eOn-es-uq3"/>
                                             <constraint firstItem="OlY-4k-FCi" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="27" id="hvm-3c-5qZ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VGn-4j-bld" secondAttribute="trailing" constant="10" id="qQG-mC-MMq"/>
                                             <constraint firstItem="qdi-Np-84I" firstAttribute="leading" secondItem="nhN-wo-46z" secondAttribute="leading" constant="15" id="rXc-cn-pd2"/>
                                             <constraint firstAttribute="trailing" secondItem="QZ7-RT-XD1" secondAttribute="trailing" constant="25" id="z7G-QB-2Gk"/>
                                             <constraint firstAttribute="trailing" secondItem="qdi-Np-84I" secondAttribute="trailing" constant="15" id="zOE-jw-w1z"/>
@@ -1587,7 +1588,6 @@
                                             <constraint firstAttribute="trailing" secondItem="5Gb-wt-tMm" secondAttribute="trailing" constant="42.670000000000002" id="Y6t-Us-cGo"/>
                                             <constraint firstItem="5Gb-wt-tMm" firstAttribute="leading" secondItem="j8k-Ob-0bV" secondAttribute="trailing" constant="20" id="ZRF-ZK-FeQ"/>
                                             <constraint firstItem="RCT-sc-12K" firstAttribute="leading" secondItem="gW7-xe-dfG" secondAttribute="trailing" constant="10" id="bb2-eg-leN"/>
-                                            <constraint firstAttribute="trailing" secondItem="2Uo-7I-rya" secondAttribute="trailing" constant="73" id="drS-Ws-zuh"/>
                                             <constraint firstItem="2Uo-7I-rya" firstAttribute="top" secondItem="7FW-8P-QuY" secondAttribute="bottom" constant="20" id="fWW-pi-F0G"/>
                                             <constraint firstItem="gW7-xe-dfG" firstAttribute="leading" secondItem="IeZ-7L-NPC" secondAttribute="leading" constant="87" id="imJ-BX-PtQ"/>
                                             <constraint firstItem="Vod-E5-2V2" firstAttribute="top" secondItem="ZC0-6n-h2V" secondAttribute="bottom" constant="15" id="j9r-ek-xZL"/>
@@ -1596,6 +1596,7 @@
                                             <constraint firstItem="2Uo-7I-rya" firstAttribute="leading" secondItem="NSR-ty-XgW" secondAttribute="trailing" constant="10" id="meG-Ro-WId"/>
                                             <constraint firstItem="j8k-Ob-0bV" firstAttribute="leading" secondItem="IeZ-7L-NPC" secondAttribute="leading" constant="40" id="myB-Vp-maR"/>
                                             <constraint firstItem="7FW-8P-QuY" firstAttribute="top" secondItem="YnJ-M6-y3Q" secondAttribute="bottom" constant="15" id="nOa-gm-2Rx"/>
+                                            <constraint firstItem="zyU-ZA-SeX" firstAttribute="leading" secondItem="YnJ-M6-y3Q" secondAttribute="trailing" constant="6" id="oqQ-L6-GVe"/>
                                             <constraint firstItem="zyU-ZA-SeX" firstAttribute="top" secondItem="j8k-Ob-0bV" secondAttribute="bottom" constant="15" id="oqe-q9-xGg"/>
                                             <constraint firstItem="urW-XL-GgL" firstAttribute="leading" secondItem="7FW-8P-QuY" secondAttribute="trailing" constant="10" id="oxF-Kd-bPX"/>
                                             <constraint firstAttribute="trailing" secondItem="YnJ-M6-y3Q" secondAttribute="trailing" constant="198" id="pVp-mv-rCs"/>
@@ -1760,7 +1761,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHd-1k-GSy">
-                                        <rect key="frame" x="0.0" y="504" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="489" width="390" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ikb-cE-taT"/>
                                             <barButtonItem enabled="NO" systemItem="trash" id="qDG-kf-mf2">
