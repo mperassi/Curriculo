@@ -94,7 +94,7 @@ class TerceiraPageViewController: UIViewController {
         defaults.setValue(dictionary, forKey: "DictValue") //Saved the Dictionary in user default (colocar na troca de pag)
         print(dictionary)
         
-        if (multiCell3?.novaTextView?.text == "") {
+        if (multiCell3?.novaTextView?.text == "gabi") {
             print("vazio")
             let ac = UIAlertController(title: "Dados incompletos", message: "Um dos campos obrigatórios não foi preenchido", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
