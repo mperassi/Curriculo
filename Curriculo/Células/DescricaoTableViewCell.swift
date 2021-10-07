@@ -46,5 +46,17 @@ extension DescricaoTableViewCell: UITextViewDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if descTextView?.textColor == UIColor.lightGray {
+            descTextView?.text = nil
+            descTextView?.textColor = UIColor(named: "TextView")
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if ((descTextView?.text == "")) {
+                descTextView?.text = "carol"
+                descTextView?.textColor = UIColor.lightGray
+        }
+    }
 }
 

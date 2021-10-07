@@ -158,6 +158,7 @@ extension SegundaPageViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row == 0 {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "largeTextCell", for: indexPath) as! TextoMaiorTableViewCell
             cell.largeTextLabel.text = "Objetivo profissional"
@@ -167,14 +168,15 @@ extension SegundaPageViewController: UITableViewDataSource{
             if cell.largeTextLabel.text == "Objetivo profissional" {
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Objetivo Profissional"
+                cell.largeTextView?.text = "carol"
+                cell.largeTextView?.textColor = UIColor.lightGray
                 
                 cell.largeTextView?.isAccessibilityElement = true
                 cell.largeTextView?.accessibilityLabel = "Digite aqui seu objetivo profissional"
-                
+       
             }
-                
 
-            
+
             return cell
             
         } else {
@@ -186,16 +188,16 @@ extension SegundaPageViewController: UITableViewDataSource{
             if cell.largeTextLabel.text == "Resumo profissional" {
                 cell.largeTextLabel.isAccessibilityElement = true
                 cell.largeTextLabel.accessibilityLabel = "Resumo Profissional"
+                cell.largeTextView?.text = "gabi"
+                cell.largeTextView?.textColor = UIColor.lightGray
                 
                 cell.largeTextView?.isAccessibilityElement = true
                 cell.largeTextView?.accessibilityLabel = "Digite aqui seu resumo profissional"
                 
+              
             }
-            
-//            cell.accessibilityElements = [cell.largeTextLabel!]
-
             return cell
-            
+
         }
     }
     

@@ -33,4 +33,16 @@ extension ObservacaoTableViewCell: UITextViewDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         return updatedText.count <= 200 // Change limit based on your requirement.
     }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if obsTextView?.textColor == UIColor.lightGray {
+            obsTextView?.text = nil
+            obsTextView?.textColor = UIColor(named: "TextView")
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if ((obsTextView?.text == "")) {
+                obsTextView?.text = "carol"
+                obsTextView?.textColor = UIColor.lightGray
+        }
+    }
 }

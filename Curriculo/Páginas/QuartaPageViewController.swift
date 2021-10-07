@@ -228,7 +228,7 @@ extension QuartaPageViewController: UITableViewDataSource{
             
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "duasDatasCell", for: indexPath) as! DuasDatasTableViewCell
-   
+            
             return cell
         }
         

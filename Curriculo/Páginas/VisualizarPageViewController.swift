@@ -8,7 +8,7 @@
 import UIKit
 import PDFKit
 
-class ProntoPageViewController2: UIViewController {
+class VisualizarPageViewController: UIViewController {
     @IBOutlet var fraseConcluido: UILabel!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var botaoCompartilhar: UIBarButtonItem!
