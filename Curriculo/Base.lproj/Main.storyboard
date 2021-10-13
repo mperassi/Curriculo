@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J4P-GA-G7C">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xWx-TW-bdn">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="2"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -107,7 +107,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-G4-A57">
-                                        <rect key="frame" x="0.0" y="802.66666666666663" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="860" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="AO2-EL-SaK"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="HCS-nQ-ang"/>
@@ -310,7 +310,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-dg-i4F">
-                                        <rect key="frame" x="0.0" y="702.66666666666663" width="391" height="49"/>
+                                        <rect key="frame" x="0.0" y="760" width="391" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="die-PQ-NiI"/>
                                             <barButtonItem title="Próximo" width="112.66666666666669" id="4rL-yn-9GH">
@@ -369,7 +369,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J4P-GA-G7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" largeTitles="YES" id="Pa2-eC-d4a">
-                        <rect key="frame" x="0.0" y="44" width="390" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -592,7 +592,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-pi-69e">
-                                        <rect key="frame" x="0.0" y="516" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="551.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="WLR-3l-fXa"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="w7c-fe-oIb"/>
@@ -806,7 +806,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-3K-t78">
-                                        <rect key="frame" x="0.0" y="507.66666666666674" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="551.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zzr-Vg-U9w"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="a3t-Yl-gbZ"/>
@@ -1221,7 +1221,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-px-WdG">
-                                        <rect key="frame" x="0.0" y="852.66666666666663" width="390" height="49"/>
+                                        <rect key="frame" x="0.0" y="901.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="zSB-kM-qYs"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="v5y-DE-ufk"/>
@@ -1316,7 +1316,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-6d-7Mu">
-                                        <rect key="frame" x="0.0" y="507.66666666666674" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="551.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="2yJ-eZ-eFA"/>
                                             <barButtonItem title="Compartilhar" id="fIc-cX-2Qd"/>
@@ -1495,7 +1495,7 @@
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-xe-dfG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-xe-dfG">
                                                 <rect key="frame" x="87" y="550" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="AzK-pB-p5T"/>
@@ -1513,7 +1513,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCT-sc-12K">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCT-sc-12K">
                                                 <rect key="frame" x="147" y="550" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="GGu-wa-nmH"/>
@@ -1533,7 +1533,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSR-ty-XgW">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSR-ty-XgW">
                                                 <rect key="frame" x="207" y="550" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="1Ni-YB-Bst"/>
@@ -1553,7 +1553,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uo-7I-rya">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uo-7I-rya">
                                                 <rect key="frame" x="267" y="550" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="hsU-Xs-LLl"/>
@@ -1615,7 +1615,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBJ-vc-gcc">
-                                        <rect key="frame" x="0.0" y="633.66666666666663" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="651.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem title="Anterior" width="113" id="VI7-u5-5cj"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="De5-kB-Rsy"/>
@@ -1767,7 +1767,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHd-1k-GSy">
-                                        <rect key="frame" x="0.0" y="516" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="560" width="390" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ikb-cE-taT"/>
                                             <barButtonItem enabled="NO" systemItem="trash" id="qDG-kf-mf2">
@@ -1872,7 +1872,7 @@
                                         </constraints>
                                     </view>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRP-sQ-gIn">
-                                        <rect key="frame" x="0.0" y="507.66666666666674" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="551.66666666666663" width="390" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="Gmk-O7-3ae"/>
                                             <barButtonItem title="Compartilhar" id="8Ot-05-yti"/>
